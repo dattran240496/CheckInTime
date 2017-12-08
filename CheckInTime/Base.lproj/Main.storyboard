@@ -1,24 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="EuphemiaCAS.ttc">
+            <string>EuphemiaUCAS-Italic</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="YAn-ar-Jiw">
+            <objects>
+                <navigationController id="HeU-4v-ecc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e92-2h-lgv">
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="VV4-GN-8lk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7e-iH-v5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188" y="90"/>
+        </scene>
+        <!--Hompage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="Hompage" customModule="CheckInTime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" highlightedImage="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="o8Z-JE-NCR">
+                                <rect key="frame" x="256.5" y="40" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o8Z-JE-NCR" secondAttribute="height" id="Oml-JB-YZo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECK IN TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUr-zp-wFs">
+                                <rect key="frame" x="239.5" y="312" width="290.5" height="53"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Italic" family="Euphemia UCAS" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apY-LC-lBZ">
+                                <rect key="frame" x="409" y="556" width="184" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Clean Time">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B4-To-YtK">
+                                <rect key="frame" x="175" y="556" width="184" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5B4-To-YtK" secondAttribute="height" id="k4V-iO-hma"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Check in Time">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLU-ai-bqP">
+                                <rect key="frame" x="175" y="790" width="184" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zLU-ai-bqP" secondAttribute="height" id="1DV-cZ-Ytx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Members">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uql-Tn-uF3">
+                                <rect key="frame" x="409" y="790" width="184" height="184"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Group">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o8Z-JE-NCR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3ha-tB-e9T"/>
+                            <constraint firstItem="Uql-Tn-uF3" firstAttribute="leading" secondItem="zLU-ai-bqP" secondAttribute="trailing" constant="50" id="Bd5-bq-5oP"/>
+                            <constraint firstItem="zLU-ai-bqP" firstAttribute="top" secondItem="5B4-To-YtK" secondAttribute="bottom" constant="50" id="C6i-vN-r8p"/>
+                            <constraint firstItem="5B4-To-YtK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="Df8-YK-SUx"/>
+                            <constraint firstItem="apY-LC-lBZ" firstAttribute="top" secondItem="5B4-To-YtK" secondAttribute="top" id="ETr-Ec-Owi"/>
+                            <constraint firstItem="NUr-zp-wFs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="J9v-2t-97e"/>
+                            <constraint firstItem="o8Z-JE-NCR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="KSP-Zl-oEa"/>
+                            <constraint firstItem="5B4-To-YtK" firstAttribute="width" secondItem="apY-LC-lBZ" secondAttribute="width" id="SY9-1g-n7T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zLU-ai-bqP" secondAttribute="bottom" constant="50" id="ThB-c4-Jiu"/>
+                            <constraint firstItem="Uql-Tn-uF3" firstAttribute="top" secondItem="zLU-ai-bqP" secondAttribute="top" id="Tmy-V7-reH"/>
+                            <constraint firstItem="apY-LC-lBZ" firstAttribute="height" secondItem="5B4-To-YtK" secondAttribute="height" id="VqM-kT-HkV"/>
+                            <constraint firstItem="apY-LC-lBZ" firstAttribute="leading" secondItem="5B4-To-YtK" secondAttribute="trailing" constant="50" id="gVV-PS-icy"/>
+                            <constraint firstItem="o8Z-JE-NCR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kpj-bM-bIK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uql-Tn-uF3" secondAttribute="trailing" constant="175" id="laV-05-4Py"/>
+                            <constraint firstItem="Uql-Tn-uF3" firstAttribute="width" secondItem="zLU-ai-bqP" secondAttribute="width" id="qb2-RG-sJz"/>
+                            <constraint firstItem="zLU-ai-bqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="rea-rM-8e9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="apY-LC-lBZ" secondAttribute="trailing" constant="175" id="rer-xN-yBh"/>
+                            <constraint firstItem="NUr-zp-wFs" firstAttribute="top" secondItem="o8Z-JE-NCR" secondAttribute="bottom" constant="16" id="ry5-ov-hOl"/>
+                            <constraint firstItem="Uql-Tn-uF3" firstAttribute="height" secondItem="zLU-ai-bqP" secondAttribute="height" id="uKq-v6-SYa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnCheckInTime" destination="5B4-To-YtK" id="yTA-5y-yYC"/>
+                        <outlet property="btnCleanTime" destination="apY-LC-lBZ" id="qFo-xV-SAo"/>
+                        <outlet property="btnGroup" destination="Uql-Tn-uF3" id="lXM-ga-u5s"/>
+                        <outlet property="btnMembers" destination="zLU-ai-bqP" id="iJ6-9B-VQm"/>
+                        <outlet property="imgViewAppIcon" destination="o8Z-JE-NCR" id="GjP-wG-RLB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-361.5234375" y="89.84375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon.png" width="1024" height="1024"/>
+    </resources>
 </document>
