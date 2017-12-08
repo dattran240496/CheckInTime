@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */; };
-		94367B0F1FDA3B9400DAC492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0E1FDA3B9400DAC492 /* ViewController.swift */; };
+		94367B0F1FDA3B9400DAC492 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0E1FDA3B9400DAC492 /* Homepage.swift */; };
 		94367B121FDA3B9400DAC492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94367B101FDA3B9400DAC492 /* Main.storyboard */; };
 		94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94367B131FDA3B9400DAC492 /* CheckInTime.xcdatamodeld */; };
 		94367B171FDA3B9500DAC492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94367B161FDA3B9500DAC492 /* Assets.xcassets */; };
 		94367B1A1FDA3B9500DAC492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94367B181FDA3B9500DAC492 /* LaunchScreen.storyboard */; };
 		94367B251FDA3B9500DAC492 /* CheckInTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B241FDA3B9500DAC492 /* CheckInTimeTests.swift */; };
 		94367B301FDA3B9500DAC492 /* CheckInTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B2F1FDA3B9500DAC492 /* CheckInTimeUITests.swift */; };
+		94367B401FDA3D3700DAC492 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94367B3F1FDA3D3700DAC492 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		94367B091FDA3B9400DAC492 /* CheckInTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckInTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94367B0E1FDA3B9400DAC492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94367B0E1FDA3B9400DAC492 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 		94367B111FDA3B9400DAC492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94367B141FDA3B9400DAC492 /* CheckInTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheckInTime.xcdatamodel; sourceTree = "<group>"; };
 		94367B161FDA3B9500DAC492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		94367B2B1FDA3B9500DAC492 /* CheckInTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckInTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94367B2F1FDA3B9500DAC492 /* CheckInTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeUITests.swift; sourceTree = "<group>"; };
 		94367B311FDA3B9500DAC492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94367B3F1FDA3D3700DAC492 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,8 @@
 		94367B0B1FDA3B9400DAC492 /* CheckInTime */ = {
 			isa = PBXGroup;
 			children = (
+				94367B3D1FDA3D1500DAC492 /* src */,
 				94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */,
-				94367B0E1FDA3B9400DAC492 /* ViewController.swift */,
 				94367B101FDA3B9400DAC492 /* Main.storyboard */,
 				94367B161FDA3B9500DAC492 /* Assets.xcassets */,
 				94367B181FDA3B9500DAC492 /* LaunchScreen.storyboard */,
@@ -126,6 +128,23 @@
 				94367B311FDA3B9500DAC492 /* Info.plist */,
 			);
 			path = CheckInTimeUITests;
+			sourceTree = "<group>";
+		};
+		94367B3D1FDA3D1500DAC492 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				94367B0E1FDA3B9400DAC492 /* Homepage.swift */,
+				94367B3E1FDA3D2700DAC492 /* img */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		94367B3E1FDA3D2700DAC492 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				94367B3F1FDA3D3700DAC492 /* icon.png */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94367B401FDA3D3700DAC492 /* icon.png in Resources */,
 				94367B1A1FDA3B9500DAC492 /* LaunchScreen.storyboard in Resources */,
 				94367B171FDA3B9500DAC492 /* Assets.xcassets in Resources */,
 				94367B121FDA3B9400DAC492 /* Main.storyboard in Resources */,
@@ -262,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94367B0F1FDA3B9400DAC492 /* ViewController.swift in Sources */,
+				94367B0F1FDA3B9400DAC492 /* Homepage.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */,
 			);
