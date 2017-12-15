@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Hompage: UIViewController {
+class HomepageController: UIViewController {
     
     @IBOutlet weak var btnCheckInTime: UIButton!
     @IBOutlet weak var btnCleanTime: UIButton!
@@ -35,13 +35,27 @@ class Hompage: UIViewController {
         btnGroup.layer.borderColor = UIColor.gray.cgColor
         btnGroup.layer.borderWidth = 2
         
-        //imgViewAppIcon.layer.cornerRadius = imgViewAppIcon.frame.size.width / 2
-        //imgViewAppIcon.clipsToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    @IBAction func onMemberAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemberController") as! MemberController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnCheckInTimeAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CheckInTimeController") as! CheckInTimeController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
