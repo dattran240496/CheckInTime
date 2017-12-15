@@ -10,9 +10,13 @@ import UIKit
 
 class MembersCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var lblName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+   
 
 }
