@@ -7,4 +7,4 @@
 //
 
 import Foundation
-let apiURL = "http://103.7.41.39:8080/"
+let apiURL = "http://localhost:8080/"

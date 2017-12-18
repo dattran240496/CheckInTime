@@ -58,6 +58,10 @@ class HomepageController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func onCleanTimeAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CleanTimeController") as! CleanTimeController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 

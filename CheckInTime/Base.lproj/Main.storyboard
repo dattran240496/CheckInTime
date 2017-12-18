@@ -42,7 +42,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pzm-ve-Dx7">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1000"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vU3-Qq-giO">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vU3-Qq-giO">
                                                 <rect key="frame" x="341.5" y="8" width="341" height="341.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="vU3-Qq-giO" secondAttribute="height" id="6ly-9v-mW1"/>
@@ -100,6 +100,9 @@
                                                 <state key="normal" title="Clean Time">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onCleanTimeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdz-YU-Oel"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -417,6 +420,116 @@
             </objects>
             <point key="canvasLocation" x="1905" y="90"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SQo-NY-1FT">
+            <objects>
+                <navigationController id="gh9-6j-nhN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pRT-qm-C9K">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SkL-35-KAa" kind="relationship" relationship="rootViewController" id="lX9-4g-VoL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6uT-jr-NuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="934"/>
+        </scene>
+        <!--Clean Time-->
+        <scene sceneID="U7p-6w-8hL">
+            <objects>
+                <viewController storyboardIdentifier="CleanTimeController" title="Clean Time" id="SkL-35-KAa" customClass="CleanTimeController" customModule="CheckInTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WJ9-Qo-2p5">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2sC-em-qME">
+                                <rect key="frame" x="16" y="80" width="377.5" height="286"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-lK-uXO">
+                                <rect key="frame" x="409.5" y="80" width="377.5" height="286"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="90P-Yz-XMV">
+                                <rect key="frame" x="16" y="382" width="377.5" height="286"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Xs-Nh-zy9">
+                                <rect key="frame" x="409.5" y="382" width="377.5" height="286"/>
+                                <color key="backgroundColor" red="0.63529411759999999" green="0.63137254899999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rD-37-3yA">
+                                <rect key="frame" x="341.5" y="684" width="341" height="68"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="1rD-37-3yA" secondAttribute="width" multiplier="1:5" id="Gws-9t-1I5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="setting">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_lever_01.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NSx-vj-ugs">
+                                <rect key="frame" x="803" y="80" width="205" height="672"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.78823529410000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bnG-br-fqi" appends="YES" id="Z4O-kD-62n"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352939999997" green="0.78823529410000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6c0-VF-Ie6" firstAttribute="trailing" secondItem="NSx-vj-ugs" secondAttribute="trailing" constant="16" id="0rF-wZ-30S"/>
+                            <constraint firstItem="9Xs-Nh-zy9" firstAttribute="width" secondItem="2sC-em-qME" secondAttribute="width" id="0z1-TB-T0x"/>
+                            <constraint firstItem="bCh-lK-uXO" firstAttribute="height" secondItem="2sC-em-qME" secondAttribute="height" id="1K1-Uz-CV6"/>
+                            <constraint firstItem="9Xs-Nh-zy9" firstAttribute="bottom" secondItem="90P-Yz-XMV" secondAttribute="bottom" id="4JT-T7-cv8"/>
+                            <constraint firstItem="NSx-vj-ugs" firstAttribute="leading" secondItem="bCh-lK-uXO" secondAttribute="trailing" constant="16" id="6eu-qI-zkK"/>
+                            <constraint firstItem="NSx-vj-ugs" firstAttribute="leading" secondItem="9Xs-Nh-zy9" secondAttribute="trailing" constant="16" id="86W-M0-sht"/>
+                            <constraint firstItem="bCh-lK-uXO" firstAttribute="top" secondItem="2sC-em-qME" secondAttribute="top" id="9Cd-U0-ENH"/>
+                            <constraint firstItem="90P-Yz-XMV" firstAttribute="top" secondItem="2sC-em-qME" secondAttribute="bottom" constant="16" id="BDe-Uv-sZA"/>
+                            <constraint firstItem="NSx-vj-ugs" firstAttribute="top" secondItem="6c0-VF-Ie6" secondAttribute="top" constant="16" id="Bha-It-Oet"/>
+                            <constraint firstItem="9Xs-Nh-zy9" firstAttribute="leading" secondItem="90P-Yz-XMV" secondAttribute="trailing" constant="16" id="E6Z-ME-O7a"/>
+                            <constraint firstItem="1rD-37-3yA" firstAttribute="top" secondItem="90P-Yz-XMV" secondAttribute="bottom" constant="16" id="EPt-sg-j3F"/>
+                            <constraint firstItem="6c0-VF-Ie6" firstAttribute="bottom" secondItem="1rD-37-3yA" secondAttribute="bottom" constant="16" id="FiM-ZB-uoK"/>
+                            <constraint firstItem="NSx-vj-ugs" firstAttribute="leading" secondItem="bCh-lK-uXO" secondAttribute="trailing" constant="16" id="Hs6-jF-fIg"/>
+                            <constraint firstItem="90P-Yz-XMV" firstAttribute="width" secondItem="2sC-em-qME" secondAttribute="width" id="Hvf-jr-C7F"/>
+                            <constraint firstItem="9Xs-Nh-zy9" firstAttribute="height" secondItem="2sC-em-qME" secondAttribute="height" id="J4o-iQ-6SQ"/>
+                            <constraint firstItem="1rD-37-3yA" firstAttribute="centerX" secondItem="6c0-VF-Ie6" secondAttribute="centerX" id="LwQ-zL-81N"/>
+                            <constraint firstItem="6c0-VF-Ie6" firstAttribute="bottom" secondItem="NSx-vj-ugs" secondAttribute="bottom" constant="16" id="N7w-pV-RGj"/>
+                            <constraint firstItem="2sC-em-qME" firstAttribute="top" secondItem="6c0-VF-Ie6" secondAttribute="top" constant="16" id="NrA-kb-7LN"/>
+                            <constraint firstItem="bCh-lK-uXO" firstAttribute="width" secondItem="2sC-em-qME" secondAttribute="width" id="V7R-os-MOJ"/>
+                            <constraint firstItem="1rD-37-3yA" firstAttribute="width" secondItem="WJ9-Qo-2p5" secondAttribute="width" multiplier="1:3" id="dDi-zW-vuV"/>
+                            <constraint firstItem="bCh-lK-uXO" firstAttribute="leading" secondItem="2sC-em-qME" secondAttribute="trailing" constant="16" id="fyU-e5-EG4"/>
+                            <constraint firstItem="90P-Yz-XMV" firstAttribute="leading" secondItem="6c0-VF-Ie6" secondAttribute="leading" constant="16" id="gs5-x1-OJr"/>
+                            <constraint firstItem="2sC-em-qME" firstAttribute="leading" secondItem="6c0-VF-Ie6" secondAttribute="leading" constant="16" id="il3-6n-qOD"/>
+                            <constraint firstItem="NSx-vj-ugs" firstAttribute="width" secondItem="WJ9-Qo-2p5" secondAttribute="width" multiplier="1:5" id="puS-dw-laK"/>
+                            <constraint firstItem="90P-Yz-XMV" firstAttribute="height" secondItem="2sC-em-qME" secondAttribute="height" id="ucp-ns-ovb"/>
+                            <constraint firstItem="9Xs-Nh-zy9" firstAttribute="top" secondItem="90P-Yz-XMV" secondAttribute="top" id="y8s-MQ-Hgm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6c0-VF-Ie6"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Clean Time" id="LiH-W3-n3S"/>
+                    <connections>
+                        <outlet property="btnSetting" destination="1rD-37-3yA" id="lS5-eq-o2g"/>
+                        <outlet property="imgLever" destination="NSx-vj-ugs" id="nsP-vJ-HOH"/>
+                        <outlet property="imgViewClean1" destination="2sC-em-qME" id="i9B-IT-arh"/>
+                        <outlet property="imgViewClean2" destination="bCh-lK-uXO" id="Uri-2l-fJc"/>
+                        <outlet property="imgViewClean3" destination="90P-Yz-XMV" id="QkP-MK-SIv"/>
+                        <outlet property="imgViewClean4" destination="9Xs-Nh-zy9" id="nVz-oP-xU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyA-Qr-kAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="bnG-br-fqi">
+                    <connections>
+                        <action selector="onLeverDownAction:" destination="SkL-35-KAa" id="7iD-xT-rXj"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2602.734375" y="933.59375"/>
+        </scene>
         <!--Add new staff-->
         <scene sceneID="KX7-Se-3pr">
             <objects>
@@ -532,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsK-QF-UmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2604.4921875" y="89.84375"/>
+            <point key="canvasLocation" x="2603" y="-1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RXE-Dh-nMS">
@@ -557,6 +670,7 @@
         <image name="cloud-front-of-sun-left.png" width="93" height="48"/>
         <image name="cloud-front-of-sun-right.png" width="73" height="41"/>
         <image name="icon.png" width="1024" height="1024"/>
+        <image name="img_lever_01.jpg" width="156" height="647"/>
         <image name="sun-morning.png" width="110" height="110"/>
         <image name="tree.png" width="273" height="109"/>
     </resources>
