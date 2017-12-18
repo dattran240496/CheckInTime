@@ -7,14 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		942E92B71FE3B2D800518040 /* CheckInTimePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E92B61FE3B2D800518040 /* CheckInTimePopUp.swift */; };
+		942E92B91FE3B31200518040 /* CheckInTimePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942E92B81FE3B31200518040 /* CheckInTimePopUp.xib */; };
+		942E92BD1FE3CF6D00518040 /* check-in.png in Resources */ = {isa = PBXBuildFile; fileRef = 942E92BB1FE3CF6D00518040 /* check-in.png */; };
+		942E92BE1FE3CF6D00518040 /* check-out.png in Resources */ = {isa = PBXBuildFile; fileRef = 942E92BC1FE3CF6D00518040 /* check-out.png */; };
 		94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */; };
-		94367B0F1FDA3B9400DAC492 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0E1FDA3B9400DAC492 /* ViewController.swift */; };
+		94367B0F1FDA3B9400DAC492 /* HomepageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B0E1FDA3B9400DAC492 /* HomepageController.swift */; };
 		94367B121FDA3B9400DAC492 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94367B101FDA3B9400DAC492 /* Main.storyboard */; };
 		94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94367B131FDA3B9400DAC492 /* CheckInTime.xcdatamodeld */; };
 		94367B171FDA3B9500DAC492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94367B161FDA3B9500DAC492 /* Assets.xcassets */; };
 		94367B1A1FDA3B9500DAC492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94367B181FDA3B9500DAC492 /* LaunchScreen.storyboard */; };
 		94367B251FDA3B9500DAC492 /* CheckInTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B241FDA3B9500DAC492 /* CheckInTimeTests.swift */; };
 		94367B301FDA3B9500DAC492 /* CheckInTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B2F1FDA3B9500DAC492 /* CheckInTimeUITests.swift */; };
+		94367B401FDA3D3700DAC492 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 94367B3F1FDA3D3700DAC492 /* icon.png */; };
+		94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94367B411FDA6E2700DAC492 /* MemberController.swift */; };
+		9438CD451FDF967700789781 /* rect.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD331FDF967500789781 /* rect.png */; };
+		9438CD461FDF967700789781 /* cloud-behind-sun-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD341FDF967500789781 /* cloud-behind-sun-left.png */; };
+		9438CD471FDF967700789781 /* sun-evening.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD351FDF967600789781 /* sun-evening.png */; };
+		9438CD481FDF967700789781 /* sun-morning.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD361FDF967600789781 /* sun-morning.png */; };
+		9438CD491FDF967700789781 /* mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD371FDF967600789781 /* mountain.png */; };
+		9438CD4A1FDF967700789781 /* ionic.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD381FDF967600789781 /* ionic.png */; };
+		9438CD4B1FDF967700789781 /* cloud-front-of-sun-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD391FDF967600789781 /* cloud-front-of-sun-left.png */; };
+		9438CD4C1FDF967700789781 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD3A1FDF967600789781 /* camera.png */; };
+		9438CD4D1FDF967700789781 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD3C1FDF967600789781 /* happy.png */; };
+		9438CD4E1FDF967700789781 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD3D1FDF967600789781 /* ok.png */; };
+		9438CD4F1FDF967700789781 /* upset.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD3E1FDF967600789781 /* upset.png */; };
+		9438CD501FDF967700789781 /* veryhappy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD3F1FDF967600789781 /* veryhappy.png */; };
+		9438CD511FDF967700789781 /* veryupset.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD401FDF967600789781 /* veryupset.png */; };
+		9438CD521FDF967700789781 /* cloud-front-of-sun-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD411FDF967700789781 /* cloud-front-of-sun-right.png */; };
+		9438CD531FDF967700789781 /* cleaning_materials.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD421FDF967700789781 /* cleaning_materials.jpg */; };
+		9438CD541FDF967700789781 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD431FDF967700789781 /* tree.png */; };
+		9438CD551FDF967700789781 /* cloud-behind-sun-right.png in Resources */ = {isa = PBXBuildFile; fileRef = 9438CD441FDF967700789781 /* cloud-behind-sun-right.png */; };
+		94D095341FDE2A09000219B0 /* CONSTANT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D095331FDE2A09000219B0 /* CONSTANT.swift */; };
+		94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D095361FDE2E65000219B0 /* MembersCollectionViewCell.swift */; };
+		94D095391FDE2E66000219B0 /* MembersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94D095371FDE2E65000219B0 /* MembersCollectionViewCell.xib */; };
+		94D0953B1FDE7D7A000219B0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D0953A1FDE7D7A000219B0 /* camera.png */; };
+		94D0953D1FDE7F3B000219B0 /* AddNewMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */; };
+		94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +64,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		942E92B61FE3B2D800518040 /* CheckInTimePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimePopUp.swift; sourceTree = "<group>"; };
+		942E92B81FE3B31200518040 /* CheckInTimePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInTimePopUp.xib; sourceTree = "<group>"; };
+		942E92BB1FE3CF6D00518040 /* check-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-in.png"; sourceTree = "<group>"; };
+		942E92BC1FE3CF6D00518040 /* check-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-out.png"; sourceTree = "<group>"; };
 		94367B091FDA3B9400DAC492 /* CheckInTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckInTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94367B0E1FDA3B9400DAC492 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94367B0E1FDA3B9400DAC492 /* HomepageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageController.swift; sourceTree = "<group>"; };
 		94367B111FDA3B9400DAC492 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94367B141FDA3B9400DAC492 /* CheckInTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CheckInTime.xcdatamodel; sourceTree = "<group>"; };
 		94367B161FDA3B9500DAC492 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +82,31 @@
 		94367B2B1FDA3B9500DAC492 /* CheckInTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckInTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94367B2F1FDA3B9500DAC492 /* CheckInTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeUITests.swift; sourceTree = "<group>"; };
 		94367B311FDA3B9500DAC492 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94367B3F1FDA3D3700DAC492 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		94367B411FDA6E2700DAC492 /* MemberController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberController.swift; sourceTree = "<group>"; };
+		9438CD331FDF967500789781 /* rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect.png; sourceTree = "<group>"; };
+		9438CD341FDF967500789781 /* cloud-behind-sun-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-behind-sun-left.png"; sourceTree = "<group>"; };
+		9438CD351FDF967600789781 /* sun-evening.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun-evening.png"; sourceTree = "<group>"; };
+		9438CD361FDF967600789781 /* sun-morning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sun-morning.png"; sourceTree = "<group>"; };
+		9438CD371FDF967600789781 /* mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain.png; sourceTree = "<group>"; };
+		9438CD381FDF967600789781 /* ionic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ionic.png; sourceTree = "<group>"; };
+		9438CD391FDF967600789781 /* cloud-front-of-sun-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-front-of-sun-left.png"; sourceTree = "<group>"; };
+		9438CD3A1FDF967600789781 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9438CD3C1FDF967600789781 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
+		9438CD3D1FDF967600789781 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		9438CD3E1FDF967600789781 /* upset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upset.png; sourceTree = "<group>"; };
+		9438CD3F1FDF967600789781 /* veryhappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryhappy.png; sourceTree = "<group>"; };
+		9438CD401FDF967600789781 /* veryupset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryupset.png; sourceTree = "<group>"; };
+		9438CD411FDF967700789781 /* cloud-front-of-sun-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-front-of-sun-right.png"; sourceTree = "<group>"; };
+		9438CD421FDF967700789781 /* cleaning_materials.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cleaning_materials.jpg; sourceTree = "<group>"; };
+		9438CD431FDF967700789781 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		9438CD441FDF967700789781 /* cloud-behind-sun-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-behind-sun-right.png"; sourceTree = "<group>"; };
+		94D095331FDE2A09000219B0 /* CONSTANT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTANT.swift; sourceTree = "<group>"; };
+		94D095361FDE2E65000219B0 /* MembersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCollectionViewCell.swift; sourceTree = "<group>"; };
+		94D095371FDE2E65000219B0 /* MembersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MembersCollectionViewCell.xib; sourceTree = "<group>"; };
+		94D0953A1FDE7D7A000219B0 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemController.swift; sourceTree = "<group>"; };
+		94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +157,8 @@
 		94367B0B1FDA3B9400DAC492 /* CheckInTime */ = {
 			isa = PBXGroup;
 			children = (
+				94367B3D1FDA3D1500DAC492 /* src */,
 				94367B0C1FDA3B9400DAC492 /* AppDelegate.swift */,
-				94367B0E1FDA3B9400DAC492 /* ViewController.swift */,
 				94367B101FDA3B9400DAC492 /* Main.storyboard */,
 				94367B161FDA3B9500DAC492 /* Assets.xcassets */,
 				94367B181FDA3B9500DAC492 /* LaunchScreen.storyboard */,
@@ -126,6 +184,83 @@
 				94367B311FDA3B9500DAC492 /* Info.plist */,
 			);
 			path = CheckInTimeUITests;
+			sourceTree = "<group>";
+		};
+		94367B3D1FDA3D1500DAC492 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				94E4581A1FE381B000EE36C0 /* CheckInTimePopup */,
+				94D095351FDE2E1E000219B0 /* MembersCollectionViewCell */,
+				94367B0E1FDA3B9400DAC492 /* HomepageController.swift */,
+				94367B411FDA6E2700DAC492 /* MemberController.swift */,
+				94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */,
+				94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */,
+				94367B3E1FDA3D2700DAC492 /* img */,
+				94D095331FDE2A09000219B0 /* CONSTANT.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		94367B3E1FDA3D2700DAC492 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				9438CD321FDF966300789781 /* imgMember */,
+				94367B3F1FDA3D3700DAC492 /* icon.png */,
+				942E92BB1FE3CF6D00518040 /* check-in.png */,
+				942E92BC1FE3CF6D00518040 /* check-out.png */,
+				94D0953A1FDE7D7A000219B0 /* camera.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		9438CD321FDF966300789781 /* imgMember */ = {
+			isa = PBXGroup;
+			children = (
+				9438CD3A1FDF967600789781 /* camera.png */,
+				9438CD421FDF967700789781 /* cleaning_materials.jpg */,
+				9438CD341FDF967500789781 /* cloud-behind-sun-left.png */,
+				9438CD441FDF967700789781 /* cloud-behind-sun-right.png */,
+				9438CD391FDF967600789781 /* cloud-front-of-sun-left.png */,
+				9438CD411FDF967700789781 /* cloud-front-of-sun-right.png */,
+				9438CD381FDF967600789781 /* ionic.png */,
+				9438CD3B1FDF967600789781 /* motivation */,
+				9438CD371FDF967600789781 /* mountain.png */,
+				9438CD331FDF967500789781 /* rect.png */,
+				9438CD351FDF967600789781 /* sun-evening.png */,
+				9438CD361FDF967600789781 /* sun-morning.png */,
+				9438CD431FDF967700789781 /* tree.png */,
+			);
+			path = imgMember;
+			sourceTree = "<group>";
+		};
+		9438CD3B1FDF967600789781 /* motivation */ = {
+			isa = PBXGroup;
+			children = (
+				9438CD3C1FDF967600789781 /* happy.png */,
+				9438CD3D1FDF967600789781 /* ok.png */,
+				9438CD3E1FDF967600789781 /* upset.png */,
+				9438CD3F1FDF967600789781 /* veryhappy.png */,
+				9438CD401FDF967600789781 /* veryupset.png */,
+			);
+			path = motivation;
+			sourceTree = "<group>";
+		};
+		94D095351FDE2E1E000219B0 /* MembersCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				94D095361FDE2E65000219B0 /* MembersCollectionViewCell.swift */,
+				94D095371FDE2E65000219B0 /* MembersCollectionViewCell.xib */,
+			);
+			path = MembersCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		94E4581A1FE381B000EE36C0 /* CheckInTimePopup */ = {
+			isa = PBXGroup;
+			children = (
+				942E92B61FE3B2D800518040 /* CheckInTimePopUp.swift */,
+				942E92B81FE3B31200518040 /* CheckInTimePopUp.xib */,
+			);
+			path = CheckInTimePopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +370,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9438CD531FDF967700789781 /* cleaning_materials.jpg in Resources */,
+				9438CD541FDF967700789781 /* tree.png in Resources */,
+				9438CD491FDF967700789781 /* mountain.png in Resources */,
+				94D095391FDE2E66000219B0 /* MembersCollectionViewCell.xib in Resources */,
+				9438CD4B1FDF967700789781 /* cloud-front-of-sun-left.png in Resources */,
+				942E92B91FE3B31200518040 /* CheckInTimePopUp.xib in Resources */,
+				9438CD4E1FDF967700789781 /* ok.png in Resources */,
+				9438CD4A1FDF967700789781 /* ionic.png in Resources */,
+				94367B401FDA3D3700DAC492 /* icon.png in Resources */,
+				942E92BE1FE3CF6D00518040 /* check-out.png in Resources */,
 				94367B1A1FDA3B9500DAC492 /* LaunchScreen.storyboard in Resources */,
+				942E92BD1FE3CF6D00518040 /* check-in.png in Resources */,
 				94367B171FDA3B9500DAC492 /* Assets.xcassets in Resources */,
+				9438CD511FDF967700789781 /* veryupset.png in Resources */,
+				9438CD471FDF967700789781 /* sun-evening.png in Resources */,
+				9438CD4D1FDF967700789781 /* happy.png in Resources */,
+				9438CD501FDF967700789781 /* veryhappy.png in Resources */,
+				9438CD551FDF967700789781 /* cloud-behind-sun-right.png in Resources */,
+				9438CD4C1FDF967700789781 /* camera.png in Resources */,
+				94D0953B1FDE7D7A000219B0 /* camera.png in Resources */,
+				9438CD461FDF967700789781 /* cloud-behind-sun-left.png in Resources */,
+				9438CD481FDF967700789781 /* sun-morning.png in Resources */,
+				9438CD521FDF967700789781 /* cloud-front-of-sun-right.png in Resources */,
+				9438CD451FDF967700789781 /* rect.png in Resources */,
+				9438CD4F1FDF967700789781 /* upset.png in Resources */,
 				94367B121FDA3B9400DAC492 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +420,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94367B0F1FDA3B9400DAC492 /* ViewController.swift in Sources */,
+				94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */,
+				942E92B71FE3B2D800518040 /* CheckInTimePopUp.swift in Sources */,
+				94D0953D1FDE7F3B000219B0 /* AddNewMemController.swift in Sources */,
+				94D095341FDE2A09000219B0 /* CONSTANT.swift in Sources */,
+				94367B0F1FDA3B9400DAC492 /* HomepageController.swift in Sources */,
+				94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */,
+				94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */,
 			);
@@ -433,6 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
