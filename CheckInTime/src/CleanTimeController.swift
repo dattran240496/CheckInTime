@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import AVFoundation
+import AudioToolbox
 class CleanTimeController: UIViewController{
     @IBOutlet weak var btnSetting: UIButton!
     @IBOutlet weak var imgLever: UIImageView!
@@ -16,9 +17,12 @@ class CleanTimeController: UIViewController{
     @IBOutlet weak var imgViewClean2: UIImageView!
     @IBOutlet weak var imgViewClean3: UIImageView!
     @IBOutlet weak var imgViewClean4: UIImageView!
-    
+    var seconds = 0
     var dataMembers = NSArray()
     var arrCleanPerson = [Int]()
+    var timerCleanTime = Timer()
+    var soundLever = AVAudioPlayer()
+    var soundRandom = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSetting.layer.cornerRadius = 15
@@ -38,11 +42,22 @@ class CleanTimeController: UIViewController{
     }
     @IBAction func onLeverDownAction(_ sender: UISwipeGestureRecognizer) {
         self.view.layer.removeAllAnimations()
+        
+        let url = Bundle.main.path(forResource: "lever", ofType: "mp3")!
+        do{
+            self.soundLever = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
+            self.soundLever.prepareToPlay()
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+        }catch{
+            print("error")
+        }
         self.leverAnimateDown(index: 1)
     }
     
     func leverAnimateDown(index: Int){
-        UIImageView.transition(with: self.imgLever, duration: 0.1, options: .transitionCrossDissolve, animations: {
+        self.soundLever.play()
+        UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
             self.imgLever.image = UIImage(named: "leverR0\(index).jpg")
         }, completion: { _ in
             if index <= 7 {
@@ -54,15 +69,27 @@ class CleanTimeController: UIViewController{
     }
     
     func leverAnimateUp(index: Int){
-        UIImageView.transition(with: self.imgLever, duration: 0.1, options: .transitionCrossDissolve, animations: {
+        
+        UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
             self.imgLever.image = UIImage(named: "leverR0\(index).jpg")
         }, completion: { _ in
             if index >= 2 {
                 self.leverAnimateUp(index: index - 1)
             }else{
                 //self.leverAnimateUp(index: index)
-                self.getDataMembers()
+                //self.getDataMembers()
+                let url = Bundle.main.path(forResource: "slot_machine_sounds", ofType: "mp3")!
+                do{
+                    self.soundRandom = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
+                    self.soundRandom.prepareToPlay()
+                    try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                    try AVAudioSession.sharedInstance().setActive(true)
+                }catch{
+                    print("error")
+                }
+                self.timerCleanTime = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(CleanTimeController.startRandom(_:)), userInfo: nil, repeats: true)
                 self.arrCleanPerson = []
+                self.soundLever.pause()
             }
         })
     }
@@ -84,31 +111,49 @@ class CleanTimeController: UIViewController{
                         self.random(arrMem: self.dataMembers)
                     }
                     self.setImgInit(arrRandom: self.arrCleanPerson, arrMem: self.dataMembers)
-                    print(self.arrCleanPerson)
                 } catch {
                     print(error)
                 }
-                
             }
             }.resume()
+    }
+    @objc func startRandom(_ sender: Timer){
+        self.seconds += 1
+        if (seconds <= 20){
+            self.arrCleanPerson = []
+            if self.dataMembers.count >= 4{
+                for _ in 1...4{
+                    soundRandom.play()
+                    self.random(arrMem: self.dataMembers)
+                }
+                self.setImgInit(arrRandom: self.arrCleanPerson, arrMem: self.dataMembers)
+            }
+            
+        }else{
+            self.soundRandom.pause()
+            self.seconds = 0
+            self.timerCleanTime.invalidate()
+        }
     }
     func random(arrMem: NSArray){
         let randomNum:UInt32 = arc4random_uniform(UInt32(arrMem.count))
         let _:TimeInterval = TimeInterval(randomNum)
         let someInt:Int = Int(randomNum)
-        var count = 0
+        var isExist = false
         for i in self.arrCleanPerson{
             if i == someInt{
-                count += 1
+                isExist = true
+                break
             }
         }
-        if count > 0 {
+        if isExist {
             self.random(arrMem: arrMem)
         }else{
             self.arrCleanPerson.append(someInt)
         }
     }
     func setImgInit(arrRandom: [Int], arrMem: NSArray) {
+        
         for i in 1...4{
             let person = arrMem[arrRandom[i - 1]]
             let url = (person as AnyObject)["avatarUrl"] as? String!
@@ -150,5 +195,7 @@ class CleanTimeController: UIViewController{
                 }
                 }.resume()
         }
+        
     }
+    
 }

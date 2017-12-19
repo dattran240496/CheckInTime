@@ -70,6 +70,35 @@ class AddNewMemController: UIViewController{
         
     }
     @IBAction func onAddNowAction(_ sender: Any) {
+        //let imgAvatar = UIImageView(image: UIImage(named: "imgAvatar-temp.png"))
+        if self.txtInputName.text != "" && self.txtInputEmail.text != "" {
+            //let imgData: Data = UIImagePNGRepresentation(imgAvatar.image!)!
+            //let encodeAvatar = imgData.base64EncodedString(options: NSData.Base64EncodingOptions())
+            
+            guard let url = URL(string: apiURL + "api/staff")  else { return }
+            var request = URLRequest(url: url)
+            
+            request.httpMethod = "POST"
+            request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            let param :[String: Any] = [
+                "name": self.txtInputName.text!,
+                "email": self.txtInputEmail.text!,
+            ]
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: param, options: [])
+            }catch{print("error")}
+            let task = URLSession.shared.dataTask(with: request){ data, response, error in
+                guard let _ = data, error == nil else{
+                    return
+                }
+                let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                print(strData ?? "")
+                print("success")
+            }
+            task.resume()
+        }
     }
     @IBAction func onTakePictureAction(_ sender: Any) {
         self.takePhoto()
