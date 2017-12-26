@@ -15,17 +15,23 @@ class CheckInTimeController: UIViewController{
     @IBOutlet weak var imgViewSun: UIImageView!
     var numberOfRepeat:Double = 1
     var dataMembers = NSArray()
-    
+    //var emojiPopup = EmojiPopup()
+    var staffForCheckTime: AnyObject!
+    var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // run animation Sun
         self.animateSun()
         let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
         self.collectionViewMemList?.register(classNib, forCellWithReuseIdentifier: "Cell")
         // get info employee
         self.getDataMembers()
-        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
+
+        self.collectionViewMemList.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: "reload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlertCheckIn), name: NSNotification.Name(rawValue: "alertCheckIn"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showAlertCheckOut), name: NSNotification.Name(rawValue: "alertCheckOut"), object: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,8 +40,9 @@ class CheckInTimeController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.getDataMembers()
-        self.collectionViewMemList.reloadData()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
+        timer.fire()
+        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
     
     @objc func getTime(_ sender: Timer){
@@ -45,7 +52,9 @@ class CheckInTimeController: UIViewController{
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         let result = formatter.string(from: dateTime)
-        lblDateTime.text = result
+     
+        lblDateTime.text = "\(result)"
+        print(result)
     }
     
     func animateSun(){
@@ -86,6 +95,20 @@ class CheckInTimeController: UIViewController{
             self.collectionViewMemList.reloadData()
         }
     }
+    
+    @objc func showAlertCheckIn(notification: NSNotification){
+        let alertController = UIAlertController(title: "Warning", message: "You have already checked in.", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in}
+        alertController.addAction(yesAction)
+       self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @objc func showAlertCheckOut(notification: NSNotification){
+        let alertController = UIAlertController(title: "Warning", message: "You have already checked out.", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in}
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Implement UICollectionViewDelegate
@@ -113,3 +136,12 @@ extension CheckInTimeController: UICollectionViewDataSource{
         self.view.addSubview(popup)
     }
 }
+
+extension CheckInTimeController: UICollectionViewDelegate{
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        self.view.layoutIfNeeded()
+        self.view.setNeedsDisplay()
+    }
+    
+}
+
