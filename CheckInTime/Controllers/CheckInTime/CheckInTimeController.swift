@@ -45,6 +45,11 @@ class CheckInTimeController: UIViewController{
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
     
+    @IBAction func onChartAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func getTime(_ sender: Timer){
         let dateTime = Date()
         let formatter = DateFormatter()
@@ -54,7 +59,6 @@ class CheckInTimeController: UIViewController{
         let result = formatter.string(from: dateTime)
      
         lblDateTime.text = "\(result)"
-        print(result)
     }
     
     func animateSun(){

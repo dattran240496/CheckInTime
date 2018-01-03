@@ -262,6 +262,13 @@
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="TNC-Mo-Wrg" kind="relationship" relationship="rootViewController" id="54t-07-Btl"/>
@@ -270,6 +277,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdf-FR-ocX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="445" y="934"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GxH-ij-EdI">
+            <objects>
+                <navigationController id="FIR-rz-QQR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RKa-59-f5L">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hMA-V5-7WZ" kind="relationship" relationship="rootViewController" id="8qy-YB-s2H"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIh-Tq-yJU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="1685"/>
         </scene>
         <!--Check In Time-->
         <scene sceneID="3d0-mc-5u6">
@@ -389,7 +412,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxA-7l-4fF"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Check In Time" id="ova-Gp-zkp"/>
+                    <navigationItem key="navigationItem" title="Check In Time" id="ova-Gp-zkp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="YqU-be-Q3t">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="asY-Sc-vXV">
+                                <rect key="frame" x="777" y="2" width="227" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Chart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onChartAction:" destination="TNC-Mo-Wrg" eventType="touchUpInside" id="W4I-7F-mJU"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionViewMemList" destination="WlP-gs-Zqu" id="LxA-NU-1yt"/>
                         <outlet property="imgViewSun" destination="2fE-FV-uJz" id="oRY-Ll-sKR"/>
@@ -399,6 +437,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B30-oJ-ddF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1106" y="934"/>
+        </scene>
+        <!--Staff-->
+        <scene sceneID="oav-LW-ubV">
+            <objects>
+                <viewController storyboardIdentifier="StaffListChart" id="hMA-V5-7WZ" customClass="StaffListChart" customModule="CheckInTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yBf-OL-ptv">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3O-et-8qN">
+                                <rect key="frame" x="16" y="89" width="38.5" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b3O-et-8qN" secondAttribute="height" id="AHT-e7-kgZ"/>
+                                </constraints>
+                                <state key="normal" image="calendar.png">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDateStartCalendarAction:" destination="hMA-V5-7WZ" eventType="touchUpInside" id="3Ol-2b-INt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXP-Ne-wQZ">
+                                <rect key="frame" x="62.5" y="89" width="205" height="38.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs7-jm-gyo">
+                                <rect key="frame" x="317.5" y="89" width="38" height="38.5"/>
+                                <state key="normal" image="calendar.png"/>
+                                <connections>
+                                    <action selector="onDateEndCalendarAction:" destination="hMA-V5-7WZ" eventType="touchUpInside" id="zaC-HB-9F3"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DWA-PX-dYP">
+                                <rect key="frame" x="363.5" y="89" width="205" height="38.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bc-9q-Z18">
+                                <rect key="frame" x="618.5" y="84" width="57" height="58"/>
+                                <state key="normal" image="bar-chart.png"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JXP-Ne-wQZ" firstAttribute="leading" secondItem="b3O-et-8qN" secondAttribute="trailing" constant="8" id="0dq-AG-xO9"/>
+                            <constraint firstItem="DWA-PX-dYP" firstAttribute="leading" secondItem="gs7-jm-gyo" secondAttribute="trailing" constant="8" id="2Wv-fT-LOY"/>
+                            <constraint firstItem="DWA-PX-dYP" firstAttribute="height" secondItem="JXP-Ne-wQZ" secondAttribute="height" id="3YO-OQ-y5P"/>
+                            <constraint firstItem="b3O-et-8qN" firstAttribute="leading" secondItem="djQ-1H-Qcd" secondAttribute="leading" constant="16" id="5Pe-ik-uXr"/>
+                            <constraint firstItem="JXP-Ne-wQZ" firstAttribute="top" secondItem="b3O-et-8qN" secondAttribute="top" id="7pL-iY-gBx"/>
+                            <constraint firstItem="7Bc-9q-Z18" firstAttribute="top" secondItem="djQ-1H-Qcd" secondAttribute="top" constant="20" id="9fa-pR-sFz"/>
+                            <constraint firstItem="7Bc-9q-Z18" firstAttribute="width" secondItem="gs7-jm-gyo" secondAttribute="width" multiplier="3:2" id="Cyn-DZ-KHL"/>
+                            <constraint firstItem="JXP-Ne-wQZ" firstAttribute="width" secondItem="yBf-OL-ptv" secondAttribute="width" multiplier="1:5" id="J3j-8c-9yh"/>
+                            <constraint firstItem="b3O-et-8qN" firstAttribute="top" secondItem="djQ-1H-Qcd" secondAttribute="top" constant="25" id="KcA-li-BNQ"/>
+                            <constraint firstItem="b3O-et-8qN" firstAttribute="height" secondItem="yBf-OL-ptv" secondAttribute="height" multiplier="1:20" id="M8x-k8-sqG"/>
+                            <constraint firstItem="gs7-jm-gyo" firstAttribute="width" secondItem="b3O-et-8qN" secondAttribute="width" id="RxK-IO-jtd"/>
+                            <constraint firstItem="gs7-jm-gyo" firstAttribute="top" secondItem="b3O-et-8qN" secondAttribute="top" id="U0p-8n-ohB"/>
+                            <constraint firstItem="gs7-jm-gyo" firstAttribute="leading" secondItem="JXP-Ne-wQZ" secondAttribute="trailing" constant="50" id="VER-0L-3tG"/>
+                            <constraint firstItem="DWA-PX-dYP" firstAttribute="top" secondItem="JXP-Ne-wQZ" secondAttribute="top" id="eeP-2q-BoV"/>
+                            <constraint firstItem="gs7-jm-gyo" firstAttribute="height" secondItem="b3O-et-8qN" secondAttribute="height" id="fl5-q3-1IR"/>
+                            <constraint firstItem="7Bc-9q-Z18" firstAttribute="leading" secondItem="DWA-PX-dYP" secondAttribute="trailing" constant="50" id="krI-6v-2Db"/>
+                            <constraint firstItem="7Bc-9q-Z18" firstAttribute="height" secondItem="gs7-jm-gyo" secondAttribute="height" multiplier="3:2" id="mnI-ZL-r4E"/>
+                            <constraint firstItem="JXP-Ne-wQZ" firstAttribute="height" secondItem="b3O-et-8qN" secondAttribute="height" id="odY-3G-yli"/>
+                            <constraint firstItem="DWA-PX-dYP" firstAttribute="width" secondItem="JXP-Ne-wQZ" secondAttribute="width" id="sSk-vA-COB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="djQ-1H-Qcd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Staff" id="cLO-Hg-69W"/>
+                    <connections>
+                        <outlet property="btnDateStartCalendar" destination="b3O-et-8qN" id="Jbl-Rj-2QH"/>
+                        <outlet property="txtInputDateEnd" destination="DWA-PX-dYP" id="y6y-y1-bLN"/>
+                        <outlet property="txtInputDateStart" destination="JXP-Ne-wQZ" id="4Wy-FR-98l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Js-C2-YQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105.6640625" y="1685.9375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FRV-uG-HKT">
@@ -453,25 +570,25 @@
                                 </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9kV-yj-E3n">
-                                <rect key="frame" x="16" y="80" width="377.5" height="320.5"/>
+                                <rect key="frame" x="16" y="80" width="377.5" height="320"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJ4-os-Ynf">
-                                <rect key="frame" x="409.5" y="80" width="377.5" height="320.5"/>
+                                <rect key="frame" x="409.5" y="80" width="377.5" height="320"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lyW-ih-E5e">
-                                <rect key="frame" x="16" y="416.5" width="377.5" height="319.5"/>
+                                <rect key="frame" x="16" y="416" width="377.5" height="320"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-Hn-j6w">
-                                <rect key="frame" x="409.5" y="416.5" width="377.5" height="319.5"/>
+                                <rect key="frame" x="409.5" y="416" width="377.5" height="320"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQi-6T-DMs">
-                                <rect key="frame" x="205.5" y="408.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="205.5" y="408" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjs-hg-fCF">
-                                <rect key="frame" x="598.5" y="408.5" width="0.0" height="0.0"/>
+                                <rect key="frame" x="598.5" y="408" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -681,6 +798,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar-chart.png" width="512" height="512"/>
+        <image name="calendar.png" width="260" height="260"/>
         <image name="camera.png" width="280" height="280"/>
         <image name="cloud-behind-sun-left.png" width="67" height="34"/>
         <image name="cloud-behind-sun-right.png" width="48" height="24"/>
