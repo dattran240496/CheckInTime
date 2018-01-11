@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402DB4304BC28C046B0E84F7 /* Pods_CheckInTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89149637ECE987B3E4F5BFCB /* Pods_CheckInTime.framework */; };
+		540100C1F6E46D526EE10709 /* Pods_CheckInTimeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8948ED9844286261649FD67 /* Pods_CheckInTimeTests.framework */; };
+		7B97A533130A18A418BC93FC /* Pods_CheckInTimeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA9B8947D2EDF3F639FE3FF /* Pods_CheckInTimeUITests.framework */; };
 		942E92B71FE3B2D800518040 /* CheckInTimePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942E92B61FE3B2D800518040 /* CheckInTimePopUp.swift */; };
 		942E92B91FE3B31200518040 /* CheckInTimePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 942E92B81FE3B31200518040 /* CheckInTimePopUp.xib */; };
 		942E92BD1FE3CF6D00518040 /* check-in.png in Resources */ = {isa = PBXBuildFile; fileRef = 942E92BB1FE3CF6D00518040 /* check-in.png */; };
@@ -96,11 +99,15 @@
 		E10D54801FF10714004E39B4 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547B1FF10713004E39B4 /* ok.png */; };
 		E10D54811FF10714004E39B4 /* upset.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547C1FF10713004E39B4 /* upset.png */; };
 		E10D54821FF10714004E39B4 /* veryhappy.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547D1FF10714004E39B4 /* veryhappy.png */; };
+		E1288A8C20076B46004D781A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1288A8B20076B46004D781A /* API.swift */; };
 		E14628F41FF24320008FE420 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14628F31FF24320008FE420 /* UIImage.swift */; };
 		E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19E39171FFCC5E7006F641F /* StaffListChart.swift */; };
 		E19E391A1FFCCB6B006F641F /* bar-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E39191FFCCB6B006F641F /* bar-chart.png */; };
 		E19E391C1FFCCC4A006F641F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E391B1FFCCC4A006F641F /* calendar.png */; };
 		E19E391F1FFCCD04006F641F /* arrow-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E391E1FFCCD04006F641F /* arrow-bottom.png */; };
+		E1A50194200707FE00A76500 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A50192200707FE00A76500 /* ChartCell.swift */; };
+		E1A50195200707FE00A76500 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A50193200707FE00A76500 /* ChartCell.xib */; };
+		E1A5019720075F0300A76500 /* DetailChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5019620075F0300A76500 /* DetailChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +128,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D0F21B1764445AE695353BE /* Pods-CheckInTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		683D5175893C4C7CFF88AB24 /* Pods-CheckInTimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89149637ECE987B3E4F5BFCB /* Pods_CheckInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC078A504DA80267AB8ED2C /* Pods-CheckInTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime.debug.xcconfig"; sourceTree = "<group>"; };
 		942E92B61FE3B2D800518040 /* CheckInTimePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimePopUp.swift; sourceTree = "<group>"; };
 		942E92B81FE3B31200518040 /* CheckInTimePopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInTimePopUp.xib; sourceTree = "<group>"; };
 		942E92BB1FE3CF6D00518040 /* check-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check-in.png"; sourceTree = "<group>"; };
@@ -209,6 +220,7 @@
 		94D0953A1FDE7D7A000219B0 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemController.swift; sourceTree = "<group>"; };
 		94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeController.swift; sourceTree = "<group>"; };
+		BCA9B8947D2EDF3F639FE3FF /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E10D54741FF104F4004E39B4 /* EmojiPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPopup.swift; sourceTree = "<group>"; };
 		E10D54751FF104F4004E39B4 /* EmojiPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiPopup.xib; sourceTree = "<group>"; };
 		E10D54791FF10713004E39B4 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
@@ -216,11 +228,19 @@
 		E10D547B1FF10713004E39B4 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
 		E10D547C1FF10713004E39B4 /* upset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upset.png; sourceTree = "<group>"; };
 		E10D547D1FF10714004E39B4 /* veryhappy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryhappy.png; sourceTree = "<group>"; };
+		E1288A8B20076B46004D781A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E14628F31FF24320008FE420 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E19E39171FFCC5E7006F641F /* StaffListChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListChart.swift; sourceTree = "<group>"; };
 		E19E39191FFCCB6B006F641F /* bar-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-chart.png"; sourceTree = "<group>"; };
 		E19E391B1FFCCC4A006F641F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		E19E391E1FFCCD04006F641F /* arrow-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-bottom.png"; sourceTree = "<group>"; };
+		E1A50192200707FE00A76500 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		E1A50193200707FE00A76500 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
+		E1A5019620075F0300A76500 /* DetailChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChart.swift; sourceTree = "<group>"; };
+		E1D474AED4C265CB3D46CD05 /* Pods-CheckInTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EA00D5A31D2414C6F4DD8DEA /* Pods-CheckInTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime.release.xcconfig"; sourceTree = "<group>"; };
+		F8948ED9844286261649FD67 /* Pods_CheckInTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC34E97DE8924BA0AA224931 /* Pods-CheckInTimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402DB4304BC28C046B0E84F7 /* Pods_CheckInTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540100C1F6E46D526EE10709 /* Pods_CheckInTimeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,12 +264,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B97A533130A18A418BC93FC /* Pods_CheckInTimeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C342CC7533A498BEF80CCFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DC078A504DA80267AB8ED2C /* Pods-CheckInTime.debug.xcconfig */,
+				EA00D5A31D2414C6F4DD8DEA /* Pods-CheckInTime.release.xcconfig */,
+				E1D474AED4C265CB3D46CD05 /* Pods-CheckInTimeTests.debug.xcconfig */,
+				4D0F21B1764445AE695353BE /* Pods-CheckInTimeTests.release.xcconfig */,
+				683D5175893C4C7CFF88AB24 /* Pods-CheckInTimeUITests.debug.xcconfig */,
+				FC34E97DE8924BA0AA224931 /* Pods-CheckInTimeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		42FF5A6D9D694A3A72635015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89149637ECE987B3E4F5BFCB /* Pods_CheckInTime.framework */,
+				F8948ED9844286261649FD67 /* Pods_CheckInTimeTests.framework */,
+				BCA9B8947D2EDF3F639FE3FF /* Pods_CheckInTimeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		94367B001FDA3B9400DAC492 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +301,8 @@
 				94367B231FDA3B9500DAC492 /* CheckInTimeTests */,
 				94367B2E1FDA3B9500DAC492 /* CheckInTimeUITests */,
 				94367B0A1FDA3B9400DAC492 /* Products */,
+				0C342CC7533A498BEF80CCFE /* Pods */,
+				42FF5A6D9D694A3A72635015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -594,6 +642,7 @@
 		E10D54661FF10240004E39B4 /* NewUI */ = {
 			isa = PBXGroup;
 			children = (
+				E1A50191200707C900A76500 /* ChartCell */,
 				E10D546F1FF10422004E39B4 /* EmojiPopup */,
 				94E4581A1FE381B000EE36C0 /* CheckInTimePopup */,
 				94D095351FDE2E1E000219B0 /* MembersCollectionViewCell */,
@@ -615,6 +664,7 @@
 		E10D54691FF1027C004E39B4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E1288A8B20076B46004D781A /* API.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -692,6 +742,7 @@
 			isa = PBXGroup;
 			children = (
 				E19E39171FFCC5E7006F641F /* StaffListChart.swift */,
+				E1A5019620075F0300A76500 /* DetailChart.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -706,6 +757,15 @@
 			path = chart;
 			sourceTree = "<group>";
 		};
+		E1A50191200707C900A76500 /* ChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1A50192200707FE00A76500 /* ChartCell.swift */,
+				E1A50193200707FE00A76500 /* ChartCell.xib */,
+			);
+			path = ChartCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -713,9 +773,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94367B341FDA3B9500DAC492 /* Build configuration list for PBXNativeTarget "CheckInTime" */;
 			buildPhases = (
+				508154E2EB61E7940EC14A71 /* [CP] Check Pods Manifest.lock */,
 				94367B051FDA3B9400DAC492 /* Sources */,
 				94367B061FDA3B9400DAC492 /* Frameworks */,
 				94367B071FDA3B9400DAC492 /* Resources */,
+				56ED19B06C5FC7A19F04A3F6 /* [CP] Embed Pods Frameworks */,
+				2D6C2977599978DF0180E44D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -730,9 +793,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94367B371FDA3B9500DAC492 /* Build configuration list for PBXNativeTarget "CheckInTimeTests" */;
 			buildPhases = (
+				3CDDE8561D37FA769C3D0F33 /* [CP] Check Pods Manifest.lock */,
 				94367B1C1FDA3B9500DAC492 /* Sources */,
 				94367B1D1FDA3B9500DAC492 /* Frameworks */,
 				94367B1E1FDA3B9500DAC492 /* Resources */,
+				65AFF2EC317758391FABC983 /* [CP] Embed Pods Frameworks */,
+				54391557933ECFC74BDA5010 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -748,9 +814,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94367B3A1FDA3B9500DAC492 /* Build configuration list for PBXNativeTarget "CheckInTimeUITests" */;
 			buildPhases = (
+				7B510E6048E1FD45039CB814 /* [CP] Check Pods Manifest.lock */,
 				94367B271FDA3B9500DAC492 /* Sources */,
 				94367B281FDA3B9500DAC492 /* Frameworks */,
 				94367B291FDA3B9500DAC492 /* Resources */,
+				CD876170111C8716FB190905 /* [CP] Embed Pods Frameworks */,
+				9FA5D217A4565ECF0920F2D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -813,6 +882,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A50195200707FE00A76500 /* ChartCell.xib in Resources */,
 				943E1E521FE7AA3C00747262 /* Contents.json in Resources */,
 				E10D54801FF10714004E39B4 /* ok.png in Resources */,
 				943E1E571FE7AA3C00747262 /* leverR02.jpg in Resources */,
@@ -911,12 +981,160 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D6C2977599978DF0180E44D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CDDE8561D37FA769C3D0F33 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheckInTimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		508154E2EB61E7940EC14A71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheckInTime-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		54391557933ECFC74BDA5010 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56ED19B06C5FC7A19F04A3F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65AFF2EC317758391FABC983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B510E6048E1FD45039CB814 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheckInTimeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA5D217A4565ECF0920F2D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD876170111C8716FB190905 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		94367B051FDA3B9400DAC492 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				94B4A5B51FE7586700D08561 /* CleanTimeController.swift in Sources */,
+				E1A5019720075F0300A76500 /* DetailChart.swift in Sources */,
 				E14628F41FF24320008FE420 /* UIImage.swift in Sources */,
 				94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */,
 				942E92B71FE3B2D800518040 /* CheckInTimePopUp.swift in Sources */,
@@ -924,10 +1142,12 @@
 				94D095341FDE2A09000219B0 /* CONSTANT.swift in Sources */,
 				94367B0F1FDA3B9400DAC492 /* HomepageController.swift in Sources */,
 				94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */,
+				E1A50194200707FE00A76500 /* ChartCell.swift in Sources */,
 				E10D54761FF104F4004E39B4 /* EmojiPopup.swift in Sources */,
 				94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */,
+				E1288A8C20076B46004D781A /* API.swift in Sources */,
 				94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1092,6 +1312,7 @@
 		};
 		94367B351FDA3B9500DAC492 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC078A504DA80267AB8ED2C /* Pods-CheckInTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1108,6 +1329,7 @@
 		};
 		94367B361FDA3B9500DAC492 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA00D5A31D2414C6F4DD8DEA /* Pods-CheckInTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1124,6 +1346,7 @@
 		};
 		94367B381FDA3B9500DAC492 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1D474AED4C265CB3D46CD05 /* Pods-CheckInTimeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1141,6 +1364,7 @@
 		};
 		94367B391FDA3B9500DAC492 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D0F21B1764445AE695353BE /* Pods-CheckInTimeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1158,6 +1382,7 @@
 		};
 		94367B3B1FDA3B9500DAC492 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683D5175893C4C7CFF88AB24 /* Pods-CheckInTimeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1174,6 +1399,7 @@
 		};
 		94367B3C1FDA3B9500DAC492 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC34E97DE8924BA0AA224931 /* Pods-CheckInTimeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

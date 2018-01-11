@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B346699219B3B3AEC70F9BF46A363BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6D3912F5D3943DD3BBE14A965973387C /* Pods-CheckInTimeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1827B8D272126CF11EFB9AF77A185C /* Pods-CheckInTimeUITests-dummy.m */; };
+		95715C0E831DD240ABD6F4FE63C7A86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B84E12D5E8927F1E190F210CEC2A5C76 /* Pods-CheckInTimeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 444B2089F2965255ED3557726B470E07 /* Pods-CheckInTimeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C01AF70D3F410236077894C92A76E8F5 /* Pods-CheckInTimeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F070E04B72377A38D133AAC3F0B6190 /* Pods-CheckInTimeTests-dummy.m */; };
+		C41A738B26E199A755BF40D0A696D709 /* Pods-CheckInTimeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 865A00FF4314DB38B742418E255DF9D5 /* Pods-CheckInTimeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDB8C80B08FFD14975A610587D41AA76 /* Pods-CheckInTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */; };
+		F1E99BDE510579DC28894C93E9472844 /* Pods-CheckInTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE0DF0DD006EEF5A1A0F75E3E6893DD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		019ACC72FFB88803A0152AD45B0B8B3D /* Pods-CheckInTime-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTime-resources.sh"; sourceTree = "<group>"; };
+		045BA23204F72F3E7EEE61AB0AEFA3FF /* Pods-CheckInTimeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTimeTests.modulemap"; sourceTree = "<group>"; };
+		068CA7B88993B36FC95C15764DA68338 /* Pods-CheckInTimeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTimeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeTests.release.xcconfig"; sourceTree = "<group>"; };
+		0F070E04B72377A38D133AAC3F0B6190 /* Pods-CheckInTimeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTimeTests-dummy.m"; sourceTree = "<group>"; };
+		0FC4BDF1F7C8AD4453707C7604323FAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1139EAA471A232671E8C19F72130D176 /* Pods-CheckInTimeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeUITests-frameworks.sh"; sourceTree = "<group>"; };
+		14EC589F6B496E5D17AA0D2E30D7DB03 /* Pods-CheckInTimeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTimeUITests.modulemap"; sourceTree = "<group>"; };
+		2358290AC0AAB71D4952BAC3150DA26C /* Pods-CheckInTime-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTime-frameworks.sh"; sourceTree = "<group>"; };
+		378C4754F2F1ADECEE88FF65FC90A10C /* Pods-CheckInTime-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTime-acknowledgements.plist"; sourceTree = "<group>"; };
+		43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTime.release.xcconfig"; sourceTree = "<group>"; };
+		444B2089F2965255ED3557726B470E07 /* Pods-CheckInTimeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTimeUITests-umbrella.h"; sourceTree = "<group>"; };
+		47086B585C7315854FBBD98F0E3F0EA1 /* Pods-CheckInTimeUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeUITests-resources.sh"; sourceTree = "<group>"; };
+		48ADAC59CE65A5ED6B3F5C5A2C1DA6BF /* Pods-CheckInTimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTime-dummy.m"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		702C21D7DD28D179D90D6F0C0C08967D /* Pods-CheckInTimeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTimeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		865A00FF4314DB38B742418E255DF9D5 /* Pods-CheckInTimeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTimeTests-umbrella.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C4B9824D362935E512BD9A9D6B48B3 /* Pods-CheckInTime-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTime-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9612262D940635018C4F6AFFB755F1C2 /* Pods-CheckInTimeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTimeTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F1827B8D272126CF11EFB9AF77A185C /* Pods-CheckInTimeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTimeUITests-dummy.m"; sourceTree = "<group>"; };
+		9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTime-umbrella.h"; sourceTree = "<group>"; };
+		A117114FB86C36E716368060D3202017 /* Pods-CheckInTime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTime.modulemap"; sourceTree = "<group>"; };
+		A49331A8054BF301E640A9409329E134 /* Pods-CheckInTimeTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeTests-resources.sh"; sourceTree = "<group>"; };
+		A606660AA03A01DC503C635A35CD2CE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A90450B1F0E463216ADA2629349BC3A9 /* Pods-CheckInTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTime.debug.xcconfig"; sourceTree = "<group>"; };
+		A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D0E10A1C8BE13BD52C96FE59044763AD /* Pods-CheckInTimeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTimeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9653D8B7A0803404C2235D221528C8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBACB9EA4DF29CEE2FA87530811EBE35 /* Pods-CheckInTimeTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeTests-frameworks.sh"; sourceTree = "<group>"; };
+		ED95ACD6FC2DCA7C519016D87B3477A4 /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeUITests.framework; path = "Pods-CheckInTimeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F117152439BD569E4ECAE264B2861AF0 /* Pods_CheckInTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeTests.framework; path = "Pods-CheckInTimeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F693F66260AD500DB64078B1BF8C5F7F /* Pods_CheckInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTime.framework; path = "Pods-CheckInTime.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A86C29C57EE9EFB4F3FACA0808576A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE0DF0DD006EEF5A1A0F75E3E6893DD0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CE8E795575F7C73EB72D18495C502AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B346699219B3B3AEC70F9BF46A363BA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF90E6EC4C04B1E18F1D124999321EB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95715C0E831DD240ABD6F4FE63C7A86C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00888D5B0A03EA51FE847D124AD54013 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7176005A2DE693E0FF9C51F4392C1 /* Pods-CheckInTime */,
+				51EF4B81C5733F7E11044AF421772BAF /* Pods-CheckInTimeTests */,
+				0BDE82669B994F6CCAC84D76164383B1 /* Pods-CheckInTimeUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		0BDE82669B994F6CCAC84D76164383B1 /* Pods-CheckInTimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FC4BDF1F7C8AD4453707C7604323FAB /* Info.plist */,
+				14EC589F6B496E5D17AA0D2E30D7DB03 /* Pods-CheckInTimeUITests.modulemap */,
+				D0E10A1C8BE13BD52C96FE59044763AD /* Pods-CheckInTimeUITests-acknowledgements.markdown */,
+				068CA7B88993B36FC95C15764DA68338 /* Pods-CheckInTimeUITests-acknowledgements.plist */,
+				9F1827B8D272126CF11EFB9AF77A185C /* Pods-CheckInTimeUITests-dummy.m */,
+				1139EAA471A232671E8C19F72130D176 /* Pods-CheckInTimeUITests-frameworks.sh */,
+				47086B585C7315854FBBD98F0E3F0EA1 /* Pods-CheckInTimeUITests-resources.sh */,
+				444B2089F2965255ED3557726B470E07 /* Pods-CheckInTimeUITests-umbrella.h */,
+				48ADAC59CE65A5ED6B3F5C5A2C1DA6BF /* Pods-CheckInTimeUITests.debug.xcconfig */,
+				A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */,
+			);
+			name = "Pods-CheckInTimeUITests";
+			path = "Target Support Files/Pods-CheckInTimeUITests";
+			sourceTree = "<group>";
+		};
+		2CA7176005A2DE693E0FF9C51F4392C1 /* Pods-CheckInTime */ = {
+			isa = PBXGroup;
+			children = (
+				A606660AA03A01DC503C635A35CD2CE3 /* Info.plist */,
+				A117114FB86C36E716368060D3202017 /* Pods-CheckInTime.modulemap */,
+				94C4B9824D362935E512BD9A9D6B48B3 /* Pods-CheckInTime-acknowledgements.markdown */,
+				378C4754F2F1ADECEE88FF65FC90A10C /* Pods-CheckInTime-acknowledgements.plist */,
+				6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */,
+				2358290AC0AAB71D4952BAC3150DA26C /* Pods-CheckInTime-frameworks.sh */,
+				019ACC72FFB88803A0152AD45B0B8B3D /* Pods-CheckInTime-resources.sh */,
+				9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */,
+				A90450B1F0E463216ADA2629349BC3A9 /* Pods-CheckInTime.debug.xcconfig */,
+				43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */,
+			);
+			name = "Pods-CheckInTime";
+			path = "Target Support Files/Pods-CheckInTime";
+			sourceTree = "<group>";
+		};
+		51EF4B81C5733F7E11044AF421772BAF /* Pods-CheckInTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D9653D8B7A0803404C2235D221528C8E /* Info.plist */,
+				045BA23204F72F3E7EEE61AB0AEFA3FF /* Pods-CheckInTimeTests.modulemap */,
+				702C21D7DD28D179D90D6F0C0C08967D /* Pods-CheckInTimeTests-acknowledgements.markdown */,
+				9612262D940635018C4F6AFFB755F1C2 /* Pods-CheckInTimeTests-acknowledgements.plist */,
+				0F070E04B72377A38D133AAC3F0B6190 /* Pods-CheckInTimeTests-dummy.m */,
+				DBACB9EA4DF29CEE2FA87530811EBE35 /* Pods-CheckInTimeTests-frameworks.sh */,
+				A49331A8054BF301E640A9409329E134 /* Pods-CheckInTimeTests-resources.sh */,
+				865A00FF4314DB38B742418E255DF9D5 /* Pods-CheckInTimeTests-umbrella.h */,
+				780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */,
+				09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */,
+			);
+			name = "Pods-CheckInTimeTests";
+			path = "Target Support Files/Pods-CheckInTimeTests";
+			sourceTree = "<group>";
+		};
+		534825FB22930E4BB2E3B2CBADE760FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F693F66260AD500DB64078B1BF8C5F7F /* Pods_CheckInTime.framework */,
+				F117152439BD569E4ECAE264B2861AF0 /* Pods_CheckInTimeTests.framework */,
+				ED95ACD6FC2DCA7C519016D87B3477A4 /* Pods_CheckInTimeUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				534825FB22930E4BB2E3B2CBADE760FA /* Products */,
+				00888D5B0A03EA51FE847D124AD54013 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		069830DE6CD557FB22E8676D90C95AD7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1E99BDE510579DC28894C93E9472844 /* Pods-CheckInTime-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B3A32163FAD6D4B442CC60A340B7695 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C41A738B26E199A755BF40D0A696D709 /* Pods-CheckInTimeTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC74FD0D19670E64E9DBD87C8DEB981 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B84E12D5E8927F1E190F210CEC2A5C76 /* Pods-CheckInTimeUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C9446D9537FB8BC2245E6FF9AEDCC1B /* Pods-CheckInTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95477B9E3E099D0799FDDB72EF38CF5F /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */;
+			buildPhases = (
+				A3911A0420CE61F4FA872AD8617B9A00 /* Sources */,
+				3A86C29C57EE9EFB4F3FACA0808576A9 /* Frameworks */,
+				069830DE6CD557FB22E8676D90C95AD7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CheckInTime";
+			productName = "Pods-CheckInTime";
+			productReference = F693F66260AD500DB64078B1BF8C5F7F /* Pods_CheckInTime.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		99CC5596CD08646D80026EE31F20FA34 /* Pods-CheckInTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C658606004BA9F8A8AD306B4B746B64D /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeTests" */;
+			buildPhases = (
+				8D69AFE419C70D1C58E3D623868C6E3E /* Sources */,
+				4CE8E795575F7C73EB72D18495C502AF /* Frameworks */,
+				9B3A32163FAD6D4B442CC60A340B7695 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CheckInTimeTests";
+			productName = "Pods-CheckInTimeTests";
+			productReference = F117152439BD569E4ECAE264B2861AF0 /* Pods_CheckInTimeTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C184B2C6A91229EB6772F983257DB1EF /* Pods-CheckInTimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD6F2DAB13FBCF8DDC5CB72BBFB0CE6F /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeUITests" */;
+			buildPhases = (
+				928FC4B2AC4CACB153EC4E69CFDE48BE /* Sources */,
+				AF90E6EC4C04B1E18F1D124999321EB6 /* Frameworks */,
+				EEC74FD0D19670E64E9DBD87C8DEB981 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-CheckInTimeUITests";
+			productName = "Pods-CheckInTimeUITests";
+			productReference = ED95ACD6FC2DCA7C519016D87B3477A4 /* Pods_CheckInTimeUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 534825FB22930E4BB2E3B2CBADE760FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C9446D9537FB8BC2245E6FF9AEDCC1B /* Pods-CheckInTime */,
+				99CC5596CD08646D80026EE31F20FA34 /* Pods-CheckInTimeTests */,
+				C184B2C6A91229EB6772F983257DB1EF /* Pods-CheckInTimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D69AFE419C70D1C58E3D623868C6E3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C01AF70D3F410236077894C92A76E8F5 /* Pods-CheckInTimeTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		928FC4B2AC4CACB153EC4E69CFDE48BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3912F5D3943DD3BBE14A965973387C /* Pods-CheckInTimeUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3911A0420CE61F4FA872AD8617B9A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB8C80B08FFD14975A610587D41AA76 /* Pods-CheckInTime-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		16EBFA89A74892CC37981DD44DC22BE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7A32B3B0860EA8B6D90F041914DDAE50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48ADAC59CE65A5ED6B3F5C5A2C1DA6BF /* Pods-CheckInTimeUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7C07ED8089F70A31B83996A8910D7F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8A8A353856DE328E70004BDCDBC92FB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90450B1F0E463216ADA2629349BC3A9 /* Pods-CheckInTime.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTime/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTime/Pods-CheckInTime.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTime;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8BC61F45EDC3916B548024D8E790E26F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		98F29E7567052F62660DDD7069ADF73C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B7457CA207D6FA81D013DDC53A50F692 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTime/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTime/Pods-CheckInTime.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTime;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E782C708044456AE45967D77F4CB93F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C07ED8089F70A31B83996A8910D7F18 /* Debug */,
+				98F29E7567052F62660DDD7069ADF73C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95477B9E3E099D0799FDDB72EF38CF5F /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A8A353856DE328E70004BDCDBC92FB3 /* Debug */,
+				B7457CA207D6FA81D013DDC53A50F692 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD6F2DAB13FBCF8DDC5CB72BBFB0CE6F /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A32B3B0860EA8B6D90F041914DDAE50 /* Debug */,
+				8BC61F45EDC3916B548024D8E790E26F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C658606004BA9F8A8AD306B4B746B64D /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E782C708044456AE45967D77F4CB93F3 /* Debug */,
+				16EBFA89A74892CC37981DD44DC22BE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

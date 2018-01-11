@@ -1,42 +1,39 @@
 //
-//  StaffListChart.swift
+//  DetailChart.swift
 //  CheckInTime
 //
-//  Created by Dat Tran on 1/3/18.
+//  Created by Dat Tran on 1/11/18.
 //  Copyright © 2018 Dat Tran. All rights reserved.
 //
 
 import Foundation
 import UIKit
-class StaffListChart: UIViewController{
-    
+
+class DetailChartController: UIViewController, ApiService{
+
     @IBOutlet weak var txtInputDateStart: UITextField!
     @IBOutlet weak var txtInputDateEnd: UITextField!
     @IBOutlet weak var btnDateStartCalendar: UIButton!
-    @IBOutlet weak var collectionViewStaff: UICollectionView!
     
+    var api = callApi()
     let datePickerStart = UIDatePicker()
     let datePickerEnd = UIDatePicker()
-    var dataMembers = NSArray()
+    
+    var staff: AnyObject!
+    var dateIn: String!
+    var dateOut: String!
+    var staffId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.staffId = staff["_id"] as? String
+        self.title = staff["name"] as? String
         self.initdatePicker()
-        let classNib = UINib(nibName: "ChartCell", bundle: nil)
-        self.collectionViewStaff?.register(classNib, forCellWithReuseIdentifier: "Cell")
-        collectionViewStaff.dataSource = self
-        collectionViewStaff.delegate = self
-        txtInputDateStart.text = "2017-12-10"
-        txtInputDateEnd.text = "2017-12-17"
-        self.getDataMembers()
+        self.getStaffChart()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.collectionViewStaff.reloadData()
     }
     
     func initdatePicker() {
@@ -64,14 +61,12 @@ class StaffListChart: UIViewController{
         //datePicker.addTarget(self, action: #selector(datePickerOnChangeValue(_:)), for: UIControlEvents.valueChanged)
         self.txtInputDateStart.becomeFirstResponder()
     }
-    @IBAction func onDateStartArrowAction(_ sender: Any) {
-        //datePicker.addTarget(self, action: #selector(datePickerOnChangeValue(_:)), for: UIControlEvents.valueChanged)
-    }
+
     @IBAction func onDateEndCalendarAction(_ sender: Any) {
-       self.txtInputDateEnd.becomeFirstResponder()
+        self.txtInputDateEnd.becomeFirstResponder()
     }
-    @IBAction func onDateEndArrowAction(_ sender: Any) {
-        //datePicker.addTarget(self, action: #selector(datePickerOnChangeValue(_:)), for: UIControlEvents.valueChanged)
+    
+    @IBAction func onSearchChartAction(_ sender: Any) {
     }
     
     @objc func handleDoneButton(_ sender: UIButton) {
@@ -106,60 +101,52 @@ class StaffListChart: UIViewController{
         datePickerStart.addSubview(doneButton)
     }
     
-    func getDataMembers() {
-        guard let url = URL(string: apiURL + "api/staff")  else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-        
-        let session = URLSession.shared
-        session.dataTask(with: request){ (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                    let data = json!["data"]! as! NSArray
-                    self.dataMembers = data
-                } catch {
-                    print(error)
-                }
-            }
-            }.resume()
+    func getStaffChart() {
+        print(dateIn)
+        print(dateOut)
+        print(staffId)
+        let urlMotivationWithStaff = URL(string: apiURL + "api/time-tracking?limit=all&dateStart=\(dateIn!)&dateEnd=\(dateOut!)&type=checkIn&staffId=\(staffId!)")
+        guard let _ = urlMotivationWithStaff else {
+            print("error")
+            return
+        }
+        api.deletgate = self
+        api.callApiChartStaff(url: urlMotivationWithStaff!)
     }
-}
-
-
-extension StaffListChart: UICollectionViewDelegate{
-    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
-        self.view.layoutIfNeeded()
-        self.view.setNeedsDisplay()
+     func setChartData(data: Data) {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            let arrData = json!["data"]! as! NSArray
+            var arrMotivationCheckIn = [Int]()
+            var arrMotivationCheckOut = [Int]()
+            var numberMotivationCheckIn = 0
+            var numberMotivationCheckOut = 0
+            print(arrData)
+//            if arrData.count != 0{
+//                for i in 0...arrData.count - 1{
+//                    let data = arrData[i] as AnyObject
+//                    let motivationCheckInt = data["motivationCheckIn"] as? Int
+//                    let motivationCheckOut = data["motivationCheckOut"] as? Int
+//                    arrMotivationCheckIn.append(motivationCheckInt!)
+//                    arrMotivationCheckOut.append(motivationCheckOut!)
+//                    numberMotivationCheckIn += motivationCheckInt!
+//                    numberMotivationCheckOut += motivationCheckOut!
+//                }
+//                DispatchQueue.main.async(execute: {
+//                    self.lblPercentCheckIn.text = String(numberMotivationCheckIn * 100 / (arrMotivationCheckIn.count * 5)) + "%"
+//                    self.lblPercentCheckOut.text = String(numberMotivationCheckOut * 100 / (arrMotivationCheckOut.count * 5)) + "%"
+//                })
+//            }else{
+//                DispatchQueue.main.async(execute: {
+//                    self.lblPercentCheckIn.text = String(0)
+//                    self.lblPercentCheckOut.text = String(0)
+//                })
+//            }
+            
+        } catch {
+            print(error)
+        }
     }
-}
-
-
-extension StaffListChart : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 380)
+    func setData(data: Data, member: AnyObject) {
     }
-}
-
-extension StaffListChart: UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataMembers.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewStaff.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ChartCell
-        cell.setValueForCell(member: dataMembers[indexPath.row] as AnyObject, dateIn: self.txtInputDateStart.text ?? "", dateOut: self.txtInputDateEnd.text ?? "")
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "DetailChartController") as! DetailChartController
-        vc.staff = dataMembers[indexPath.row] as AnyObject
-        vc.dateIn = self.txtInputDateStart.text
-        vc.dateOut = self.txtInputDateEnd.text
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-   
 }
