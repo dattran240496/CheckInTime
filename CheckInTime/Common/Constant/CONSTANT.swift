@@ -8,3 +8,10 @@
 
 import Foundation
 let apiURL = "http://localhost:8080/"
+let arrMotivation = [
+    "very upset",
+    "upset",
+    "normal",
+    "happy",
+    "very happy"
+]

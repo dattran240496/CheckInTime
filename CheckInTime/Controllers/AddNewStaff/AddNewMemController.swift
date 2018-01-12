@@ -70,7 +70,7 @@ class AddNewMemController: UIViewController{
         
     }
     @IBAction func onAddNowAction(_ sender: Any) {
-        //let imgAvatar = UIImageView(image: UIImage(named: "imgAvatar-temp.png"))
+        let imgAvatar = UIImageView(image: UIImage(named: "imgAvatar-temp.png"))
         if self.txtInputName.text != "" && self.txtInputEmail.text != "" {
             //let imgData: Data = UIImagePNGRepresentation(imgAvatar.image!)!
             //let encodeAvatar = imgData.base64EncodedString(options: NSData.Base64EncodingOptions())
@@ -92,6 +92,11 @@ class AddNewMemController: UIViewController{
             //            }
             //            dataTask.resume()
             
+            guard let base64String = UIImagePNGRepresentation((imgAvatar.image?.resized(toWidth: 300)!)!)?.base64EncodedString() else{
+                return
+            }
+            print(base64String)
+            print("data:image/png;base64," + base64String)
             guard let url = URL(string: apiURL + "api/staff")  else { return }
             var request = URLRequest(url: url)
             
@@ -101,8 +106,7 @@ class AddNewMemController: UIViewController{
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             let param :[String: Any] = [
                     "name": self.txtInputName.text!,
-                    "email": self.txtInputEmail.text!,
-                    "avatarUrl": "uploads/1513040535527.jpg"
+                    "email": self.txtInputEmail.text!
             ]
             
             do{

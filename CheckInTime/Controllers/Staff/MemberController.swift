@@ -16,6 +16,7 @@ class MemberController: UIViewController{
     @IBOutlet weak var collectionViewMembers: UICollectionView!
     //var dataMembers: AnyObject
     @IBOutlet weak var lblDateTime: UILabel!
+    var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
         let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
@@ -35,6 +36,10 @@ class MemberController: UIViewController{
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
+        timer.fire()
+        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+        
         btnAdd.layer.cornerRadius = btnAdd.frame.size.width / 2
         btnAdd.titleLabel?.font = btnAdd.titleLabel?.font.withSize(btnAdd.frame.size.width / 1.5)
         lblDateTime.font = lblDateTime.font.withSize(btnAdd.frame.size.width / 2)
@@ -78,7 +83,7 @@ class MemberController: UIViewController{
 }
 
 
-// MARK: - Implement UICollectionViewDelegate
+// MARK: - Implement UICollectionViewDelegateFlowLayout
 extension MemberController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 280, height: 280)
@@ -116,3 +121,11 @@ extension MemberController: UICollectionViewDataSource, UIGestureRecognizerDeleg
     }
 }
 
+// MARK: - Implement UICollectionViewDelegate
+extension MemberController: UICollectionViewDelegate{
+    func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
+        self.view.layoutIfNeeded()
+        self.view.setNeedsDisplay()
+    }
+    
+}
