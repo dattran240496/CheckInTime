@@ -10,9 +10,13 @@ import UIKit
 
 class EmojiPopup: UIViewController {
 
+    @IBOutlet var tapView: UITapGestureRecognizer!
+    var staff: AnyObject!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.isUserInteractionEnabled = true
+        tapView.view?.isUserInteractionEnabled = true
+        tapView.isEnabled = true
         // Do any additional setup after loading the view.
     }
 
@@ -20,11 +24,23 @@ class EmojiPopup: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func abc() {
-    print("abc")
+    
+    @IBAction func onPressBackDropAction(_ sender: Any) {
+        print("press")
+        dismiss()
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "dismissPopup"), object: nil)
     }
     
-
+    
+    
+    func dismiss(){
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.view.alpha = 0
+        }, completion: { finished in
+            self.view.removeFromSuperview()
+            
+        })
+    }
     /*
     // MARK: - Navigation
 

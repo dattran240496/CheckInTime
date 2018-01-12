@@ -39,11 +39,10 @@ class MembersCollectionViewCell: UICollectionViewCell {
                         let state = member["state"] as? Int ?? 0
                         if state == 1{
                             self.imgAvatar.layer.borderColor = UIColor.green.cgColor
-                            self.imgAvatar.layer.borderWidth = 2
                         }else if state == 2{
                             self.imgAvatar.layer.borderColor = UIColor.red.cgColor
-                            self.imgAvatar.layer.borderWidth = 2
                         }
+                        self.imgAvatar.layer.borderWidth = 2
                         self.imgAvatar.image = image
                     })
                     

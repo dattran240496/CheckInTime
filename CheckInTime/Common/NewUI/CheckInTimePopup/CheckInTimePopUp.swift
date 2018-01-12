@@ -7,21 +7,18 @@
 //
 
 import UIKit
-protocol Modal {
-    func show(animated:Bool)
-    func dismiss(animated:Bool)
-    var backgroundView:UIView {get}
-    var dialogView:UIView {get set}
-}
 
 class CheckInTimePopUp: UIView {
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var view: UIView!
+    @IBOutlet var optionCheckView: UIView!
+    @IBOutlet weak var emojiView: UIView!
+    
+    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet var tapGuestView: UITapGestureRecognizer!
     var staffId: String!
     var staff: AnyObject!
     var motivation: Int!
-    
+    var methodCheckTime: String!
     override init(frame: CGRect) {
         super.init(frame: frame)
         initCommon()
@@ -34,9 +31,9 @@ class CheckInTimePopUp: UIView {
     
     private func initCommon(){
         Bundle.main.loadNibNamed("CheckInTimePopUp", owner: self, options: nil)
-        self.contentView.frame = self.bounds
-        self.contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(self.contentView)
+        self.viewContainer.frame = self.bounds
+        self.viewContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(self.viewContainer)
         self.alpha = 0
         UIView.animate(withDuration: 0.5, animations: {
             self.alpha = 1
@@ -44,26 +41,81 @@ class CheckInTimePopUp: UIView {
     }
     
     @IBAction func onPressBackDropAction(_ sender: Any) {
-        dismiss()
+        dismissEmojiView()
     }
   
-    func dismiss(){
-        UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-            self.view.alpha = 0
-            self.contentView.alpha = 0
+    func dismissOptionCheck(){
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.optionCheckView.alpha = 0
         }, completion: { finished in
+            self.optionCheckView.removeFromSuperview()
+        })
+    }
+    
+    func dismissEmojiView(){
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.emojiView.alpha = 0
+            self.optionCheckView.alpha = 0
+            self.alpha = 0
+        }, completion: { finished in
+            self.emojiView.removeFromSuperview()
+            self.optionCheckView.removeFromSuperview()
             self.removeFromSuperview()
         })
     }
 
     @IBAction func onCheckInAction(_ sender: Any) {
-        self.staffCheckTime(method: "POST", motivation: 1)
-        dismiss()
+        if staff["state"] as? Int == 1{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alertCheckIn"), object: nil)
+        }else{
+            self.methodCheckTime = "POST"
+            dismissOptionCheck()
+            initEmojiView()
+        }
+        
     }
     
     @IBAction func onCheckOutAction(_ sender: Any) {
-        self.staffCheckTime(method: "PUT", motivation: 2)
-        dismiss()
+        if staff["state"] as? Int == 2{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "alertCheckOut"), object: nil)
+        }else{
+            self.methodCheckTime = "PUT"
+            dismissOptionCheck()
+            initEmojiView()
+        }
+        
+    }
+    func initEmojiView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.emojiView.alpha = 1
+        })
+    }
+    @objc func dismissPopup(notification: NSNotification){
+        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.alpha = 0
+        }, completion: { finished in
+            //self.removeFromSuperview()
+        })
+    }
+    
+    @IBAction func onVeryUpsetAction(_ sender: Any) {
+        self.staffCheckTime(method: methodCheckTime, motivation: 1)
+    }
+    
+    @IBAction func onUpsetAction(_ sender: Any) {
+        self.staffCheckTime(method: methodCheckTime, motivation: 2)
+    }
+
+    @IBAction func onNormalAction(_ sender: Any) {
+        self.staffCheckTime(method: methodCheckTime, motivation: 3)
+    }
+    
+    @IBAction func onHappyAction(_ sender: Any) {
+        self.staffCheckTime(method: methodCheckTime, motivation: 4)
+    }
+    
+    @IBAction func onVeryHappyAction(_ sender: Any) {
+        self.staffCheckTime(method: methodCheckTime, motivation: 5)
     }
     
     func staffCheckTime(method: String, motivation: Int){
@@ -92,5 +144,11 @@ class CheckInTimePopUp: UIView {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"), object: nil)
         }
         task.resume()
+        self.dismissEmojiView()
+    }
+}
+extension CheckInTimePopUp: UIAlertViewDelegate{
+    func showAlert(){
+        
     }
 }
