@@ -20,14 +20,12 @@ class CheckInTimeController: UIViewController{
     var timer = Timer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // run animation Sun
         self.animateSun()
         let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
         self.collectionViewMemList?.register(classNib, forCellWithReuseIdentifier: "Cell")
         // get info employee
         self.getDataMembers()
-
         self.collectionViewMemList.reloadData()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: NSNotification.Name(rawValue: "reload"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(showAlertCheckIn), name: NSNotification.Name(rawValue: "alertCheckIn"), object: nil)
@@ -44,7 +42,10 @@ class CheckInTimeController: UIViewController{
         timer.fire()
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
-    
+    @objc func onChartAction() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func onChartAction(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
         self.navigationController?.pushViewController(vc, animated: true)

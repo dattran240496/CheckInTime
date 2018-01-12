@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,65 +52,64 @@
                             <rect key="frame" x="0.0" y="102.5" width="512" height="307.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleAspectFit" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-bi-ZFy">
-                                    <rect key="frame" x="16" y="92.5" width="480" height="123"/>
+                                    <rect key="frame" x="16" y="112.5" width="480" height="83"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-9R-aea">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="gxn-9R-aea" secondAttribute="height" id="G3n-Vl-JY2"/>
+                                            </constraints>
                                             <state key="normal" title="Button" image="veryupset.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3n-Hc-KxD">
-                                            <rect key="frame" x="99" y="0.0" width="83" height="123"/>
+                                            <rect key="frame" x="99" y="0.0" width="83" height="83"/>
                                             <state key="normal" title="Button" image="upset.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-W1-ovL">
-                                            <rect key="frame" x="198" y="0.0" width="83" height="123"/>
+                                            <rect key="frame" x="198" y="0.0" width="83" height="83"/>
                                             <state key="normal" title="Button" image="ok.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOE-cZ-mTb">
-                                            <rect key="frame" x="297" y="0.0" width="83.5" height="123"/>
+                                            <rect key="frame" x="297" y="0.0" width="83.5" height="83"/>
                                             <state key="normal" title="Button" image="happy.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOW-0o-gqa">
-                                            <rect key="frame" x="396.5" y="0.0" width="83.5" height="123"/>
+                                            <rect key="frame" x="396.5" y="0.0" width="83.5" height="83"/>
                                             <state key="normal" title="Button" image="veryhappy.png"/>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VkA-W1-ovL" firstAttribute="width" secondItem="C3n-Hc-KxD" secondAttribute="width" id="BuT-J2-eo1"/>
                                         <constraint firstItem="GOW-0o-gqa" firstAttribute="width" secondItem="fOE-cZ-mTb" secondAttribute="width" id="J1c-eO-GrG"/>
-                                        <constraint firstItem="C3n-Hc-KxD" firstAttribute="height" secondItem="gxn-9R-aea" secondAttribute="height" id="Kf5-qz-nEw"/>
-                                        <constraint firstItem="VkA-W1-ovL" firstAttribute="height" secondItem="C3n-Hc-KxD" secondAttribute="height" id="RI6-Ue-3H2"/>
-                                        <constraint firstItem="GOW-0o-gqa" firstAttribute="height" secondItem="fOE-cZ-mTb" secondAttribute="height" id="Z1q-RB-ler"/>
-                                        <constraint firstItem="fOE-cZ-mTb" firstAttribute="height" secondItem="VkA-W1-ovL" secondAttribute="height" id="aGi-CV-2Tq"/>
                                         <constraint firstItem="fOE-cZ-mTb" firstAttribute="width" secondItem="VkA-W1-ovL" secondAttribute="width" id="w7n-8H-riz"/>
                                         <constraint firstItem="C3n-Hc-KxD" firstAttribute="width" secondItem="gxn-9R-aea" secondAttribute="width" id="zid-UP-Ldm"/>
                                     </constraints>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very Upset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdz-AZ-9tM">
-                                    <rect key="frame" x="15.5" y="223.5" width="85" height="20.5"/>
+                                    <rect key="frame" x="15.5" y="203.5" width="85" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upset" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TlM-gx-geP">
-                                    <rect key="frame" x="133.5" y="223.5" width="46" height="20.5"/>
+                                    <rect key="frame" x="133.5" y="203.5" width="46" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESe-gl-CZt">
-                                    <rect key="frame" x="228.5" y="223.5" width="55.5" height="20.5"/>
+                                    <rect key="frame" x="228.5" y="203.5" width="55.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO8-l1-ZyR">
-                                    <rect key="frame" x="330" y="223.5" width="50" height="20.5"/>
+                                    <rect key="frame" x="330" y="203.5" width="50" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Very Happy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-bm-me3">
-                                    <rect key="frame" x="410.5" y="223.5" width="89" height="20.5"/>
+                                    <rect key="frame" x="410.5" y="203.5" width="89" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -128,7 +128,6 @@
                                 <constraint firstItem="TlM-gx-geP" firstAttribute="centerX" secondItem="C3n-Hc-KxD" secondAttribute="centerX" id="dGm-9I-KjK"/>
                                 <constraint firstItem="ESe-gl-CZt" firstAttribute="top" secondItem="vpf-bi-ZFy" secondAttribute="bottom" constant="8" id="f62-2G-Pf8"/>
                                 <constraint firstItem="vI8-bm-me3" firstAttribute="centerX" secondItem="GOW-0o-gqa" secondAttribute="centerX" id="jFm-qZ-DFZ"/>
-                                <constraint firstItem="gxn-9R-aea" firstAttribute="height" secondItem="TKS-pk-1ZW" secondAttribute="height" multiplier="2:5" id="jQd-QB-TEP"/>
                                 <constraint firstItem="vI8-bm-me3" firstAttribute="top" secondItem="vpf-bi-ZFy" secondAttribute="bottom" constant="8" id="qTp-On-1HG"/>
                                 <constraint firstItem="TlM-gx-geP" firstAttribute="top" secondItem="vpf-bi-ZFy" secondAttribute="bottom" constant="8" id="rGr-DX-1Kw"/>
                                 <constraint firstItem="Mdz-AZ-9tM" firstAttribute="centerX" secondItem="gxn-9R-aea" secondAttribute="centerX" id="rVJ-pa-Jxd"/>

@@ -8,12 +8,19 @@
 
 import Foundation
 import UIKit
+import SwiftChart
 
 class DetailChartController: UIViewController, ApiService{
 
     @IBOutlet weak var txtInputDateStart: UITextField!
     @IBOutlet weak var txtInputDateEnd: UITextField!
     @IBOutlet weak var btnDateStartCalendar: UIButton!
+    @IBOutlet weak var lblMotivation: UILabel!
+    @IBOutlet weak var btnDateEndCalendar: UIButton!
+    @IBOutlet weak var btnSearchDate: UIButton!
+    @IBOutlet weak var viewChart: UIView!
+    @IBOutlet weak var lblCheckOutAverage: UILabel!
+    @IBOutlet weak var lblCheckInAverage: UILabel!
     
     var api = callApi()
     let datePickerStart = UIDatePicker()
@@ -25,10 +32,13 @@ class DetailChartController: UIViewController, ApiService{
     var staffId: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.staffId = staff["_id"] as? String
-        self.title = staff["name"] as? String
+        self.txtInputDateStart.text      = dateIn
+        self.txtInputDateEnd.text        = dateOut
+        self.staffId                     = staff["_id"] as? String
+        self.title                       = staff["name"] as? String
         self.initdatePicker()
         self.getStaffChart()
+        self.lblMotivation.transform     = CGAffineTransform(rotationAngle: -.pi/2)
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,24 +47,23 @@ class DetailChartController: UIViewController, ApiService{
     }
     
     func initdatePicker() {
-        datePickerStart.datePickerMode = .date
-        datePickerStart.backgroundColor = UIColor.white
+        datePickerStart.datePickerMode          = .date
+        datePickerStart.backgroundColor         = UIColor.white
         datePickerStart.addTarget(self, action: #selector(datePickerStartOnChangeValue(_:)), for: UIControlEvents.valueChanged)
         txtInputDateStart.inputView = datePickerStart
         
-        datePickerEnd.datePickerMode = .date
-        datePickerEnd.backgroundColor = UIColor.white
+        datePickerEnd.datePickerMode            = .date
+        datePickerEnd.backgroundColor           = UIColor.white
+        txtInputDateEnd.inputView               = datePickerEnd
         datePickerEnd.addTarget(self, action: #selector(datePickerEndOnChangeValue(_:)), for: UIControlEvents.valueChanged)
-        txtInputDateEnd.inputView = datePickerEnd
-        
         // Adding Button ToolBar
-        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
-        toolbar.barStyle = .default
-        toolbar.tintColor = UIColor.blue
+        let toolbar                             = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+        toolbar.barStyle                        = .default
+        toolbar.tintColor                       = UIColor.blue
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(handleDoneButton(_:)))
         toolbar.setItems([doneBtn], animated: true)
-        txtInputDateStart.inputAccessoryView = toolbar
-        txtInputDateEnd.inputAccessoryView = toolbar
+        txtInputDateStart.inputAccessoryView    = toolbar
+        txtInputDateEnd.inputAccessoryView      = toolbar
     }
     
     @IBAction func onDateStartCalendarAction(_ sender: Any) {
@@ -76,19 +85,19 @@ class DetailChartController: UIViewController, ApiService{
     
     @objc func datePickerStartOnChangeValue(_ sender: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        txtInputDateStart.text = dateFormatter.string(from: sender.date)
+        dateFormatter.dateStyle     = .short
+        dateFormatter.timeStyle     = .none
+        dateFormatter.dateFormat    = "yyyy-MM-dd"
+        txtInputDateStart.text      = dateFormatter.string(from: sender.date)
     }
     
     @objc func datePickerEndOnChangeValue(_ sender: UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateStyle     = .short
+        dateFormatter.timeStyle     = .none
+        dateFormatter.dateFormat    = "yyyy-MM-dd"
         print(dateFormatter.string(from: sender.date))
-        txtInputDateEnd.text = dateFormatter.string(from: sender.date)
+        txtInputDateEnd.text        = dateFormatter.string(from: sender.date)
     }
     
     @IBAction func dateTextInputPressed(_ sender: UITextField) {
@@ -115,38 +124,101 @@ class DetailChartController: UIViewController, ApiService{
     }
      func setChartData(data: Data) {
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-            let arrData = json!["data"]! as! NSArray
-            var arrMotivationCheckIn = [Int]()
-            var arrMotivationCheckOut = [Int]()
-            var numberMotivationCheckIn = 0
-            var numberMotivationCheckOut = 0
-            print(arrData)
-//            if arrData.count != 0{
-//                for i in 0...arrData.count - 1{
-//                    let data = arrData[i] as AnyObject
-//                    let motivationCheckInt = data["motivationCheckIn"] as? Int
-//                    let motivationCheckOut = data["motivationCheckOut"] as? Int
-//                    arrMotivationCheckIn.append(motivationCheckInt!)
-//                    arrMotivationCheckOut.append(motivationCheckOut!)
-//                    numberMotivationCheckIn += motivationCheckInt!
-//                    numberMotivationCheckOut += motivationCheckOut!
-//                }
-//                DispatchQueue.main.async(execute: {
-//                    self.lblPercentCheckIn.text = String(numberMotivationCheckIn * 100 / (arrMotivationCheckIn.count * 5)) + "%"
-//                    self.lblPercentCheckOut.text = String(numberMotivationCheckOut * 100 / (arrMotivationCheckOut.count * 5)) + "%"
-//                })
-//            }else{
-//                DispatchQueue.main.async(execute: {
-//                    self.lblPercentCheckIn.text = String(0)
-//                    self.lblPercentCheckOut.text = String(0)
-//                })
-//            }
-            
-        } catch {
+            let json                    = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            let arrData                 = json!["data"]! as! NSArray
+            var arrMotivationCheckIn    = [Double]()
+            var arrMotivationCheckOut   = [Double]()
+            var labels                  = [Double]()
+            var labelsAsString          = [String]()
+            if arrData.count != 0{
+                for i in 0...arrData.count - 1{
+                    let data                = arrData[i] as AnyObject
+                    let motivationCheckIn   = data["motivationCheckIn"] as? Double
+                    let motivationCheckOut  = data["motivationCheckOut"] as? Double
+                    let motivationDateIn    = data["dateIn"] as? String
+                    
+                    arrMotivationCheckIn.append(motivationCheckIn!)
+                    arrMotivationCheckOut.append(motivationCheckOut!)
+                    let formater            = DateFormatter()
+                    formater.dateFormat     = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z"
+                    let dateIn              = formater.date(from: motivationDateIn!)
+                    formater.dateFormat     = "yyyy-MM-dd"
+                    labels.append(Double(i))
+                    labelsAsString.append(formater.string(from: dateIn!))
+                }
+                DispatchQueue.main.async(execute: {
+                    let minMotivationCheckIn = self.findMin(arr: arrMotivationCheckIn)
+                    let maxMotivationCheckIn = self.findMax(arr: arrMotivationCheckIn)
+                    let minMotivationCheckOut = self.findMin(arr: arrMotivationCheckOut)
+                    let maxMotivationCheckOut = self.findMax(arr: arrMotivationCheckOut)
+                    
+                    if minMotivationCheckIn == maxMotivationCheckIn {
+                        self.lblCheckInAverage.text =
+                        "\(arrMotivation[Int(minMotivationCheckIn - 1)]) = \(String(format: "%.2f", arguments: [minMotivationCheckIn * 100 / (5 * Double(arrMotivationCheckIn.count))]))%"
+                    }else{
+                        var sumMotiCheckIn: Double = 0
+                        for moti in arrMotivationCheckIn{
+                            sumMotiCheckIn += moti
+                        }
+                        self.lblCheckInAverage.text =
+                        "\(arrMotivation[Int(minMotivationCheckIn - 1)]) < \(String(format: "%.2f", arguments: [sumMotiCheckIn * 100 / (5 * Double(arrMotivationCheckIn.count))]))% < \(arrMotivation[Int(maxMotivationCheckIn - 1)])"
+                    }
+                    if minMotivationCheckOut == maxMotivationCheckOut {
+                        self.lblCheckOutAverage.text = "\(arrMotivation[Int(minMotivationCheckOut - 1)]) = \(String(format: "%.2f", arguments: [minMotivationCheckOut * 100 / (5 * Double(arrMotivationCheckIn.count))]))%"
+                    }else{
+                        var sumMotiCheckOut: Double = 0
+                        for moti in arrMotivationCheckOut{
+                            sumMotiCheckOut += moti
+                        }
+                        self.lblCheckOutAverage.text = "\(arrMotivation[Int(minMotivationCheckOut - 1)]) < \((5 * Double(arrMotivationCheckOut.count)))% < \(arrMotivation[Int(maxMotivationCheckIn - 1)])"
+                    }
+                    
+                    let chart                   = Chart(frame: CGRect(x: 0, y: 0, width: self.viewChart.frame.size.width, height: self.viewChart.frame.size.height))
+                    chart.maxY                  = 5
+                    chart.maxX                  = Double(labelsAsString.count)
+                    chart.minX                  = -0.1
+                    chart.minY                  = 0
+                    let checkIn                 = ChartSeries(arrMotivationCheckIn)
+                    checkIn.color               = ChartColors.greenColor()
+                    checkIn.area                = false
+                    let checkOut                = ChartSeries(arrMotivationCheckOut)
+                    checkOut.color              = ChartColors.cyanColor()
+                    checkOut.area               = false
+                    
+                    chart.xLabelsFormatter      = { (labelIndex: Int, labelValue: Double) -> String in
+                        return labelsAsString[labelIndex]
+                    }
+                    chart.xLabels               = labels
+                    chart.xLabelsOrientation    = .vertical
+                    chart.yLabels               = [1, 2, 3, 4, 5]
+                    chart.add([checkIn, checkOut])
+                    self.viewChart.addSubview(chart)
+                    
+                })
+            }} catch {
             print(error)
         }
     }
     func setData(data: Data, member: AnyObject) {
+    }
+    
+    func findMin(arr: [Double]) -> Double {
+        var min = arr[0]
+        for data in arr{
+            if min < data{
+                min = data
+            }
+        }
+        return min
+    }
+    
+    func findMax(arr: [Double]) -> Double {
+        var max = arr[0]
+        for data in arr{
+            if max > data{
+                max = data
+            }
+        }
+        return max
     }
 }

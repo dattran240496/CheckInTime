@@ -18,6 +18,8 @@ class StaffListChart: UIViewController{
     let datePickerStart = UIDatePicker()
     let datePickerEnd = UIDatePicker()
     var dataMembers = NSArray()
+    var dateIn = String()
+    var dateOut = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initdatePicker()
@@ -27,6 +29,8 @@ class StaffListChart: UIViewController{
         collectionViewStaff.delegate = self
         txtInputDateStart.text = "2017-12-10"
         txtInputDateEnd.text = "2017-12-17"
+        dateIn = txtInputDateStart.text ?? ""
+        dateOut = txtInputDateEnd.text ?? ""
         self.getDataMembers()
     }
     
@@ -106,6 +110,15 @@ class StaffListChart: UIViewController{
         datePickerStart.addSubview(doneButton)
     }
     
+    @IBAction func onSearchChartAction(_ sender: Any) {
+        self.dateIn = self.txtInputDateStart.text ?? ""
+        self.dateOut = self.txtInputDateEnd.text ?? ""
+        self.collectionViewStaff.reloadData()
+        txtInputDateStart.resignFirstResponder()
+        txtInputDateEnd.resignFirstResponder()
+    }
+    
+    
     func getDataMembers() {
         guard let url = URL(string: apiURL + "api/staff")  else { return }
         var request = URLRequest(url: url)
@@ -142,6 +155,7 @@ extension StaffListChart : UICollectionViewDelegateFlowLayout {
     }
 }
 
+
 extension StaffListChart: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -150,7 +164,7 @@ extension StaffListChart: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionViewStaff.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ChartCell
-        cell.setValueForCell(member: dataMembers[indexPath.row] as AnyObject, dateIn: self.txtInputDateStart.text ?? "", dateOut: self.txtInputDateEnd.text ?? "")
+        cell.setValueForCell(member: dataMembers[indexPath.row] as AnyObject, dateIn: self.dateIn, dateOut: self.dateOut)
         return cell
     }
     
