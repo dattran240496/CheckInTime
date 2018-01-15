@@ -92,8 +92,6 @@
 		94D0953B1FDE7D7A000219B0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D0953A1FDE7D7A000219B0 /* camera.png */; };
 		94D0953D1FDE7F3B000219B0 /* AddNewMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */; };
 		94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */; };
-		E10D54761FF104F4004E39B4 /* EmojiPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D54741FF104F4004E39B4 /* EmojiPopup.swift */; };
-		E10D54771FF104F4004E39B4 /* EmojiPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = E10D54751FF104F4004E39B4 /* EmojiPopup.xib */; };
 		E10D547E1FF10714004E39B4 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D54791FF10713004E39B4 /* happy.png */; };
 		E10D547F1FF10714004E39B4 /* veryupset.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547A1FF10713004E39B4 /* veryupset.png */; };
 		E10D54801FF10714004E39B4 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547B1FF10713004E39B4 /* ok.png */; };
@@ -108,6 +106,7 @@
 		E1A50194200707FE00A76500 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A50192200707FE00A76500 /* ChartCell.swift */; };
 		E1A50195200707FE00A76500 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A50193200707FE00A76500 /* ChartCell.xib */; };
 		E1A5019720075F0300A76500 /* DetailChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5019620075F0300A76500 /* DetailChart.swift */; };
+		E1A5B579200C9771006DA54D /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5B578200C9771006DA54D /* NSMutableData.swift */; };
 		E1A933272008C3F500CFAE8C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A933262008C3F500CFAE8C /* UIColor.swift */; };
 		E1AE2BB02008938C005BAD60 /* bar-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = E1AE2BAF2008938B005BAD60 /* bar-chart.png */; };
 /* End PBXBuildFile section */
@@ -223,8 +222,6 @@
 		94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemController.swift; sourceTree = "<group>"; };
 		94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeController.swift; sourceTree = "<group>"; };
 		BCA9B8947D2EDF3F639FE3FF /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E10D54741FF104F4004E39B4 /* EmojiPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPopup.swift; sourceTree = "<group>"; };
-		E10D54751FF104F4004E39B4 /* EmojiPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiPopup.xib; sourceTree = "<group>"; };
 		E10D54791FF10713004E39B4 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
 		E10D547A1FF10713004E39B4 /* veryupset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryupset.png; sourceTree = "<group>"; };
 		E10D547B1FF10713004E39B4 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -239,6 +236,7 @@
 		E1A50192200707FE00A76500 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		E1A50193200707FE00A76500 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		E1A5019620075F0300A76500 /* DetailChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChart.swift; sourceTree = "<group>"; };
+		E1A5B578200C9771006DA54D /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
 		E1A933262008C3F500CFAE8C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E1AE2BAF2008938B005BAD60 /* bar-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-chart.png"; sourceTree = "<group>"; };
 		E1D474AED4C265CB3D46CD05 /* Pods-CheckInTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -647,7 +645,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A50191200707C900A76500 /* ChartCell */,
-				E10D546F1FF10422004E39B4 /* EmojiPopup */,
 				94E4581A1FE381B000EE36C0 /* CheckInTimePopup */,
 				94D095351FDE2E1E000219B0 /* MembersCollectionViewCell */,
 			);
@@ -713,15 +710,6 @@
 			path = CleanTime;
 			sourceTree = "<group>";
 		};
-		E10D546F1FF10422004E39B4 /* EmojiPopup */ = {
-			isa = PBXGroup;
-			children = (
-				E10D54741FF104F4004E39B4 /* EmojiPopup.swift */,
-				E10D54751FF104F4004E39B4 /* EmojiPopup.xib */,
-			);
-			path = EmojiPopup;
-			sourceTree = "<group>";
-		};
 		E10D54781FF106F0004E39B4 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +727,7 @@
 			children = (
 				E14628F31FF24320008FE420 /* UIImage.swift */,
 				E1A933262008C3F500CFAE8C /* UIColor.swift */,
+				E1A5B578200C9771006DA54D /* NSMutableData.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -897,7 +886,6 @@
 				E19E391F1FFCCD04006F641F /* arrow-bottom.png in Resources */,
 				9438CD541FDF967700789781 /* tree.png in Resources */,
 				943E1E4F1FE7AA3C00747262 /* leverR07.jpg in Resources */,
-				E10D54771FF104F4004E39B4 /* EmojiPopup.xib in Resources */,
 				9473B43C1FE8C6B400A2EFA3 /* btn03.mp3 in Resources */,
 				9438CD491FDF967700789781 /* mountain.png in Resources */,
 				94B4A5D61FE76A2900D08561 /* Contents.json in Resources */,
@@ -1144,6 +1132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B4A5B51FE7586700D08561 /* CleanTimeController.swift in Sources */,
+				E1A5B579200C9771006DA54D /* NSMutableData.swift in Sources */,
 				E1A5019720075F0300A76500 /* DetailChart.swift in Sources */,
 				E14628F41FF24320008FE420 /* UIImage.swift in Sources */,
 				94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */,
@@ -1154,7 +1143,6 @@
 				94367B0F1FDA3B9400DAC492 /* HomepageController.swift in Sources */,
 				94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */,
 				E1A50194200707FE00A76500 /* ChartCell.swift in Sources */,
-				E10D54761FF104F4004E39B4 /* EmojiPopup.swift in Sources */,
 				94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */,
@@ -1329,7 +1317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1346,7 +1334,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

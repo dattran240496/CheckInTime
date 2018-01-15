@@ -11,32 +11,29 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 class CleanTimeController: UIViewController{
-    @IBOutlet weak var btnSetting: UIButton!
-    @IBOutlet weak var imgLever: UIImageView!
-    @IBOutlet weak var imgViewClean1: UIImageView!
-    @IBOutlet weak var imgViewClean2: UIImageView!
-    @IBOutlet weak var imgViewClean3: UIImageView!
-    @IBOutlet weak var imgViewClean4: UIImageView!
-    @IBOutlet weak var lblName1: UILabel!
-    @IBOutlet weak var lblName2: UILabel!
-    @IBOutlet weak var lblName3: UILabel!
-    @IBOutlet weak var lblName4: UILabel!
+    @IBOutlet weak var btnSetting:      UIButton!
+    @IBOutlet weak var imgLever:        UIImageView!
+    @IBOutlet weak var imgViewClean1:   UIImageView!
+    @IBOutlet weak var imgViewClean2:   UIImageView!
+    @IBOutlet weak var imgViewClean3:   UIImageView!
+    @IBOutlet weak var imgViewClean4:   UIImageView!
+    @IBOutlet weak var lblName1:        UILabel!
+    @IBOutlet weak var lblName2:        UILabel!
+    @IBOutlet weak var lblName3:        UILabel!
+    @IBOutlet weak var lblName4:        UILabel!
     
-    var seconds = 0
-    var dataMembers = [AnyObject]()
-    var arrCleanPerson = [Int]()
-    var timerCleanTime = Timer()
-    var soundLever = AVAudioPlayer()
-    var soundRandom = AVAudioPlayer()
+    var seconds             = 0 // time when random staff
+    var dataMembers         = [AnyObject]() // all staff
+    var arrCleanPerson      = [Int]() // index 4 staff in staff array
+    var timerCleanTime      = Timer()
+    var soundLever          = AVAudioPlayer()
+    var soundRandom         = AVAudioPlayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.loadViewIfNeeded()
-        imgLever.isUserInteractionEnabled = true
-        self.imgLever.contentMode = .scaleAspectFit
+        imgLever.isUserInteractionEnabled   = true
+        self.imgLever.contentMode           = .scaleAspectFit
         self.getDataMembers()
-        
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.imgLever.layoutIfNeeded()
@@ -46,7 +43,6 @@ class CleanTimeController: UIViewController{
     }
     @IBAction func onLeverDownAction(_ sender: UISwipeGestureRecognizer) {
         self.view.layer.removeAllAnimations()
-        
         let url = Bundle.main.path(forResource: "lever", ofType: "mp3")!
         do{
             self.soundLever = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
@@ -58,7 +54,7 @@ class CleanTimeController: UIViewController{
         }
         self.leverAnimateDown(index: 1)
     }
-    
+    // lever animation when go down
     func leverAnimateDown(index: Int){
         self.soundLever.play()
         UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
@@ -72,16 +68,14 @@ class CleanTimeController: UIViewController{
         })
     }
     
+    // lever animation when go up
     func leverAnimateUp(index: Int){
-        
         UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
             self.imgLever.image = UIImage(named: "leverR0\(index).jpg")
         }, completion: { _ in
             if index >= 2 {
                 self.leverAnimateUp(index: index - 1)
             }else{
-                //self.leverAnimateUp(index: index)
-                //self.getDataMembers()
                 let url = Bundle.main.path(forResource: "slot_machine_sounds", ofType: "mp3")!
                 do{
                     self.soundRandom = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
@@ -97,6 +91,8 @@ class CleanTimeController: UIViewController{
             }
         })
     }
+    
+    // get all staff
     func getDataMembers() {
         guard let url = URL(string: apiURL + "api/staff")  else { return }
         var request = URLRequest(url: url)
@@ -128,9 +124,10 @@ class CleanTimeController: UIViewController{
             }
             }.resume()
     }
+    // random 4 numbers, for 0 to staff lenght
     @objc func startRandom(_ sender: Timer){
         self.seconds += 1
-        if (seconds <= 20){
+        if (seconds <= timeClean){
             self.arrCleanPerson = []
             if self.dataMembers.count >= 4{
                 for _ in 1...4{
@@ -139,18 +136,18 @@ class CleanTimeController: UIViewController{
                 }
                 self.setImgInit(arrRandom: self.arrCleanPerson, arrMem: self.dataMembers)
             }
-            
-        }else{
+         }else{
             self.soundRandom.pause()
             self.seconds = 0
             self.timerCleanTime.invalidate()
         }
     }
+    // random
     func random(arrMem: [AnyObject]){
-        let randomNum:UInt32 = arc4random_uniform(UInt32(arrMem.count))
-        let _:TimeInterval = TimeInterval(randomNum)
-        let someInt:Int = Int(randomNum)
-        var isExist = false
+        let randomNum:UInt32    = arc4random_uniform(UInt32(arrMem.count))
+        let _:TimeInterval      = TimeInterval(randomNum)
+        let someInt:Int         = Int(randomNum)
+        var isExist             = false
         for i in self.arrCleanPerson{
             if i == someInt{
                 isExist = true
@@ -163,13 +160,14 @@ class CleanTimeController: UIViewController{
             self.arrCleanPerson.append(someInt)
         }
     }
+    
+    // set 4 staff at initial screen
     func setImgInit(arrRandom: [Int], arrMem: [AnyObject]) {
-        
         for i in 1...4{
-            let person = arrMem[arrRandom[i - 1]]
-            let url = (person as AnyObject)["avatarUrl"] as? String!
-            let imgURL = URL(string: apiURL + url!)
-            let session = URLSession.shared
+            let person      = arrMem[arrRandom[i - 1]]
+            let url         = (person as AnyObject)["avatarUrl"] as? String!
+            let imgURL      = URL(string: apiURL + url!)
+            let session     = URLSession.shared
             session.dataTask(with: imgURL!) { (data, response, error) in
                 //if there is any error
                 if let e = error {

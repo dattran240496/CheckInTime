@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class MemberController: UIViewController{
+class MemberController: UIViewController, ApiService{
     
     var dataMembers = NSArray()
     //let indexImgTapped:Int
@@ -16,9 +16,11 @@ class MemberController: UIViewController{
     @IBOutlet weak var collectionViewMembers: UICollectionView!
     //var dataMembers: AnyObject
     @IBOutlet weak var lblDateTime: UILabel!
-    var timer = Timer()
+    var timer           = Timer()
+     let api            = callApi()
     override func viewDidLoad() {
         super.viewDidLoad()
+        api.deletgate = self
         let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
         self.collectionViewMembers?.register(classNib, forCellWithReuseIdentifier: "Cell")
         // Do any additional setup after loading the view, typically from a nib.
@@ -48,22 +50,7 @@ class MemberController: UIViewController{
     
     func getDataMembers() {
         guard let url = URL(string: apiURL + "api/staff")  else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-        
-        let session = URLSession.shared
-        session.dataTask(with: request){ (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                    let data = json!["data"]! as! NSArray
-                    self.dataMembers = data
-                } catch {
-                    print(error)
-                }
-            }
-            }.resume()
+        api.callApiGetStaff(url: url)
     }
     
     @IBAction func onAddNewMemAction(_ sender: Any) {
@@ -79,6 +66,23 @@ class MemberController: UIViewController{
         formatter.pmSymbol = "PM"
         let result = formatter.string(from: dateTime)
         lblDateTime.text = result
+    }
+    
+    func setData(data: Data) {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            let dataStaff = json!["data"]! as! NSArray
+            self.dataMembers = dataStaff
+            DispatchQueue.main.async {
+                self.collectionViewMembers.reloadData()
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func setChartData(data: Data) {
+        
     }
 }
 
