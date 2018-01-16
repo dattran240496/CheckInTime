@@ -23,12 +23,9 @@ class MemberController: UIViewController, ApiService{
         api.deletgate = self
         let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
         self.collectionViewMembers?.register(classNib, forCellWithReuseIdentifier: "Cell")
-        // Do any additional setup after loading the view, typically from a nib.
-        
         self.getDataMembers()
         collectionViewMembers.dataSource = self
         collectionViewMembers.delegate = self
-        
         Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(MemberController.getTime(_:)), userInfo: nil, repeats: true)
     }
     
@@ -36,15 +33,15 @@ class MemberController: UIViewController, ApiService{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        btnAdd.layer.cornerRadius = btnAdd.frame.size.width / 2
+        btnAdd.titleLabel?.font = btnAdd.titleLabel?.font.withSize(btnAdd.frame.size.width / 1.5)
+        lblDateTime.font = lblDateTime.font.withSize(btnAdd.frame.size.width / 2)
+    }
     override func viewDidAppear(_ animated: Bool) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
         timer.fire()
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-        
-        btnAdd.layer.cornerRadius = btnAdd.frame.size.width / 2
-        btnAdd.titleLabel?.font = btnAdd.titleLabel?.font.withSize(btnAdd.frame.size.width / 1.5)
-        lblDateTime.font = lblDateTime.font.withSize(btnAdd.frame.size.width / 2)
         self.collectionViewMembers.reloadData()
     }
     
@@ -114,9 +111,10 @@ extension MemberController: UICollectionViewDataSource, UIGestureRecognizerDeleg
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc  = self.storyboard?.instantiateViewController(withIdentifier: "AddNewMemController") as! AddNewMemController
         let person = dataMembers[indexPath.row]
-        vc.memberName = (person as AnyObject)["name"] as? String
-        vc.memberEmail = (person as AnyObject)["email"] as? String
-        vc.memberAvatar = (person as AnyObject)["avatarUrl"] as? String
+        vc.memberName           = (person as AnyObject)["name"] as? String
+        vc.memberEmail          = (person as AnyObject)["email"] as? String
+        vc.memberAvatar         = (person as AnyObject)["avatarUrl"] as? String
+        vc.staffId              = (person as AnyObject)["_id"] as? String
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

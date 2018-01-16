@@ -16,4 +16,4 @@ let arrMotivation = [
     "happy",
     "very happy"
 ]
-let timeClean = 70
+let timeClean = 40 // clean time

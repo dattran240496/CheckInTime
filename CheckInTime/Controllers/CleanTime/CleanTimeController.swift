@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import AVFoundation
 import AudioToolbox
-class CleanTimeController: UIViewController{
+class CleanTimeController: UIViewController, ApiService{
+    
     @IBOutlet weak var btnSetting:      UIButton!
     @IBOutlet weak var imgLever:        UIImageView!
     @IBOutlet weak var imgViewClean1:   UIImageView!
@@ -23,14 +24,19 @@ class CleanTimeController: UIViewController{
     @IBOutlet weak var lblName4:        UILabel!
     
     var seconds             = 0 // time when random staff
-    var dataMembers         = [AnyObject]() // all staff
+    //var allStaff            = [AnyObject]() // all staff
     var arrCleanPerson      = [Int]() // index 4 staff in staff array
     var timerCleanTime      = Timer()
     var soundLever          = AVAudioPlayer()
     var soundRandom         = AVAudioPlayer()
+    let api                 = callApi()
+    var staffForClean       = [AnyObject]() // staff checked in
+    var isRandom            = false
+    var isDoneRandone       = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadViewIfNeeded()
+        api.deletgate                       = self
         imgLever.isUserInteractionEnabled   = true
         self.imgLever.contentMode           = .scaleAspectFit
         self.getDataMembers()
@@ -42,22 +48,26 @@ class CleanTimeController: UIViewController{
         self.imgLever.layer.removeAllAnimations()
     }
     @IBAction func onLeverDownAction(_ sender: UISwipeGestureRecognizer) {
-        self.view.layer.removeAllAnimations()
-        let url = Bundle.main.path(forResource: "lever", ofType: "mp3")!
-        do{
-            self.soundLever = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
-            self.soundLever.prepareToPlay()
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
-        }catch{
-            print("error")
+        if isDoneRandone{
+            self.isRandom       = false
+            self.isDoneRandone  = false
+            self.view.layer.removeAllAnimations()
+            let url = Bundle.main.path(forResource: "lever", ofType: "mp3")!
+            do{
+                self.soundLever = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
+                self.soundLever.prepareToPlay()
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setActive(true)
+            }catch{
+                print("error")
+            }
+            self.leverAnimateDown(index: 1)
         }
-        self.leverAnimateDown(index: 1)
     }
     // lever animation when go down
     func leverAnimateDown(index: Int){
         self.soundLever.play()
-        UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
+        UIImageView.transition(with: self.imgLever, duration: 0.04, options: .transitionCrossDissolve, animations: {
             self.imgLever.image = UIImage(named: "leverR0\(index).jpg")
         }, completion: { _ in
             if index <= 7 {
@@ -70,7 +80,7 @@ class CleanTimeController: UIViewController{
     
     // lever animation when go up
     func leverAnimateUp(index: Int){
-        UIImageView.transition(with: self.imgLever, duration: 0.05, options: .transitionCrossDissolve, animations: {
+        UIImageView.transition(with: self.imgLever, duration: 0.04, options: .transitionCrossDissolve, animations: {
             self.imgLever.image = UIImage(named: "leverR0\(index).jpg")
         }, completion: { _ in
             if index >= 2 {
@@ -95,50 +105,26 @@ class CleanTimeController: UIViewController{
     // get all staff
     func getDataMembers() {
         guard let url = URL(string: apiURL + "api/staff")  else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-        
-        let session = URLSession.shared
-        session.dataTask(with: request){ (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                    let staffs = json!["data"]! as! NSArray
-                    for staff in staffs{
-                        let state = (staff as AnyObject)["state"] as? Int ?? 0
-                        if state == 1{
-                            self.dataMembers.append(staff as AnyObject)
-                        }
-                    }
-                    print(self.dataMembers)
-                    if self.dataMembers.count >= 3{
-                        for _ in 1...4{
-                            self.random(arrMem: self.dataMembers)
-                        }
-                    }
-                    self.setImgInit(arrRandom: self.arrCleanPerson, arrMem: self.dataMembers)
-                } catch {
-                    print(error)
-                }
-            }
-            }.resume()
+        api.callApiGetStaff(url: url)
     }
     // random 4 numbers, for 0 to staff lenght
     @objc func startRandom(_ sender: Timer){
         self.seconds += 1
         if (seconds <= timeClean){
             self.arrCleanPerson = []
-            if self.dataMembers.count >= 4{
+            if self.staffForClean.count >= 4{
                 for _ in 1...4{
                     soundRandom.play()
-                    self.random(arrMem: self.dataMembers)
+                    self.random(arrMem: self.staffForClean)
                 }
-                self.setImgInit(arrRandom: self.arrCleanPerson, arrMem: self.dataMembers)
+                self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
             }
-         }else{
+        }else{
+            self.isRandom           = true
+            self.isDoneRandone      = true
+            self.seconds            = 0
+            self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
             self.soundRandom.pause()
-            self.seconds = 0
             self.timerCleanTime.invalidate()
         }
     }
@@ -162,7 +148,7 @@ class CleanTimeController: UIViewController{
     }
     
     // set 4 staff at initial screen
-    func setImgInit(arrRandom: [Int], arrMem: [AnyObject]) {
+    func setImgCleanStaff(arrRandom: [Int], arrMem: [AnyObject]) {
         for i in 1...4{
             let person      = arrMem[arrRandom[i - 1]]
             let url         = (person as AnyObject)["avatarUrl"] as? String!
@@ -200,6 +186,22 @@ class CleanTimeController: UIViewController{
                             default:
                                 break
                             }
+                            if self.isRandom == true{
+                                DispatchQueue.main.async(execute:{
+                                    
+                                    let winner1             = Candicate(name: self.lblName1.text!, avatar: self.imgViewClean1.image!)
+                                    let winner2             = Candicate(name: self.lblName2.text!, avatar: self.imgViewClean2.image!)
+                                    let winner3             = Candicate(name: self.lblName3.text!, avatar: self.imgViewClean3.image!)
+                                    let winner4             = Candicate(name: self.lblName4.text!, avatar: self.imgViewClean4.image!)
+                                    let cleanWinner = WinnerViewController(nibName: "WinnerViewController", bundle: nil)
+                                    cleanWinner.winner1     = winner1
+                                    cleanWinner.winner2     = winner2
+                                    cleanWinner.winner3     = winner3
+                                    cleanWinner.winner4     = winner4
+                                    //cleanWinner.setWinners(winner1: winner1, winner2: winner2, winner3: winner3, winner4: winner4)
+                                    self.present(cleanWinner, animated: true, completion: nil)
+                                })
+                            }
                         })
                         
                     } else {
@@ -208,6 +210,33 @@ class CleanTimeController: UIViewController{
                 }
                 }.resume()
         }
+        
+    }
+    
+    func setData(data: Data) {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            let staffs = json!["data"]! as! NSArray
+            for staff in staffs{
+                let state = (staff as AnyObject)["state"] as? Int ?? 0
+                if state == 1{
+                    self.staffForClean.append(staff as AnyObject)
+                }
+            }
+            print(self.staffForClean)
+            if self.staffForClean.count >= 3{
+                for _ in 1...4{
+                    self.random(arrMem: self.staffForClean)
+                }
+            }
+            self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
+        } catch {
+            print(error)
+        }
+        
+    }
+    
+    func setChartData(data: Data) {
         
     }
     
