@@ -89,6 +89,7 @@ class ChartCell: UICollectionViewCell, ApiService {
             print(error)
         }
     }
+    func callBackAfterDelete(message: String) {}
 }
 
 

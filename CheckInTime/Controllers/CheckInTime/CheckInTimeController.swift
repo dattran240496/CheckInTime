@@ -44,6 +44,9 @@ class CheckInTimeController: UIViewController, ApiService{
         timer.fire()
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        lblDateTime.font = lblDateTime.font.withSize(self.view.frame.size.height / 10)
+    }
     @objc func onChartAction() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
         self.navigationController?.pushViewController(vc, animated: true)
@@ -111,9 +114,8 @@ class CheckInTimeController: UIViewController, ApiService{
         }
     }
     
-    func setChartData(data: Data) {
-        
-    }
+    func setChartData(data: Data) {}
+    func callBackAfterDelete(message: String) {}
 }
 
 // MARK: - Implement UICollectionViewDelegate

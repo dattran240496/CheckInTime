@@ -46,8 +46,36 @@ class callApi{
             }
             }.resume()
     }
+    func deleteStaff(staffId: String) {
+        guard let url = URL(string: apiURL + "api/staff/\(staffId)") else {
+            return
+        }
+        let session                 = URLSession.shared
+        var request                 = URLRequest(url: url)
+        request.httpMethod          = "DELETE"
+        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+        session.dataTask(with: request) { (data, response, error) in
+            //if there is any error
+            if let e = error {
+                //displaying the error
+                print("Error Occurred: \(e)")
+            } else {
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
+                    DispatchQueue.main.async(execute: {
+                        if let message = json!["message"]{
+                            self.deletgate?.callBackAfterDelete(message: message as! String)
+                        }
+                    })
+                }catch{
+                    
+                }
+            }
+            }.resume()
+    }
 }
 protocol ApiService:class {
     func setData(data: Data)
     func setChartData(data: Data)
+    func callBackAfterDelete(message: String)
 }

@@ -224,6 +224,7 @@ class DetailChartController: UIViewController, ApiService{
     }
     func setData(data: Data) {
     }
+    func callBackAfterDelete(message: String) {}
     // find min data in array
     func findMin(arr: [Double]) -> Int {
         var min = arr[0]

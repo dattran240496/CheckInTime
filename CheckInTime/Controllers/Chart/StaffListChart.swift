@@ -146,6 +146,7 @@ class StaffListChart: UIViewController, ApiService{
     
     func setChartData(data: Data) {
     }
+    func callBackAfterDelete(message: String) {}
 }
 
 

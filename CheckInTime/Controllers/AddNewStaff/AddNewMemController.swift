@@ -93,36 +93,39 @@ class AddNewMemController: UIViewController{
                     guard let _ = data, error == nil else{
                         return
                     }
-                    if let response = response {
-                        print("Response: \n \(response)")
-                    }
-                    let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                    print(strData ?? "")
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataInStaffScene"), object: nil)
+                    DispatchQueue.main.async(execute: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
                 }
                 task.resume()
             }
         }else{
             // edit staff
-            let imgAvatar = UIImage(named: "imgAvatar-temp.png")
-            guard let url               = URL(string: apiURL + "api/staff/update-with-photo")  else { return }
-            var request                 = URLRequest(url: url)
-            let boundary                = "Boundary-\(UUID().uuidString)"
-            request.httpMethod          = "POST"
-            request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-            request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-            let param :[String: Any]    = [
-                "name":         "Dat Tran",
-                "staffId":      "59f92d28fe087d0a243164cb"
+            if self.txtInputName.text != ""{
+                let imgAvatar = UIImage(named: "imgAvatar-temp.png")
+                guard let url               = URL(string: apiURL + "api/staff/update-with-photo")  else { return }
+                var request                 = URLRequest(url: url)
+                let boundary                = "Boundary-\(UUID().uuidString)"
+                request.httpMethod          = "POST"
+                request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+                let param :[String: Any]    = [
+                    "name":         self.txtInputName.text!,
+                    "staffId":      self.staffId
                 ]
-            request.httpBody = createBody(parameters: param, boundary: boundary, data: UIImageJPEGRepresentation(imgAvatar!, 0.7)!, mimeType: "uploads/jpg", filename: "uploads/.jpg")
-            let task = URLSession.shared.dataTask(with: request){ data, response, error in
-                guard let _ = data, error == nil else{
-                    return
+                request.httpBody = createBody(parameters: param, boundary: boundary, data: UIImageJPEGRepresentation(imgAvatar!, 0.7)!, mimeType: "uploads/jpg", filename: "uploads/.jpg")
+                let task = URLSession.shared.dataTask(with: request){ data, response, error in
+                    guard let _ = data, error == nil else{
+                        return
+                    }
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataInStaffScene"), object: nil)
+                    DispatchQueue.main.async(execute: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
                 }
-                let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                print(strData ?? "")
+                task.resume()
             }
-            task.resume()
         }
     }
     
@@ -153,7 +156,6 @@ class AddNewMemController: UIViewController{
         body.appendString("--".appending(boundary.appending("--")))
         return body as Data
     }
-
 }
 
 
