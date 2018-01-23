@@ -9,6 +9,7 @@
 import UIKit
 
 class ChartCell: UICollectionViewCell, ApiService {
+    
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var viewCircleCheckIn: UIView!
@@ -16,12 +17,15 @@ class ChartCell: UICollectionViewCell, ApiService {
     @IBOutlet weak var lblPercentCheckIn: UILabel!
     @IBOutlet weak var lblPercentCheckOut: UILabel!
     var api = callApi()
+    var member: AnyObject!
     override func awakeFromNib() {
         super.awakeFromNib()
+        api.deletgate = self
         // Initialization code
     }
     func setValueForCell(member: AnyObject, dateIn: String, dateOut: String) {
         let staffId = member["_id"] as? String
+        self.member = member
         self.viewCircleCheckIn.layer.cornerRadius = viewCircleCheckIn.frame.size.width / 2
         self.viewCircleCheckOut.layer.cornerRadius = viewCircleCheckOut.frame.size.width / 2
         self.lblName.text = member["name"] as? String
@@ -31,7 +35,7 @@ class ChartCell: UICollectionViewCell, ApiService {
         guard let urls = imgURL else {
             return
         }
-        api.callApi(url: urls, member: member)
+        api.callApiGetStaff(url: urls)
         let urlMotivationWithStaff = URL(string: apiURL + "api/time-tracking?limit=all&dateStart=\(dateIn)&dateEnd=\(dateOut)&type=checkIn&staffId=\(staffId!)")
         guard let _ = urlMotivationWithStaff else {
             return
@@ -39,9 +43,8 @@ class ChartCell: UICollectionViewCell, ApiService {
         api.callApiChartStaff(url: urlMotivationWithStaff!)
     }
     
-    func setData(data: Data, member: AnyObject){
+    func setData(data: Data){
         let image = UIImage(data: data)
-        //displaying the image
         self.imgAvatar.layer.masksToBounds = true
         self.imgAvatar.layer.cornerRadius = 120
         let state = member["state"] as? Int ?? 0
@@ -86,12 +89,10 @@ class ChartCell: UICollectionViewCell, ApiService {
             print(error)
         }
     }
+    func callBackAfterDelete(message: String) {}
 }
 
-protocol ApiService:class {
-    func setData(data: Data,member: AnyObject)
-    func setChartData(data: Data)
-}
+
 
 
 

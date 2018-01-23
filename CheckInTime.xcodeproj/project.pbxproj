@@ -92,8 +92,6 @@
 		94D0953B1FDE7D7A000219B0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 94D0953A1FDE7D7A000219B0 /* camera.png */; };
 		94D0953D1FDE7F3B000219B0 /* AddNewMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */; };
 		94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */; };
-		E10D54761FF104F4004E39B4 /* EmojiPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10D54741FF104F4004E39B4 /* EmojiPopup.swift */; };
-		E10D54771FF104F4004E39B4 /* EmojiPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = E10D54751FF104F4004E39B4 /* EmojiPopup.xib */; };
 		E10D547E1FF10714004E39B4 /* happy.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D54791FF10713004E39B4 /* happy.png */; };
 		E10D547F1FF10714004E39B4 /* veryupset.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547A1FF10713004E39B4 /* veryupset.png */; };
 		E10D54801FF10714004E39B4 /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = E10D547B1FF10713004E39B4 /* ok.png */; };
@@ -102,14 +100,26 @@
 		E1288A8C20076B46004D781A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1288A8B20076B46004D781A /* API.swift */; };
 		E14628F41FF24320008FE420 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14628F31FF24320008FE420 /* UIImage.swift */; };
 		E14E140320089BBC00DA2E28 /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = E14E140220089BBC00DA2E28 /* chart.png */; };
+		E1613B95200DE9CB000F1524 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1613B94200DE9CB000F1524 /* bg2.png */; };
+		E1613B98200DF808000F1524 /* burnstown_dam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1613B92200DE83B000F1524 /* burnstown_dam.ttf */; };
+		E17450E7200D980F00F6CF86 /* cleanTop.png in Resources */ = {isa = PBXBuildFile; fileRef = E17450E4200D980D00F6CF86 /* cleanTop.png */; };
+		E17450E8200D980F00F6CF86 /* cleanBot.png in Resources */ = {isa = PBXBuildFile; fileRef = E17450E5200D980D00F6CF86 /* cleanBot.png */; };
+		E17450E9200D980F00F6CF86 /* cleanStaff.png in Resources */ = {isa = PBXBuildFile; fileRef = E17450E6200D980E00F6CF86 /* cleanStaff.png */; };
+		E17450EF200DAFEA00F6CF86 /* WinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17450ED200DAFEA00F6CF86 /* WinnerViewController.swift */; };
+		E17450F0200DAFEA00F6CF86 /* WinnerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E17450EE200DAFEA00F6CF86 /* WinnerViewController.xib */; };
+		E17450F3200DBABB00F6CF86 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17450F2200DBABB00F6CF86 /* Candidate.swift */; };
 		E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19E39171FFCC5E7006F641F /* StaffListChart.swift */; };
 		E19E391C1FFCCC4A006F641F /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E391B1FFCCC4A006F641F /* calendar.png */; };
 		E19E391F1FFCCD04006F641F /* arrow-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = E19E391E1FFCCD04006F641F /* arrow-bottom.png */; };
 		E1A50194200707FE00A76500 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A50192200707FE00A76500 /* ChartCell.swift */; };
 		E1A50195200707FE00A76500 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A50193200707FE00A76500 /* ChartCell.xib */; };
 		E1A5019720075F0300A76500 /* DetailChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5019620075F0300A76500 /* DetailChart.swift */; };
+		E1A5B579200C9771006DA54D /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A5B578200C9771006DA54D /* NSMutableData.swift */; };
 		E1A933272008C3F500CFAE8C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A933262008C3F500CFAE8C /* UIColor.swift */; };
 		E1AE2BB02008938C005BAD60 /* bar-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = E1AE2BAF2008938B005BAD60 /* bar-chart.png */; };
+		E1D9CA972010457100A6B80E /* DeleteStaffPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D9CA952010457100A6B80E /* DeleteStaffPopup.swift */; };
+		E1D9CA982010457100A6B80E /* DeleteStaffPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D9CA962010457100A6B80E /* DeleteStaffPopup.xib */; };
+		E1D9CA9B2010491F00A6B80E /* exclamation-mark.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D9CA9A2010491F00A6B80E /* exclamation-mark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -223,8 +233,6 @@
 		94D0953C1FDE7F3B000219B0 /* AddNewMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewMemController.swift; sourceTree = "<group>"; };
 		94E458171FE3697A00EE36C0 /* CheckInTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTimeController.swift; sourceTree = "<group>"; };
 		BCA9B8947D2EDF3F639FE3FF /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTimeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E10D54741FF104F4004E39B4 /* EmojiPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPopup.swift; sourceTree = "<group>"; };
-		E10D54751FF104F4004E39B4 /* EmojiPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiPopup.xib; sourceTree = "<group>"; };
 		E10D54791FF10713004E39B4 /* happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happy.png; sourceTree = "<group>"; };
 		E10D547A1FF10713004E39B4 /* veryupset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = veryupset.png; sourceTree = "<group>"; };
 		E10D547B1FF10713004E39B4 /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -233,15 +241,27 @@
 		E1288A8B20076B46004D781A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E14628F31FF24320008FE420 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E14E140220089BBC00DA2E28 /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
+		E1613B92200DE83B000F1524 /* burnstown_dam.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = burnstown_dam.ttf; sourceTree = "<group>"; };
+		E1613B94200DE9CB000F1524 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		E17450E4200D980D00F6CF86 /* cleanTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanTop.png; sourceTree = "<group>"; };
+		E17450E5200D980D00F6CF86 /* cleanBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanBot.png; sourceTree = "<group>"; };
+		E17450E6200D980E00F6CF86 /* cleanStaff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanStaff.png; sourceTree = "<group>"; };
+		E17450ED200DAFEA00F6CF86 /* WinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerViewController.swift; sourceTree = "<group>"; };
+		E17450EE200DAFEA00F6CF86 /* WinnerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WinnerViewController.xib; sourceTree = "<group>"; };
+		E17450F2200DBABB00F6CF86 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 		E19E39171FFCC5E7006F641F /* StaffListChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffListChart.swift; sourceTree = "<group>"; };
 		E19E391B1FFCCC4A006F641F /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
 		E19E391E1FFCCD04006F641F /* arrow-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-bottom.png"; sourceTree = "<group>"; };
 		E1A50192200707FE00A76500 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
 		E1A50193200707FE00A76500 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		E1A5019620075F0300A76500 /* DetailChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailChart.swift; sourceTree = "<group>"; };
+		E1A5B578200C9771006DA54D /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
 		E1A933262008C3F500CFAE8C /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		E1AE2BAF2008938B005BAD60 /* bar-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar-chart.png"; sourceTree = "<group>"; };
 		E1D474AED4C265CB3D46CD05 /* Pods-CheckInTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1D9CA952010457100A6B80E /* DeleteStaffPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStaffPopup.swift; sourceTree = "<group>"; };
+		E1D9CA962010457100A6B80E /* DeleteStaffPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteStaffPopup.xib; sourceTree = "<group>"; };
+		E1D9CA9A2010491F00A6B80E /* exclamation-mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exclamation-mark.png"; sourceTree = "<group>"; };
 		EA00D5A31D2414C6F4DD8DEA /* Pods-CheckInTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime.release.xcconfig"; sourceTree = "<group>"; };
 		F8948ED9844286261649FD67 /* Pods_CheckInTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheckInTimeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC34E97DE8924BA0AA224931 /* Pods-CheckInTimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheckInTimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -462,6 +482,10 @@
 		94B4A5B61FE7690A00D08561 /* cleanTime */ = {
 			isa = PBXGroup;
 			children = (
+				E1613B94200DE9CB000F1524 /* bg2.png */,
+				E17450E5200D980D00F6CF86 /* cleanBot.png */,
+				E17450E6200D980E00F6CF86 /* cleanStaff.png */,
+				E17450E4200D980D00F6CF86 /* cleanTop.png */,
 				9473B4271FE8BAAA00A2EFA3 /* bkg_wood_button.jpg */,
 				9473B4281FE8BAAA00A2EFA3 /* hand-shake-love.jpg */,
 				9473B4291FE8BAAB00A2EFA3 /* img_balloon_with_bg.jpg */,
@@ -605,6 +629,7 @@
 		E10D54621FF101EB004E39B4 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1613B91200DE830000F1524 /* Fonts */,
 				E10D54671FF10257004E39B4 /* Images */,
 				E10D54631FF101F5004E39B4 /* Sounds */,
 			);
@@ -646,8 +671,10 @@
 		E10D54661FF10240004E39B4 /* NewUI */ = {
 			isa = PBXGroup;
 			children = (
+				E1D9CA94201043CA00A6B80E /* DeleteStaffPopup */,
+				E17450F1200DBAAA00F6CF86 /* Candidate */,
+				E17450EC200DAFB900F6CF86 /* CleanWinner */,
 				E1A50191200707C900A76500 /* ChartCell */,
-				E10D546F1FF10422004E39B4 /* EmojiPopup */,
 				94E4581A1FE381B000EE36C0 /* CheckInTimePopup */,
 				94D095351FDE2E1E000219B0 /* MembersCollectionViewCell */,
 			);
@@ -657,6 +684,7 @@
 		E10D54671FF10257004E39B4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E1D9CA992010491600A6B80E /* staff */,
 				E19E391D1FFCCC4C006F641F /* chart */,
 				E10D54781FF106F0004E39B4 /* Emoji */,
 				94B4A5B71FE7691500D08561 /* checkin */,
@@ -713,15 +741,6 @@
 			path = CleanTime;
 			sourceTree = "<group>";
 		};
-		E10D546F1FF10422004E39B4 /* EmojiPopup */ = {
-			isa = PBXGroup;
-			children = (
-				E10D54741FF104F4004E39B4 /* EmojiPopup.swift */,
-				E10D54751FF104F4004E39B4 /* EmojiPopup.xib */,
-			);
-			path = EmojiPopup;
-			sourceTree = "<group>";
-		};
 		E10D54781FF106F0004E39B4 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,8 +758,34 @@
 			children = (
 				E14628F31FF24320008FE420 /* UIImage.swift */,
 				E1A933262008C3F500CFAE8C /* UIColor.swift */,
+				E1A5B578200C9771006DA54D /* NSMutableData.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E1613B91200DE830000F1524 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E1613B92200DE83B000F1524 /* burnstown_dam.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E17450EC200DAFB900F6CF86 /* CleanWinner */ = {
+			isa = PBXGroup;
+			children = (
+				E17450ED200DAFEA00F6CF86 /* WinnerViewController.swift */,
+				E17450EE200DAFEA00F6CF86 /* WinnerViewController.xib */,
+			);
+			path = CleanWinner;
+			sourceTree = "<group>";
+		};
+		E17450F1200DBAAA00F6CF86 /* Candidate */ = {
+			isa = PBXGroup;
+			children = (
+				E17450F2200DBABB00F6CF86 /* Candidate.swift */,
+			);
+			path = Candidate;
 			sourceTree = "<group>";
 		};
 		E19E39161FFCC58F006F641F /* Chart */ = {
@@ -770,6 +815,23 @@
 				E1A50193200707FE00A76500 /* ChartCell.xib */,
 			);
 			path = ChartCell;
+			sourceTree = "<group>";
+		};
+		E1D9CA94201043CA00A6B80E /* DeleteStaffPopup */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9CA952010457100A6B80E /* DeleteStaffPopup.swift */,
+				E1D9CA962010457100A6B80E /* DeleteStaffPopup.xib */,
+			);
+			path = DeleteStaffPopup;
+			sourceTree = "<group>";
+		};
+		E1D9CA992010491600A6B80E /* staff */ = {
+			isa = PBXGroup;
+			children = (
+				E1D9CA9A2010491F00A6B80E /* exclamation-mark.png */,
+			);
+			path = staff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -893,11 +955,11 @@
 				E10D54801FF10714004E39B4 /* ok.png in Resources */,
 				943E1E571FE7AA3C00747262 /* leverR02.jpg in Resources */,
 				9438CD531FDF967700789781 /* cleaning_materials.jpg in Resources */,
+				E17450E9200D980F00F6CF86 /* cleanStaff.png in Resources */,
 				943E1E561FE7AA3C00747262 /* Contents.json in Resources */,
 				E19E391F1FFCCD04006F641F /* arrow-bottom.png in Resources */,
 				9438CD541FDF967700789781 /* tree.png in Resources */,
 				943E1E4F1FE7AA3C00747262 /* leverR07.jpg in Resources */,
-				E10D54771FF104F4004E39B4 /* EmojiPopup.xib in Resources */,
 				9473B43C1FE8C6B400A2EFA3 /* btn03.mp3 in Resources */,
 				9438CD491FDF967700789781 /* mountain.png in Resources */,
 				94B4A5D61FE76A2900D08561 /* Contents.json in Resources */,
@@ -930,14 +992,17 @@
 				9473B4391FE8C6B400A2EFA3 /* runslot.mp3 in Resources */,
 				9438CD511FDF967700789781 /* veryupset.png in Resources */,
 				94B4A5D81FE76A2900D08561 /* Contents.json in Resources */,
+				E1613B95200DE9CB000F1524 /* bg2.png in Resources */,
 				9438CD471FDF967700789781 /* sun-evening.png in Resources */,
 				94B4A5D31FE76A2900D08561 /* img_lever_08.jpg in Resources */,
+				E17450E8200D980F00F6CF86 /* cleanBot.png in Resources */,
 				943E1E541FE7AA3C00747262 /* Contents.json in Resources */,
 				9473B43A1FE8C6B400A2EFA3 /* bingo.mp3 in Resources */,
 				9438CD4D1FDF967700789781 /* happy.png in Resources */,
 				94B4A5DF1FE76A2900D08561 /* img_lever_02.jpg in Resources */,
 				9438CD501FDF967700789781 /* veryhappy.png in Resources */,
 				94B4A5E11FE76A2900D08561 /* img_lever_06.jpg in Resources */,
+				E1613B98200DF808000F1524 /* burnstown_dam.ttf in Resources */,
 				9473B42B1FE8BAAB00A2EFA3 /* bkg_wood_button.jpg in Resources */,
 				9473B42E1FE8BAAB00A2EFA3 /* img_body3.jpg in Resources */,
 				943E1E5D1FE7AA3C00747262 /* leverR05.jpg in Resources */,
@@ -947,6 +1012,8 @@
 				9438CD4C1FDF967700789781 /* camera.png in Resources */,
 				94D0953B1FDE7D7A000219B0 /* camera.png in Resources */,
 				943E1E511FE7AA3C00747262 /* leverR08.jpg in Resources */,
+				E17450E7200D980F00F6CF86 /* cleanTop.png in Resources */,
+				E1D9CA982010457100A6B80E /* DeleteStaffPopup.xib in Resources */,
 				94CADC731FE8F8B600FB1442 /* imgAvatar-temp.png in Resources */,
 				E10D54821FF10714004E39B4 /* veryhappy.png in Resources */,
 				94B4A5DD1FE76A2900D08561 /* img_lever_04.jpg in Resources */,
@@ -959,12 +1026,14 @@
 				94B4A5DE1FE76A2900D08561 /* Contents.json in Resources */,
 				E10D547E1FF10714004E39B4 /* happy.png in Resources */,
 				E10D547F1FF10714004E39B4 /* veryupset.png in Resources */,
+				E1D9CA9B2010491F00A6B80E /* exclamation-mark.png in Resources */,
 				94367B121FDA3B9400DAC492 /* Main.storyboard in Resources */,
 				94B4A5DB1FE76A2900D08561 /* img_lever_07.jpg in Resources */,
 				943E1E531FE7AA3C00747262 /* leverR01.jpg in Resources */,
 				94B4A5D21FE76A2900D08561 /* Contents.json in Resources */,
 				E1AE2BB02008938C005BAD60 /* bar-chart.png in Resources */,
 				9473B43D1FE8C6B400A2EFA3 /* slot_machine_sounds.mp3 in Resources */,
+				E17450F0200DAFEA00F6CF86 /* WinnerViewController.xib in Resources */,
 				94B4A5DC1FE76A2900D08561 /* Contents.json in Resources */,
 				94B4A5E01FE76A2900D08561 /* Contents.json in Resources */,
 				943E1E591FE7AA3C00747262 /* leverR04.jpg in Resources */,
@@ -1144,17 +1213,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B4A5B51FE7586700D08561 /* CleanTimeController.swift in Sources */,
+				E1A5B579200C9771006DA54D /* NSMutableData.swift in Sources */,
 				E1A5019720075F0300A76500 /* DetailChart.swift in Sources */,
 				E14628F41FF24320008FE420 /* UIImage.swift in Sources */,
 				94E458181FE3697A00EE36C0 /* CheckInTimeController.swift in Sources */,
 				942E92B71FE3B2D800518040 /* CheckInTimePopUp.swift in Sources */,
 				94D0953D1FDE7F3B000219B0 /* AddNewMemController.swift in Sources */,
 				E1A933272008C3F500CFAE8C /* UIColor.swift in Sources */,
+				E1D9CA972010457100A6B80E /* DeleteStaffPopup.swift in Sources */,
 				94D095341FDE2A09000219B0 /* CONSTANT.swift in Sources */,
 				94367B0F1FDA3B9400DAC492 /* HomepageController.swift in Sources */,
+				E17450F3200DBABB00F6CF86 /* Candidate.swift in Sources */,
 				94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */,
+				E17450EF200DAFEA00F6CF86 /* WinnerViewController.swift in Sources */,
 				E1A50194200707FE00A76500 /* ChartCell.swift in Sources */,
-				E10D54761FF104F4004E39B4 /* EmojiPopup.swift in Sources */,
 				94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */,
@@ -1329,7 +1401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1346,7 +1418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5876V75LV3;
 				INFOPLIST_FILE = CheckInTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DatTran.CheckInTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

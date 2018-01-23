@@ -10,15 +10,14 @@ import UIKit
 
 class CheckInTimePopUp: UIView {
     
-    @IBOutlet var optionCheckView: UIView!
-    @IBOutlet weak var emojiView: UIView!
-    
-    @IBOutlet weak var viewContainer: UIView!
-    @IBOutlet var tapGuestView: UITapGestureRecognizer!
-    var staffId: String!
-    var staff: AnyObject!
-    var motivation: Int!
-    var methodCheckTime: String!
+    @IBOutlet var optionCheckView:      UIView!
+    @IBOutlet weak var emojiView:       UIView!
+    @IBOutlet weak var viewContainer:   UIView!
+    @IBOutlet var tapGuestView:         UITapGestureRecognizer!
+    var staffId:                        String!
+    var staff:                          AnyObject!
+    var motivation:                     Int!
+    var methodCheckTime:                String!
     override init(frame: CGRect) {
         super.init(frame: frame)
         initCommon()

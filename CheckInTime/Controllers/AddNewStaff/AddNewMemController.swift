@@ -17,28 +17,31 @@ class AddNewMemController: UIViewController{
     @IBOutlet weak var txtInputName: UITextField!
     @IBOutlet weak var txtInputEmail: UITextField!
     @IBOutlet weak var btnAddNow: UIButton!
-    var memberName: String!
-    var memberEmail: String!
-    var memberAvatar: String!
+    var memberName: String! // staff name if edit staff
+    var memberEmail: String! // staff email if edit staff
+    var memberAvatar: String! // staff avatar if edit staff
+    var memberImage: UIImage! // staff avatar if add new staff
+    var staffId: String!
+    var isAddNewStaff                   = true
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        btnAddNow.layer.borderWidth = 2
-        btnAddNow.layer.borderColor = UIColor.white.cgColor
-        btnAddNow.layer.cornerRadius = 30
+        btnAddNow.layer.borderWidth         = 2
+        btnAddNow.layer.borderColor         = UIColor.white.cgColor
+        btnAddNow.layer.cornerRadius        = 30
     }
     override func viewDidAppear(_ animated: Bool) {
-        btnCamera.layer.cornerRadius = btnCamera.frame.size.width / 2
-        btnCamera.layer.masksToBounds = true
-        btnCamera.layer.borderWidth = 1
-        btnCamera.layer.borderColor = UIColor.orange.cgColor
-        //btnCamera.imageView?.contentMode = .scaleToFill
-        if (memberEmail != nil) && (memberName != nil) && (memberAvatar != nil) {
-            txtInputName.text = memberName
-            txtInputEmail.text = memberEmail
-            btnAddNow.setTitle("edit member", for: .normal)
-            let imgURL = URL(string: apiURL + memberAvatar!)
-            let session = URLSession.shared
+        btnCamera.layer.cornerRadius        = btnCamera.frame.size.width / 2
+        btnCamera.layer.masksToBounds       = true
+        btnCamera.layer.borderWidth         = 1
+        btnCamera.layer.borderColor         = UIColor.orange.cgColor
+        if (memberEmail != nil) && (memberName != nil) && (memberAvatar != nil) { // if staff name and staff email and staff avatar not equal nil => edit staff
+            isAddNewStaff                               = false
+            txtInputName.text                           = memberName
+            txtInputEmail.text                          = memberEmail
+            txtInputEmail.isUserInteractionEnabled      = false
+            btnAddNow.setTitle("edit member", for: .normal) //
+            let imgURL              = URL(string: apiURL + memberAvatar!)
+            let session             = URLSession.shared
             session.dataTask(with: imgURL!) { (data, response, error) in
                 //if there is any error
                 if let e = error {
@@ -70,68 +73,93 @@ class AddNewMemController: UIViewController{
         
     }
     @IBAction func onAddNowAction(_ sender: Any) {
-        let imgAvatar = UIImageView(image: UIImage(named: "imgAvatar-temp.png"))
-        if self.txtInputName.text != "" && self.txtInputEmail.text != "" {
-            //let imgData: Data = UIImagePNGRepresentation(imgAvatar.image!)!
-            //let encodeAvatar = imgData.base64EncodedString(options: NSData.Base64EncodingOptions())
-            //            let session = URLSession(configuration: URLSessionConfiguration.default)
-            //            guard let urlAvatar = URL(string: apiURL + "photo") else { return }
-            //            var requestAvatar = URLRequest(url: urlAvatar)
-            //            requestAvatar.httpMethod = "POST"
-            //            requestAvatar.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-            //            requestAvatar.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            //            requestAvatar.addValue("application/json", forHTTPHeaderField: "Accept")
-            //            requestAvatar.httpBody = UIImagePNGRepresentation(imgAvatar.image!)
-            //            let dataTask = session.dataTask(with: requestAvatar){ (data, response, error) in
-            //                if let error = error {
-            //                    print("Something went wrong: \(error)")
-            //                }
-            //                if let response = response {
-            //                    print("Response: \n \(response)")
-            //                }
-            //            }
-            //            dataTask.resume()
-            
-            guard let base64String = UIImagePNGRepresentation((imgAvatar.image?.resized(toWidth: 300)!)!)?.base64EncodedString() else{
-                return
-            }
-            print(base64String)
-            print("data:image/png;base64," + base64String)
-            guard let url = URL(string: apiURL + "api/staff")  else { return }
-            var request = URLRequest(url: url)
-            
-            request.httpMethod = "POST"
-            request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            let param :[String: Any] = [
-                    "name": self.txtInputName.text!,
-                    "email": self.txtInputEmail.text!
-            ]
-            
-            do{
-                request.httpBody = try JSONSerialization.data(withJSONObject: param, options: [])
-            }catch{print("error")}
-            let task = URLSession.shared.dataTask(with: request){ data, response, error in
-                guard let _ = data, error == nil else{
-                    return
+        if isAddNewStaff{
+            // Add new staff
+            if self.txtInputName.text != "" && self.txtInputEmail.text != ""{
+                //            let imgAvatar = UIImageView(image: UIImage(named: "imgAvatar-temp.png"))
+                let imgAvatar = UIImage(named: "imgAvatar-temp.png")
+                guard let url               = URL(string: apiURL + "api/staff")  else { return }
+                var request                 = URLRequest(url: url)
+                let boundary                = "Boundary-\(UUID().uuidString)"
+                request.httpMethod          = "POST"
+                request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+                let param :[String: Any]    = [
+                    "name":         self.txtInputName.text!,
+                    "email":        self.txtInputEmail.text!,
+                    ]
+                request.httpBody = createBody(parameters: param, boundary: boundary, data: UIImageJPEGRepresentation(imgAvatar!, 0.7)!, mimeType: "uploads/jpg", filename: "uploads/.jpg")
+                let task = URLSession.shared.dataTask(with: request){ data, response, error in
+                    guard let _ = data, error == nil else{
+                        return
+                    }
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataInStaffScene"), object: nil)
+                    DispatchQueue.main.async(execute: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
                 }
-                if let response = response {
-                    print("Response: \n \(response)")
-                }
-                let strData = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                print(strData ?? "")
-                print("success")
+                task.resume()
             }
-            task.resume()
+        }else{
+            // edit staff
+            if self.txtInputName.text != ""{
+                let imgAvatar = UIImage(named: "imgAvatar-temp.png")
+                guard let url               = URL(string: apiURL + "api/staff/update-with-photo")  else { return }
+                var request                 = URLRequest(url: url)
+                let boundary                = "Boundary-\(UUID().uuidString)"
+                request.httpMethod          = "POST"
+                request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+                let param :[String: Any]    = [
+                    "name":         self.txtInputName.text!,
+                    "staffId":      self.staffId
+                ]
+                request.httpBody = createBody(parameters: param, boundary: boundary, data: UIImageJPEGRepresentation(imgAvatar!, 0.7)!, mimeType: "uploads/jpg", filename: "uploads/.jpg")
+                let task = URLSession.shared.dataTask(with: request){ data, response, error in
+                    guard let _ = data, error == nil else{
+                        return
+                    }
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadDataInStaffScene"), object: nil)
+                    DispatchQueue.main.async(execute: {
+                        self.navigationController?.popViewController(animated: true)
+                    })
+                }
+                task.resume()
+            }
         }
     }
+    
     @IBAction func onTakePictureAction(_ sender: Any) {
         self.takePhoto()
     }
-    
+    // create body for add new staff
+    func createBody(parameters: [String: Any],
+                    boundary: String,
+                    data: Data,
+                    mimeType: String,
+                    filename: String) -> Data {
+        let body = NSMutableData()
+        
+        let boundaryPrefix = "--\(boundary)\r\n"
+        
+        for (key, value) in parameters {
+            body.appendString(boundaryPrefix)
+            body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+            body.appendString("\(value)\r\n")
+        }
+        
+        body.appendString(boundaryPrefix)
+        body.appendString("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename)\"\r\n")
+        body.appendString("Content-Type: \(mimeType)\r\n\r\n")
+        body.append(data)
+        body.appendString("\r\n")
+        body.appendString("--".appending(boundary.appending("--")))
+        return body as Data
+    }
 }
 
+
+// MARK: - implement TextField
 extension AddNewMemController: UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
         scrlView.setContentOffset(CGPoint(x: 0, y: 300), animated: true)
@@ -146,12 +174,13 @@ extension AddNewMemController: UITextFieldDelegate{
     }
 }
 
+// MARK: - implement ImagePickerController
 extension AddNewMemController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func takePhoto() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
-            let imgPicker = UIImagePickerController()
-            imgPicker.delegate = self
-            imgPicker.sourceType = .camera
+            let imgPicker           = UIImagePickerController()
+            imgPicker.delegate      = self
+            imgPicker.sourceType    = .camera
             imgPicker.allowsEditing = false
             self.present(imgPicker, animated: true, completion: nil)
         }
@@ -159,7 +188,8 @@ extension AddNewMemController: UIImagePickerControllerDelegate, UINavigationCont
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImg = info[UIImagePickerControllerOriginalImage] as? UIImage{
             //btnCamera.imageView?.contentMode = .scaleAspectFit
-            memberAvatar = nil
+            memberAvatar    = nil
+            memberImage     = pickerImg
             btnCamera.setImage(pickerImg, for: .normal)
         }
         picker.dismiss(animated: true, completion: nil)
