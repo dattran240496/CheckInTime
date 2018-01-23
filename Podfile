@@ -7,6 +7,7 @@ target 'CheckInTime' do
 
   # Pods for CheckInTime
 pod "SwiftChart"
+pod 'SideMenu'
   target 'CheckInTimeTests' do
     inherit! :search_paths
     # Pods for testing

@@ -104,28 +104,33 @@ class CleanTimeController: UIViewController, ApiService{
     
     // get all staff
     func getDataMembers() {
-        guard let url = URL(string: apiURL + "api/staff")  else { return }
+        guard let url = URL(string: apiURL + "users")  else { return }
         api.callApiGetStaff(url: url)
     }
     // random 4 numbers, for 0 to staff lenght
     @objc func startRandom(_ sender: Timer){
+        var numberRandom = 0
         self.seconds += 1
         if (seconds <= timeClean){
             self.arrCleanPerson = []
             if self.staffForClean.count >= 4{
-                for _ in 1...4{
-                    soundRandom.play()
-                    self.random(arrMem: self.staffForClean)
-                }
-                self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
+                numberRandom = 4
+            }else{
+                //self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
+                numberRandom = self.staffForClean.count
             }
+            for _ in 1...numberRandom{
+                soundRandom.play()
+                self.random(arrMem: self.staffForClean)
+            }
+            self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
         }else{
-            self.isRandom           = true
             self.isDoneRandone      = true
             self.seconds            = 0
             self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
             self.soundRandom.pause()
             self.timerCleanTime.invalidate()
+            self.isRandom           = true
         }
     }
     // random
@@ -149,10 +154,11 @@ class CleanTimeController: UIViewController, ApiService{
     
     // set 4 staff at initial screen
     func setImgCleanStaff(arrRandom: [Int], arrMem: [AnyObject]) {
-        for i in 1...4{
+        for i in 1...arrRandom.count{
             let person      = arrMem[arrRandom[i - 1]]
-            let url         = (person as AnyObject)["avatarUrl"] as? String!
-            let imgURL      = URL(string: apiURL + url!)
+            let imgAvatar   = (person as AnyObject)["image"] as AnyObject
+            let url         = imgAvatar["url"] as? String ?? ""
+            let imgURL      = URL(string: apiURL + url)
             let session     = URLSession.shared
             session.dataTask(with: imgURL!) { (data, response, error) in
                 //if there is any error
@@ -168,42 +174,42 @@ class CleanTimeController: UIViewController, ApiService{
                         DispatchQueue.main.async(execute: {
                             switch i{
                             case 1:
-                                self.imgViewClean1.image = image
+                                self.imgViewClean1.image = image ?? UIImage(named: "imgAvatar-temp.png")
                                 self.lblName1.text = (person as AnyObject)["name"] as? String!
                                 break
                             case 2:
-                                self.imgViewClean2.image = image
+                                self.imgViewClean2.image = image ?? UIImage(named: "imgAvatar-temp.png")
                                 self.lblName2.text = (person as AnyObject)["name"] as? String!
                                 break
                             case 3:
-                                self.imgViewClean3.image = image
+                                self.imgViewClean3.image = image ?? UIImage(named: "imgAvatar-temp.png")
                                 self.lblName3.text = (person as AnyObject)["name"] as? String!
                                 break
                             case 4:
-                                self.imgViewClean4.image = image
+                                self.imgViewClean4.image = image ?? UIImage(named: "imgAvatar-temp.png")
                                 self.lblName4.text = (person as AnyObject)["name"] as? String!
                                 break
                             default:
                                 break
                             }
-                            if self.isRandom == true{
-                                DispatchQueue.main.async(execute:{
-                                    
-                                    let winner1             = Candicate(name: self.lblName1.text!, avatar: self.imgViewClean1.image!)
-                                    let winner2             = Candicate(name: self.lblName2.text!, avatar: self.imgViewClean2.image!)
-                                    let winner3             = Candicate(name: self.lblName3.text!, avatar: self.imgViewClean3.image!)
-                                    let winner4             = Candicate(name: self.lblName4.text!, avatar: self.imgViewClean4.image!)
-                                    let cleanWinner = WinnerViewController(nibName: "WinnerViewController", bundle: nil)
+                        })
+                        if self.isRandom == true{
+                            DispatchQueue.main.async(execute:{
+                                let winner1             = Candicate(name: self.lblName1.text!, avatar: self.imgViewClean1.image ?? UIImage(named: "imgAvatar-temp.png")!)
+                                let winner2             = Candicate(name: self.lblName2.text!, avatar: self.imgViewClean2.image ?? UIImage(named: "imgAvatar-temp.png")!)
+                                let winner3             = Candicate(name: self.lblName3.text!, avatar: self.imgViewClean3.image ?? UIImage(named: "imgAvatar-temp.png")!)
+                                let winner4             = Candicate(name: self.lblName4.text!, avatar: self.imgViewClean4.image ?? UIImage(named: "imgAvatar-temp.png")!)
+                                DispatchQueue.main.async(execute: {
+                                    let cleanWinner         = WinnerViewController(nibName: "WinnerViewController", bundle: nil)
                                     cleanWinner.winner1     = winner1
                                     cleanWinner.winner2     = winner2
                                     cleanWinner.winner3     = winner3
                                     cleanWinner.winner4     = winner4
                                     //cleanWinner.setWinners(winner1: winner1, winner2: winner2, winner3: winner3, winner4: winner4)
                                     self.present(cleanWinner, animated: true, completion: nil)
-                                })
-                            }
-                        })
-                        
+                                    })
+                            })
+                        }
                     } else {
                         print("Image file is currupted")
                     }
@@ -215,19 +221,24 @@ class CleanTimeController: UIViewController, ApiService{
     
     func setData(data: Data) {
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-            let staffs = json!["data"]! as! NSArray
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSArray
+            let staffs = json!
             for staff in staffs{
                 let state = (staff as AnyObject)["state"] as? Int ?? 0
                 if state == 1{
-                    self.staffForClean.append(staff as AnyObject)
+                    //self.staffForClean.append(staff as AnyObject)
                 }
+                self.staffForClean.append(staff as AnyObject)
             }
-            print(self.staffForClean)
-            if self.staffForClean.count >= 3{
-                for _ in 1...4{
-                    self.random(arrMem: self.staffForClean)
-                }
+            var numberRandom = 0
+            if self.staffForClean.count >= 4{
+                numberRandom = 4
+            }else{
+                //self.arrCleanPerson = self.staffForClean
+                numberRandom = self.staffForClean.count
+            }
+            for _ in 1...numberRandom{
+                self.random(arrMem: self.staffForClean)
             }
             self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
         } catch {

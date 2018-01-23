@@ -32,11 +32,13 @@ class WinnerViewController: UIViewController {
     var swipeGesture: UISwipeGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
-        swipeGesture                            = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+        swipeGesture                            = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
         swipeGesture.direction                  = .down
         imgBackground.addGestureRecognizer(swipeGesture)
         imgBackground.isUserInteractionEnabled  = true
-        setWinners(winner1: winner1, winner2: winner2, winner3: winner3, winner4: winner4)
+        DispatchQueue.main.async(execute: {
+            self.setWinners(winner1: self.winner1, winner2: self.winner2, winner3: self.winner3, winner4: self.winner4)
+        })
         let url                                 = Bundle.main.path(forResource: "bingo", ofType: "mp3")!
         do{
             self.soundDoneRandomStaff           = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
@@ -51,20 +53,36 @@ class WinnerViewController: UIViewController {
         self.soundDoneRandomStaff.play()
     }
     func setWinners(winner1: Candicate, winner2: Candicate, winner3: Candicate, winner4: Candicate){
-        imgWinner1.image            = winner1.avatar
-        lblNameWinner1.text         = winner1.name
-        imgWinner2.image            = winner2.avatar
-        lblNameWinner2.text         = winner2.name
-        imgWinner3.image            = winner3.avatar
-        lblNameWinner3.text         = winner3.name
-        imgWinner4.image            = winner4.avatar
-        lblNameWinner4.text         = winner4.name
+        if winner1.name != ""{
+            self.imgWinner1.image            = winner1.avatar
+            self.lblNameWinner1.text         = winner1.name
+        }
+        if winner2.name != ""{
+            self.imgWinner2.image            = winner2.avatar
+            self.lblNameWinner2.text         = winner2.name
+        }
+        if winner3.name != ""{
+            self.imgWinner3.image            = winner3.avatar
+            self.lblNameWinner3.text         = winner3.name
+        }
+        if winner4.name != ""{
+            self.imgWinner4.image            = winner4.avatar
+            self.lblNameWinner4.text         = winner4.name
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @objc func handleSwipe(){
+    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer){
+        winner1.avatar      = nil
+        winner1.name        = nil
+        winner2.avatar      = nil
+        winner2.name        = nil
+        winner3.avatar      = nil
+        winner3.name        = nil
+        winner4.avatar      = nil
+        winner4.name        = nil
         self.dismiss(animated: true, completion: nil)
     }
     /*
