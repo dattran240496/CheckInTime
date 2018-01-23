@@ -41,6 +41,8 @@ class MembersCollectionViewCell: UICollectionViewCell {
                             self.imgAvatar.layer.borderColor = UIColor.green.cgColor
                         }else if state == 2{
                             self.imgAvatar.layer.borderColor = UIColor.red.cgColor
+                        }else{
+                            self.imgAvatar.layer.borderColor = UIColor.black.cgColor
                         }
                         self.imgAvatar.layer.borderWidth = 2
                         self.imgAvatar.image = image

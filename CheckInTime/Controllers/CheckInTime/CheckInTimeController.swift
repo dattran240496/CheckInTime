@@ -8,21 +8,25 @@
 
 import Foundation
 import UIKit
-class CheckInTimeController: UIViewController{
-    
+class CheckInTimeController: UIViewController, ApiService{
+    @IBOutlet weak var btnChart: UIBarButtonItem!
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var lblDateTime: UILabel!
     @IBOutlet weak var collectionViewMemList: UICollectionView!
     @IBOutlet weak var imgViewSun: UIImageView!
-    var numberOfRepeat:Double = 1
-    var dataMembers = NSArray()
+    var numberOfRepeat:Double       = 1
+    var dataMembers                 = NSArray()
     //var emojiPopup = EmojiPopup()
     var staffForCheckTime: AnyObject!
-    var timer = Timer()
+    var timer                       = Timer()
+    let api                         = callApi()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupSideMenu(storyBoardName: "Main", navigationControllerIndetifier: "UISideMenuNavigationController",transition: .menuSlideIn)
+        api.deletgate = self
         // run animation Sun
         self.animateSun()
-        let classNib = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
+        let classNib    = UINib(nibName: "MembersCollectionViewCell", bundle: nil)
         self.collectionViewMemList?.register(classNib, forCellWithReuseIdentifier: "Cell")
         // get info employee
         self.getDataMembers()
@@ -38,19 +42,45 @@ class CheckInTimeController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
         timer.fire()
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-    }
-    @objc func onChartAction() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    @IBAction func onChartAction(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        //addWindow()
     }
     
+    func addWindow(){
+        if let window = UIApplication.shared.keyWindow as? UIWindow{
+//                let button = UIButton()
+//                button.backgroundColor = .red
+//                button.frame = CGRect(x: 900, y: 50, width: 40, height: 40)
+//                window.addSubview(button)
+            
+        }
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        lblDateTime.font = lblDateTime.font.withSize(self.view.frame.size.height / 10)
+    }
+    @objc func onChartAction() {
+        DispatchQueue.main.async(execute: {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+    }
+    @IBAction func onChartAction(_ sender: Any) {
+        DispatchQueue.main.async(execute: {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+    }
+    @IBAction func onOpenSideMenuAction(_ sender: Any) {
+        //present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
+    
+    // timer
     @objc func getTime(_ sender: Timer){
         let dateTime = Date()
         let formatter = DateFormatter()
@@ -58,10 +88,9 @@ class CheckInTimeController: UIViewController{
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         let result = formatter.string(from: dateTime)
-     
         lblDateTime.text = "\(result)"
     }
-    
+    // sun animation
     func animateSun(){
         UIView.animate(withDuration: 6, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
             self.imgViewSun.transform = CGAffineTransform(rotationAngle: -CGFloat(self.numberOfRepeat * Double.pi))
@@ -70,50 +99,48 @@ class CheckInTimeController: UIViewController{
             self.animateSun()
         })
     }
-    
+    // get all staff
     func getDataMembers() {
         guard let url = URL(string: apiURL + "api/staff")  else { return }
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
-        let session = URLSession.shared
-        session.dataTask(with: request){ (data, response, error) in
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-                    let data = json!["data"]! as! NSArray
-                    self.dataMembers = data
-                    DispatchQueue.main.async {
-                        self.collectionViewMemList.reloadData()
-                    }
-                } catch {
-                    print(error)
-                }
-            }
-            }.resume()
-        
+        api.callApiGetStaff(url: url)
     }
-    
+    // reload collection view when check in time
     @objc func reloadCollectionView(notification: NSNotification){
         self.getDataMembers()
         DispatchQueue.main.async {
             self.collectionViewMemList.reloadData()
         }
     }
-    
+    // show alert if you press "Check In" button and you are "Check In"
     @objc func showAlertCheckIn(notification: NSNotification){
         let alertController = UIAlertController(title: "Warning", message: "You have already checked in.", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in}
         alertController.addAction(yesAction)
-       self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
-    
+    // show alert if you press "Check Out" button and you are "Check Out"
     @objc func showAlertCheckOut(notification: NSNotification){
         let alertController = UIAlertController(title: "Warning", message: "You have already checked out.", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "OK", style: .default) { (action) -> Void in}
         alertController.addAction(yesAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func setData(data: Data) {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            let dataStaff = json!["data"]! as! NSArray
+            self.dataMembers = dataStaff
+            DispatchQueue.main.async {
+                self.collectionViewMemList.reloadData()
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func setChartData(data: Data) {}
+    func callBackAfterDelete(message: String) {}
 }
 
 // MARK: - Implement UICollectionViewDelegate
@@ -125,7 +152,7 @@ extension CheckInTimeController : UICollectionViewDelegateFlowLayout {
 
 // MARK: - Implement UICollectionViewDataSource
 extension CheckInTimeController: UICollectionViewDataSource{
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataMembers.count
     }
@@ -142,6 +169,8 @@ extension CheckInTimeController: UICollectionViewDataSource{
     }
 }
 
+
+// MARK: - implement CollectionView
 extension CheckInTimeController: UICollectionViewDelegate{
     func scrollViewDidChangeAdjustedContentInset(_ scrollView: UIScrollView) {
         self.view.layoutIfNeeded()

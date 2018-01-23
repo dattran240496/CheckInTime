@@ -10,17 +10,20 @@ import Foundation
 import UIKit
 class callApi{
     weak var deletgate: ApiService?
-    func callApi(url: URL,member: AnyObject){
-        let session = URLSession.shared
-        session.dataTask(with: url) { (data, response, error) in
+    func callApiGetStaff(url: URL){
+        let session                 = URLSession.shared
+        var request                 = URLRequest(url: url)
+        request.httpMethod          = "GET"
+        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+        session.dataTask(with: request) { (data, response, error) in
             //if there is any error
             if let e = error {
-                //displaying the message
+                //displaying the error
                 print("Error Occurred: \(e)")
             } else {
                 DispatchQueue.main.async(execute: {
                     if let  _ = data{
-                        self.deletgate?.setData(data: data! , member: member )
+                        self.deletgate?.setData(data: data!)
                     }
                 })
             }
@@ -43,4 +46,36 @@ class callApi{
             }
             }.resume()
     }
+    func deleteStaff(staffId: String) {
+        guard let url = URL(string: apiURL + "api/staff/\(staffId)") else {
+            return
+        }
+        let session                 = URLSession.shared
+        var request                 = URLRequest(url: url)
+        request.httpMethod          = "DELETE"
+        request.addValue("Hello! I am mobile", forHTTPHeaderField: "x-access-token-mobile")
+        session.dataTask(with: request) { (data, response, error) in
+            //if there is any error
+            if let e = error {
+                //displaying the error
+                print("Error Occurred: \(e)")
+            } else {
+                do{
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: Any]
+                    DispatchQueue.main.async(execute: {
+                        if let message = json!["message"]{
+                            self.deletgate?.callBackAfterDelete(message: message as! String)
+                        }
+                    })
+                }catch{
+                    
+                }
+            }
+            }.resume()
+    }
+}
+protocol ApiService:class {
+    func setData(data: Data)
+    func setChartData(data: Data)
+    func callBackAfterDelete(message: String)
 }

@@ -7,7 +7,9 @@
 //
 
 import Foundation
-let apiURL = "http://localhost:8080/"
+//let apiURL = "http://localhost:8080/"
+//let apiURL = "http://103.7.41.39:8080/"
+let apiURL = "https://api.rubyist.asia/v1/"
 let arrMotivation = [
     "very upset",
     "upset",
@@ -15,3 +17,4 @@ let arrMotivation = [
     "happy",
     "very happy"
 ]
+let timeClean = 40 // clean time

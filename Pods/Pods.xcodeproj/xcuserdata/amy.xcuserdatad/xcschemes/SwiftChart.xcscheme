@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FDE6CB0E2D7CFFE4537B5835B773BD80'
+               BlueprintIdentifier = 'A6D14B480A070C2F35332F982B100000'
                BlueprintName = 'SwiftChart'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftChart.framework'>

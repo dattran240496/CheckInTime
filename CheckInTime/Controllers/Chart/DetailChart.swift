@@ -12,24 +12,24 @@ import SwiftChart
 
 class DetailChartController: UIViewController, ApiService{
 
-    @IBOutlet weak var txtInputDateStart: UITextField!
-    @IBOutlet weak var txtInputDateEnd: UITextField!
-    @IBOutlet weak var btnDateStartCalendar: UIButton!
-    @IBOutlet weak var lblMotivation: UILabel!
-    @IBOutlet weak var btnDateEndCalendar: UIButton!
-    @IBOutlet weak var btnSearchDate: UIButton!
-    @IBOutlet weak var viewChart: UIView!
-    @IBOutlet weak var lblCheckOutAverage: UILabel!
-    @IBOutlet weak var lblCheckInAverage: UILabel!
+    @IBOutlet weak var txtInputDateStart:       UITextField!
+    @IBOutlet weak var txtInputDateEnd:         UITextField!
+    @IBOutlet weak var btnDateStartCalendar:    UIButton!
+    @IBOutlet weak var lblMotivation:           UILabel!
+    @IBOutlet weak var btnDateEndCalendar:      UIButton!
+    @IBOutlet weak var btnSearchDate:           UIButton!
+    @IBOutlet weak var viewChart:               UIView!
+    @IBOutlet weak var lblCheckOutAverage:      UILabel!
+    @IBOutlet weak var lblCheckInAverage:       UILabel!
     
-    var api = callApi()
-    let datePickerStart = UIDatePicker()
-    let datePickerEnd = UIDatePicker()
+    var api                 = callApi()
+    let datePickerStart     = UIDatePicker() // DatePicker for Start Date
+    let datePickerEnd       = UIDatePicker() // DatePicker for Start Date
     
-    var staff: AnyObject!
-    var dateIn: String!
-    var dateOut: String!
-    var staffId: String!
+    var staff:      AnyObject! // staff for search chart
+    var dateIn:     String! // Start Date for search
+    var dateOut:    String! // End Date for search
+    var staffId:    String! // staff id for search chart
     override func viewDidLoad() {
         super.viewDidLoad()
         self.txtInputDateStart.text      = dateIn
@@ -45,7 +45,7 @@ class DetailChartController: UIViewController, ApiService{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // init DatePicker
     func initdatePicker() {
         datePickerStart.datePickerMode          = .date
         datePickerStart.backgroundColor         = UIColor.white
@@ -77,7 +77,7 @@ class DetailChartController: UIViewController, ApiService{
     
     @IBAction func onSearchChartAction(_ sender: Any) {
     }
-    
+    // "Done" button on DatePicket
     @objc func handleDoneButton(_ sender: UIButton) {
         txtInputDateStart.resignFirstResponder()
         txtInputDateEnd.resignFirstResponder()
@@ -96,7 +96,6 @@ class DetailChartController: UIViewController, ApiService{
         dateFormatter.dateStyle     = .short
         dateFormatter.timeStyle     = .none
         dateFormatter.dateFormat    = "yyyy-MM-dd"
-        print(dateFormatter.string(from: sender.date))
         txtInputDateEnd.text        = dateFormatter.string(from: sender.date)
     }
     
@@ -109,11 +108,8 @@ class DetailChartController: UIViewController, ApiService{
         doneButton.addTarget(self, action: #selector(handleDoneButton(_:)), for: UIControlEvents.touchDragInside)
         datePickerStart.addSubview(doneButton)
     }
-    
+    // get staff chart with staff id
     func getStaffChart() {
-        print(dateIn)
-        print(dateOut)
-        print(staffId)
         let urlMotivationWithStaff = URL(string: apiURL + "api/time-tracking?limit=all&dateStart=\(dateIn!)&dateEnd=\(dateOut!)&type=checkIn&staffId=\(staffId!)")
         guard let _ = urlMotivationWithStaff else {
             print("error")
@@ -122,7 +118,8 @@ class DetailChartController: UIViewController, ApiService{
         api.deletgate = self
         api.callApiChartStaff(url: urlMotivationWithStaff!)
     }
-     func setChartData(data: Data) {
+    // draw chart
+    func setChartData(data: Data) {
         do {
             let json                    = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
             let arrData                 = json!["data"]! as! NSArray
@@ -147,32 +144,58 @@ class DetailChartController: UIViewController, ApiService{
                     labelsAsString.append(formater.string(from: dateIn!))
                 }
                 DispatchQueue.main.async(execute: {
-                    let minMotivationCheckIn = self.findMin(arr: arrMotivationCheckIn)
-                    let maxMotivationCheckIn = self.findMax(arr: arrMotivationCheckIn)
-                    let minMotivationCheckOut = self.findMin(arr: arrMotivationCheckOut)
-                    let maxMotivationCheckOut = self.findMax(arr: arrMotivationCheckOut)
+                    let minMotivationCheckIn    = self.findMin(arr: arrMotivationCheckIn)
+                    let maxMotivationCheckIn    = self.findMax(arr: arrMotivationCheckIn)
+                    let minMotivationCheckOut   = self.findMin(arr: arrMotivationCheckOut)
+                    let maxMotivationCheckOut   = self.findMax(arr: arrMotivationCheckOut)
                     
-                    if minMotivationCheckIn == maxMotivationCheckIn {
-                        self.lblCheckInAverage.text =
-                        "\(arrMotivation[Int(minMotivationCheckIn - 1)]) = \(String(format: "%.2f", arguments: [minMotivationCheckIn * 100 / (5 * Double(arrMotivationCheckIn.count))]))%"
-                    }else{
-                        var sumMotiCheckIn: Double = 0
-                        for moti in arrMotivationCheckIn{
-                            sumMotiCheckIn += moti
+                    if arrMotivationCheckIn.count != 0{
+                        if minMotivationCheckIn == maxMotivationCheckIn {
+                            let nameMotivation              = arrMotivation[Int(arrMotivationCheckIn[minMotivationCheckIn] - 1)]
+                            let percentMotivation           = String(format: "%.2f", arguments: [arrMotivationCheckIn[minMotivationCheckIn] * 100 / 5])
+                            self.lblCheckInAverage.text     = "\(nameMotivation) = \(percentMotivation)%"
+                        }else{
+                            var sumMotiCheckIn: Double  = 0
+                            var countMinCheckIn         = 0
+                            var countMaxCheckIn         = 0
+                            for moti in arrMotivationCheckIn{
+                                sumMotiCheckIn += moti
+                                if moti == arrMotivationCheckIn[minMotivationCheckIn]{
+                                    countMinCheckIn += 1
+                                }
+                                if moti == arrMotivationCheckIn[maxMotivationCheckIn]{
+                                    countMaxCheckIn += 1
+                                }
+                            }
+                            let nameMinMotivation           = arrMotivation[Int(arrMotivationCheckIn[minMotivationCheckIn] - 1)]
+                            let percentMotivation           = String(format: "%.2f", arguments: [(sumMotiCheckIn) * 100 / (5 * Double(arrMotivationCheckIn.count))])
+                            let nameMaxMotivation           = arrMotivation[Int(arrMotivationCheckIn[maxMotivationCheckIn] - 1)]
+                            self.lblCheckInAverage.text     = "\(nameMinMotivation) < \(percentMotivation)% < \(nameMaxMotivation)"
                         }
-                        self.lblCheckInAverage.text =
-                        "\(arrMotivation[Int(minMotivationCheckIn - 1)]) < \(String(format: "%.2f", arguments: [sumMotiCheckIn * 100 / (5 * Double(arrMotivationCheckIn.count))]))% < \(arrMotivation[Int(maxMotivationCheckIn - 1)])"
-                    }
-                    if minMotivationCheckOut == maxMotivationCheckOut {
-                        self.lblCheckOutAverage.text = "\(arrMotivation[Int(minMotivationCheckOut - 1)]) = \(String(format: "%.2f", arguments: [minMotivationCheckOut * 100 / (5 * Double(arrMotivationCheckIn.count))]))%"
-                    }else{
-                        var sumMotiCheckOut: Double = 0
-                        for moti in arrMotivationCheckOut{
-                            sumMotiCheckOut += moti
-                        }
-                        self.lblCheckOutAverage.text = "\(arrMotivation[Int(minMotivationCheckOut - 1)]) < \((5 * Double(arrMotivationCheckOut.count)))% < \(arrMotivation[Int(maxMotivationCheckIn - 1)])"
                     }
                     
+                    if arrMotivationCheckOut.count != 0{
+                        if minMotivationCheckOut == maxMotivationCheckOut {
+                            let nameMotivation:String
+                            if arrMotivationCheckOut[minMotivationCheckOut] - 1 < 0{
+                                nameMotivation              = "none"
+                            }else{
+                                nameMotivation              = arrMotivation[Int(arrMotivationCheckOut[minMotivationCheckOut] - 1)]
+                            }
+                            let percentMotivation           = String(format: "%.2f", arguments: [arrMotivationCheckOut[minMotivationCheckOut] * 100 / 5])
+                            self.lblCheckOutAverage.text    = "\(nameMotivation) = \(percentMotivation)%"
+                        }else{
+                            var sumMotiCheckOut: Double = 0
+                            for moti in arrMotivationCheckOut{
+                                sumMotiCheckOut += moti
+                            }
+                            let nameMinMotivation           = arrMotivation[Int(arrMotivationCheckOut[minMotivationCheckOut] - 1)]
+                            let percentMotivation           = String(format: "%.2f", arguments: [Double(sumMotiCheckOut) * 100 / (5 * Double(arrMotivationCheckOut.count))])
+                            let nameMaxMotivation           = arrMotivation[Int(arrMotivationCheckOut[maxMotivationCheckOut] - 1)]
+                            self.lblCheckOutAverage.text    = "\(nameMinMotivation) < \(percentMotivation)% < \(nameMaxMotivation)"
+                        }
+                    }
+                    // set chart with data
                     let chart                   = Chart(frame: CGRect(x: 0, y: 0, width: self.viewChart.frame.size.width, height: self.viewChart.frame.size.height))
                     chart.maxY                  = 5
                     chart.maxX                  = Double(labelsAsString.count)
@@ -196,29 +219,34 @@ class DetailChartController: UIViewController, ApiService{
                     
                 })
             }} catch {
-            print(error)
+                print(error)
         }
     }
-    func setData(data: Data, member: AnyObject) {
+    func setData(data: Data) {
     }
-    
-    func findMin(arr: [Double]) -> Double {
+    func callBackAfterDelete(message: String) {}
+    // find min data in array
+    func findMin(arr: [Double]) -> Int {
         var min = arr[0]
-        for data in arr{
-            if min < data{
-                min = data
+        var indexMin = 0
+        for i in 0...arr.count - 1{
+            if min > arr[i] && arr[i] != 0 || min == 0{
+                min = arr[i]
+                indexMin = i
             }
         }
-        return min
+        return indexMin
     }
-    
-    func findMax(arr: [Double]) -> Double {
+    // find max data in array
+    func findMax(arr: [Double]) -> Int {
         var max = arr[0]
-        for data in arr{
-            if max > data{
-                max = data
+        var indexMax = 0
+        for i in 0...arr.count - 1{
+            if max < arr[i]{
+                max = arr[i]
+                indexMax = i
             }
         }
-        return max
+        return indexMax
     }
 }
