@@ -100,6 +100,13 @@
 		E1288A8C20076B46004D781A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1288A8B20076B46004D781A /* API.swift */; };
 		E14628F41FF24320008FE420 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14628F31FF24320008FE420 /* UIImage.swift */; };
 		E14E140320089BBC00DA2E28 /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = E14E140220089BBC00DA2E28 /* chart.png */; };
+		E15999632016CD45006C87F8 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15999622016CD45006C87F8 /* UIViewController.swift */; };
+		E15999662016D699006C87F8 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15999652016D699006C87F8 /* SideMenuController.swift */; };
+		E15999702016DD0A006C87F8 /* cleaning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E159996D2016DD09006C87F8 /* cleaning.jpg */; };
+		E15999712016DD0A006C87F8 /* staff-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E159996E2016DD0A006C87F8 /* staff-icon.png */; };
+		E15999722016DD0A006C87F8 /* checkInTime.png in Resources */ = {isa = PBXBuildFile; fileRef = E159996F2016DD0A006C87F8 /* checkInTime.png */; };
+		E15999752016E335006C87F8 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15999732016E335006C87F8 /* SideMenuCell.swift */; };
+		E15999762016E335006C87F8 /* SideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E15999742016E335006C87F8 /* SideMenuCell.xib */; };
 		E1613B95200DE9CB000F1524 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1613B94200DE9CB000F1524 /* bg2.png */; };
 		E1613B98200DF808000F1524 /* burnstown_dam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1613B92200DE83B000F1524 /* burnstown_dam.ttf */; };
 		E17450E7200D980F00F6CF86 /* cleanTop.png in Resources */ = {isa = PBXBuildFile; fileRef = E17450E4200D980D00F6CF86 /* cleanTop.png */; };
@@ -241,6 +248,13 @@
 		E1288A8B20076B46004D781A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E14628F31FF24320008FE420 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E14E140220089BBC00DA2E28 /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
+		E15999622016CD45006C87F8 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E15999652016D699006C87F8 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		E159996D2016DD09006C87F8 /* cleaning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cleaning.jpg; sourceTree = "<group>"; };
+		E159996E2016DD0A006C87F8 /* staff-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "staff-icon.png"; sourceTree = "<group>"; };
+		E159996F2016DD0A006C87F8 /* checkInTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkInTime.png; sourceTree = "<group>"; };
+		E15999732016E335006C87F8 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		E15999742016E335006C87F8 /* SideMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuCell.xib; sourceTree = "<group>"; };
 		E1613B92200DE83B000F1524 /* burnstown_dam.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = burnstown_dam.ttf; sourceTree = "<group>"; };
 		E1613B94200DE9CB000F1524 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
 		E17450E4200D980D00F6CF86 /* cleanTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanTop.png; sourceTree = "<group>"; };
@@ -616,6 +630,7 @@
 		E10D54611FF101C8004E39B4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E15999642016D685006C87F8 /* SideMenu */,
 				E19E39161FFCC58F006F641F /* Chart */,
 				E10D546E1FF102C2004E39B4 /* CleanTime */,
 				E10D546D1FF102BA004E39B4 /* CheckInTime */,
@@ -671,6 +686,7 @@
 		E10D54661FF10240004E39B4 /* NewUI */ = {
 			isa = PBXGroup;
 			children = (
+				E15999672016DC2F006C87F8 /* SideMenu */,
 				E1D9CA94201043CA00A6B80E /* DeleteStaffPopup */,
 				E17450F1200DBAAA00F6CF86 /* Candidate */,
 				E17450EC200DAFB900F6CF86 /* CleanWinner */,
@@ -684,6 +700,7 @@
 		E10D54671FF10257004E39B4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E159996C2016DCFD006C87F8 /* SideMenu */,
 				E1D9CA992010491600A6B80E /* staff */,
 				E19E391D1FFCCC4C006F641F /* chart */,
 				E10D54781FF106F0004E39B4 /* Emoji */,
@@ -759,8 +776,36 @@
 				E14628F31FF24320008FE420 /* UIImage.swift */,
 				E1A933262008C3F500CFAE8C /* UIColor.swift */,
 				E1A5B578200C9771006DA54D /* NSMutableData.swift */,
+				E15999622016CD45006C87F8 /* UIViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		E15999642016D685006C87F8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E15999652016D699006C87F8 /* SideMenuController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		E15999672016DC2F006C87F8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E15999732016E335006C87F8 /* SideMenuCell.swift */,
+				E15999742016E335006C87F8 /* SideMenuCell.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		E159996C2016DCFD006C87F8 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E159996F2016DD0A006C87F8 /* checkInTime.png */,
+				E159996D2016DD09006C87F8 /* cleaning.jpg */,
+				E159996E2016DD0A006C87F8 /* staff-icon.png */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		E1613B91200DE830000F1524 /* Fonts */ = {
@@ -962,6 +1007,7 @@
 				943E1E4F1FE7AA3C00747262 /* leverR07.jpg in Resources */,
 				9473B43C1FE8C6B400A2EFA3 /* btn03.mp3 in Resources */,
 				9438CD491FDF967700789781 /* mountain.png in Resources */,
+				E15999702016DD0A006C87F8 /* cleaning.jpg in Resources */,
 				94B4A5D61FE76A2900D08561 /* Contents.json in Resources */,
 				94D095391FDE2E66000219B0 /* MembersCollectionViewCell.xib in Resources */,
 				9473B42C1FE8BAAB00A2EFA3 /* hand-shake-love.jpg in Resources */,
@@ -979,6 +1025,7 @@
 				94B4A5D71FE76A2900D08561 /* img_lever_05.jpg in Resources */,
 				9473B42D1FE8BAAB00A2EFA3 /* img_balloon_with_bg.jpg in Resources */,
 				94B4A5D51FE76A2900D08561 /* img_lever_03.jpg in Resources */,
+				E15999722016DD0A006C87F8 /* checkInTime.png in Resources */,
 				943E1E581FE7AA3C00747262 /* Contents.json in Resources */,
 				943E1E5A1FE7AA3C00747262 /* Contents.json in Resources */,
 				94B4A5D91FE76A2900D08561 /* img_lever_01.jpg in Resources */,
@@ -1015,6 +1062,7 @@
 				E17450E7200D980F00F6CF86 /* cleanTop.png in Resources */,
 				E1D9CA982010457100A6B80E /* DeleteStaffPopup.xib in Resources */,
 				94CADC731FE8F8B600FB1442 /* imgAvatar-temp.png in Resources */,
+				E15999762016E335006C87F8 /* SideMenuCell.xib in Resources */,
 				E10D54821FF10714004E39B4 /* veryhappy.png in Resources */,
 				94B4A5DD1FE76A2900D08561 /* img_lever_04.jpg in Resources */,
 				9438CD461FDF967700789781 /* cloud-behind-sun-left.png in Resources */,
@@ -1032,6 +1080,7 @@
 				943E1E531FE7AA3C00747262 /* leverR01.jpg in Resources */,
 				94B4A5D21FE76A2900D08561 /* Contents.json in Resources */,
 				E1AE2BB02008938C005BAD60 /* bar-chart.png in Resources */,
+				E15999712016DD0A006C87F8 /* staff-icon.png in Resources */,
 				9473B43D1FE8C6B400A2EFA3 /* slot_machine_sounds.mp3 in Resources */,
 				E17450F0200DAFEA00F6CF86 /* WinnerViewController.xib in Resources */,
 				94B4A5DC1FE76A2900D08561 /* Contents.json in Resources */,
@@ -1131,10 +1180,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CheckInTime/Pods-CheckInTime-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftChart/SwiftChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1213,6 +1264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B4A5B51FE7586700D08561 /* CleanTimeController.swift in Sources */,
+				E15999662016D699006C87F8 /* SideMenuController.swift in Sources */,
 				E1A5B579200C9771006DA54D /* NSMutableData.swift in Sources */,
 				E1A5019720075F0300A76500 /* DetailChart.swift in Sources */,
 				E14628F41FF24320008FE420 /* UIImage.swift in Sources */,
@@ -1226,12 +1278,14 @@
 				E17450F3200DBABB00F6CF86 /* Candidate.swift in Sources */,
 				94D095381FDE2E65000219B0 /* MembersCollectionViewCell.swift in Sources */,
 				E17450EF200DAFEA00F6CF86 /* WinnerViewController.swift in Sources */,
+				E15999632016CD45006C87F8 /* UIViewController.swift in Sources */,
 				E1A50194200707FE00A76500 /* ChartCell.swift in Sources */,
 				94367B421FDA6E2700DAC492 /* MemberController.swift in Sources */,
 				94367B0D1FDA3B9400DAC492 /* AppDelegate.swift in Sources */,
 				E19E39181FFCC5E7006F641F /* StaffListChart.swift in Sources */,
 				E1288A8C20076B46004D781A /* API.swift in Sources */,
 				94367B151FDA3B9400DAC492 /* CheckInTime.xcdatamodeld in Sources */,
+				E15999752016E335006C87F8 /* SideMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

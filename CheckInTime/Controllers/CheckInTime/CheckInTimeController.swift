@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 class CheckInTimeController: UIViewController, ApiService{
+    @IBOutlet weak var btnChart: UIBarButtonItem!
+    @IBOutlet weak var btnMenu: UIBarButtonItem!
     @IBOutlet weak var lblDateTime: UILabel!
     @IBOutlet weak var collectionViewMemList: UICollectionView!
     @IBOutlet weak var imgViewSun: UIImageView!
@@ -20,6 +22,7 @@ class CheckInTimeController: UIViewController, ApiService{
     let api                         = callApi()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupSideMenu(storyBoardName: "Main", navigationControllerIndetifier: "UISideMenuNavigationController",transition: .menuSlideIn)
         api.deletgate = self
         // run animation Sun
         self.animateSun()
@@ -43,18 +46,40 @@ class CheckInTimeController: UIViewController, ApiService{
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getTime(_:)), userInfo: nil, repeats: true)
         timer.fire()
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+        
+        //addWindow()
+    }
+    
+    func addWindow(){
+        if let window = UIApplication.shared.keyWindow as? UIWindow{
+//                let button = UIButton()
+//                button.backgroundColor = .red
+//                button.frame = CGRect(x: 900, y: 50, width: 40, height: 40)
+//                window.addSubview(button)
+            
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         lblDateTime.font = lblDateTime.font.withSize(self.view.frame.size.height / 10)
     }
     @objc func onChartAction() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
-        self.navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.async(execute: {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
     }
     @IBAction func onChartAction(_ sender: Any) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
-        self.navigationController?.pushViewController(vc, animated: true)
+        DispatchQueue.main.async(execute: {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "StaffListChart") as! StaffListChart
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
     }
+    @IBAction func onOpenSideMenuAction(_ sender: Any) {
+        //present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
+    
     // timer
     @objc func getTime(_ sender: Timer){
         let dateTime = Date()

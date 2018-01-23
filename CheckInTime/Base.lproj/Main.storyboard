@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fG-lE-A3M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gh9-6j-nhN">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,6 +28,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7e-iH-v5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1188" y="90"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="V3a-g4-lMb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NB2-u5-rAJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="UISideMenuNavigationController" navigationBarHidden="YES" id="Nbv-yc-xYp" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hgN-on-LCW">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="bAh-Of-eVx" kind="relationship" relationship="rootViewController" id="rUE-CK-RwK"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1096" y="2495"/>
+        </scene>
+        <!--Side Menu Controller-->
+        <scene sceneID="wMM-Gi-og6">
+            <objects>
+                <viewController id="bAh-Of-eVx" customClass="SideMenuController" customModule="CheckInTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Krb-Tc-uJd">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dna-Xe-ILA">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xaG-XM-xgq">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zmv-wX-ULI">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bAh-Of-eVx" id="IWp-QO-04X"/>
+                                    <outlet property="delegate" destination="bAh-Of-eVx" id="erN-Dp-G00"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dna-Xe-ILA" firstAttribute="leading" secondItem="Mso-Rs-cQL" secondAttribute="leading" id="T21-Yo-FRU"/>
+                            <constraint firstItem="dna-Xe-ILA" firstAttribute="top" secondItem="Mso-Rs-cQL" secondAttribute="top" id="gWh-5N-M87"/>
+                            <constraint firstItem="Mso-Rs-cQL" firstAttribute="bottom" secondItem="dna-Xe-ILA" secondAttribute="bottom" id="sio-WA-dBS"/>
+                            <constraint firstItem="Mso-Rs-cQL" firstAttribute="trailing" secondItem="dna-Xe-ILA" secondAttribute="trailing" id="tHM-lo-6ey"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mso-Rs-cQL"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FCB-Cf-o6X"/>
+                    <connections>
+                        <outlet property="collectionViewSideMenu" destination="dna-Xe-ILA" id="zEr-b2-2QF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="McJ-V3-u71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1096" y="3257"/>
         </scene>
         <!--Homepage Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -469,15 +549,26 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Check In Time" id="ova-Gp-zkp">
-                        <barButtonItem key="rightBarButtonItem" title="chart" springLoaded="YES" id="eaP-GW-S9v">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="onChartAction:" destination="TNC-Mo-Wrg" id="UQj-a4-lp8"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="chart" id="eaP-GW-S9v">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onChartAction:" destination="TNC-Mo-Wrg" id="UQj-a4-lp8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Menu" id="wpR-wr-ern">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onOpenSideMenuAction:" destination="TNC-Mo-Wrg" id="hn1-0y-4qW"/>
+                                    <segue destination="Nbv-yc-xYp" kind="presentation" id="Ldd-lv-Jao"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnChart" destination="eaP-GW-S9v" id="MjQ-YD-6qj"/>
+                        <outlet property="btnMenu" destination="wpR-wr-ern" id="rcq-6G-sNo"/>
                         <outlet property="collectionViewMemList" destination="WlP-gs-Zqu" id="LxA-NU-1yt"/>
                         <outlet property="imgViewSun" destination="2fE-FV-uJz" id="oRY-Ll-sKR"/>
                         <outlet property="lblDateTime" destination="YWm-Cm-Ggn" id="AjT-Ud-4Ma"/>
@@ -701,17 +792,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cleanStaff.png" translatesAutoresizingMaskIntoConstraints="NO" id="XpS-Nw-atD">
                                 <rect key="frame" x="0.0" y="416" width="803" height="269"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTe-Tl-aAi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTe-Tl-aAi">
                                 <rect key="frame" x="50" y="147" width="343.5" height="231"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t50-q5-Mvs">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t50-q5-Mvs">
                                 <rect key="frame" x="409.5" y="147" width="343.5" height="231"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKl-Mj-Upw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wKl-Mj-Upw">
                                 <rect key="frame" x="50" y="430" width="344" height="233"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yEB-bL-hpR">
-                                <rect key="frame" x="409.5" y="430" width="343.5" height="233"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEB-bL-hpR">
+                                <rect key="frame" x="409.5" y="431" width="343.5" height="233"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25882352939999997" green="0.78823529410000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>

@@ -7,30 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02B7720CC28C637C66A944A5CC8A3DDB /* SwiftChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB4BD82342BB22C040B0CDBBE2259861 /* SwiftChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29EC1E5B47DA0C99FF2890D80E4467FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		5A100C09348E6DADEE7C0F163D13F39A /* SwiftChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F0597B6BDCE065BF23A5C8E26013C /* SwiftChart-dummy.m */; };
+		0A25CBE680AF4F3121C0673D1DC7AA6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		0D8EE92D47579F466F5F6C975AC05695 /* Pods-CheckInTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */; };
+		0DE76F4DECE43099CCD1E1516EECACC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		2172057E5DE26F292BC539E84C480EA1 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E21FEBFAFE6805E44D1D472291BE5D /* SideMenu-dummy.m */; };
+		2A671CBF1FDFD8332872C0372244782F /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9644581B65B9C80E92A25EED856A74 /* UITableViewVibrantCell.swift */; };
+		357A4E818D5D30D2EE2498DE6C971143 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		4B9F235F0CDF0B8B16CD8829AB0C3EB9 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C2C930D79D0BF3CE9D615460CCDF9A0D /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5333A54129D71295989B4A4A2119555E /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B3DB239C40495A25BD1990C58D04B /* UISideMenuNavigationController.swift */; };
 		5B346699219B3B3AEC70F9BF46A363BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		6096A1C48BE440BB93D91CE4289E13FB /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E0941487415A86E4FAB7541FFF1B /* ChartSeries.swift */; };
+		66DD13FDC7E3A44004D13181FA2CF19A /* Pods-CheckInTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6802401775C52C143A7F0C71225CCFB4 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1ADF32EF8CDD1719D21FB7C94F583B /* SideMenuManager.swift */; };
 		6D3912F5D3943DD3BBE14A965973387C /* Pods-CheckInTimeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1827B8D272126CF11EFB9AF77A185C /* Pods-CheckInTimeUITests-dummy.m */; };
-		6FD27386B49396C9E751725303206898 /* Pods-CheckInTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		70FF0949BD8CEC02F1BA9EB8E06A8657 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		8E6860CAD98F7E2C1D75DC086C555F43 /* Pods-CheckInTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */; };
+		7E53C76746C734E8E14E8485DA32DBAC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		842F5E280B46071C47F92E08829A89B7 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB1B5ADF1397D6C04884E68265A488C /* SideMenuTransition.swift */; };
 		95715C0E831DD240ABD6F4FE63C7A86C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		9F6FCF7080F8F779AE851DD6E3C20318 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		A4FDA697DA25E6C1AA4CA8EAF675CE7E /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E96569280D72FB5E8751107B9251869 /* ChartColors.swift */; };
+		997821E4F92DA3A62B69A2D92EA7BDA6 /* SwiftChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DFB582555C69E934AE2A2C747A6A1 /* SwiftChart-dummy.m */; };
+		AD88D8D42EF541E89253E9F002A3D2FF /* SwiftChart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CD46A397B67CA304DBB2BF867D92F4 /* SwiftChart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B84E12D5E8927F1E190F210CEC2A5C76 /* Pods-CheckInTimeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 444B2089F2965255ED3557726B470E07 /* Pods-CheckInTimeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF0860CA349C4F244FE19B42483370D8 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1AB9413A637861CFCC0B38663147A2 /* Chart.swift */; };
 		C01AF70D3F410236077894C92A76E8F5 /* Pods-CheckInTimeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F070E04B72377A38D133AAC3F0B6190 /* Pods-CheckInTimeTests-dummy.m */; };
 		C41A738B26E199A755BF40D0A696D709 /* Pods-CheckInTimeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 865A00FF4314DB38B742418E255DF9D5 /* Pods-CheckInTimeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D039E0F2301DF11B5250145200C314CE /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABFBBA379C73ED25BEA7B61E533DECB /* Chart.swift */; };
-		E82B0B4FBC8F201CBD075AF4465DA096 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FEFEE9956D00D20425A16C9419D4B9 /* ChartSeries.swift */; };
+		E044AC31A03351E8108202904B632D9F /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A46DE20BDA3A092DDD0E42E7C78A3D /* ChartColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		22796123E1466CEF23FBA6E0289B4C31 /* PBXContainerItemProxy */ = {
+		745ACDF59364A623E8E978BF7B2847A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FDE6CB0E2D7CFFE4537B5835B773BD80;
+			remoteGlobalIDString = D3D0DA64AE0793CD7B55FCFDD6A1D0FA;
+			remoteInfo = SideMenu;
+		};
+		827953D016DE64E562FA0E45ED51F100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6D14B480A070C2F35332F982B100000;
 			remoteInfo = SwiftChart;
 		};
 /* End PBXContainerItemProxy section */
@@ -39,58 +53,68 @@
 		019ACC72FFB88803A0152AD45B0B8B3D /* Pods-CheckInTime-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTime-resources.sh"; sourceTree = "<group>"; };
 		045BA23204F72F3E7EEE61AB0AEFA3FF /* Pods-CheckInTimeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTimeTests.modulemap"; sourceTree = "<group>"; };
 		068CA7B88993B36FC95C15764DA68338 /* Pods-CheckInTimeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTimeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0921F43BF449B926C735E679C5A6FA51 /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftChart.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F070E04B72377A38D133AAC3F0B6190 /* Pods-CheckInTimeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTimeTests-dummy.m"; sourceTree = "<group>"; };
 		0FC4BDF1F7C8AD4453707C7604323FAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1139EAA471A232671E8C19F72130D176 /* Pods-CheckInTimeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeUITests-frameworks.sh"; sourceTree = "<group>"; };
+		1322FB8F6A708F29301AAB8343D229F0 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		138FB67E2B708B17CD7A72710215A708 /* SwiftChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftChart.modulemap; sourceTree = "<group>"; };
 		14EC589F6B496E5D17AA0D2E30D7DB03 /* Pods-CheckInTimeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTimeUITests.modulemap"; sourceTree = "<group>"; };
 		2358290AC0AAB71D4952BAC3150DA26C /* Pods-CheckInTime-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTime-frameworks.sh"; sourceTree = "<group>"; };
-		23C4B5301EA0CC747CFE32B4A42D21CE /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeUITests.framework; path = "Pods-CheckInTimeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E69BF9DE464B1DE2EC21EB78DE33BD /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		378C4754F2F1ADECEE88FF65FC90A10C /* Pods-CheckInTime-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTime-acknowledgements.plist"; sourceTree = "<group>"; };
+		3FE8C30966C1910766E41B1B637B0897 /* SwiftChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-prefix.pch"; sourceTree = "<group>"; };
 		43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTime.release.xcconfig"; sourceTree = "<group>"; };
 		444B2089F2965255ED3557726B470E07 /* Pods-CheckInTimeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTimeUITests-umbrella.h"; sourceTree = "<group>"; };
 		47086B585C7315854FBBD98F0E3F0EA1 /* Pods-CheckInTimeUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeUITests-resources.sh"; sourceTree = "<group>"; };
 		48ADAC59CE65A5ED6B3F5C5A2C1DA6BF /* Pods-CheckInTimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4E1F0597B6BDCE065BF23A5C8E26013C /* SwiftChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftChart-dummy.m"; sourceTree = "<group>"; };
+		4DB02ED16D674F273A92AC9E475C52BB /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SideMenu.modulemap; sourceTree = "<group>"; };
+		5209571012B9CB869B34CC953EEA29CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E21FEBFAFE6805E44D1D472291BE5D /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
 		6266749E5AE3DCA98554C598CDB80DB7 /* Pods-CheckInTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTime-dummy.m"; sourceTree = "<group>"; };
+		69A2A6047DC27A13A569944517C1D3E8 /* SwiftChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftChart.xcconfig; sourceTree = "<group>"; };
 		702C21D7DD28D179D90D6F0C0C08967D /* Pods-CheckInTimeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTimeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		734A17E9A2ACF2E98A21A9B8E428D453 /* Pods_CheckInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTime.framework; path = "Pods-CheckInTime.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73FD7136332D7966367EB341AFF29A07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		80E923FB7A7941074A54C9EBEB5BC7B8 /* Pods_CheckInTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeTests.framework; path = "Pods-CheckInTimeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7943EC9C3848EE00F9992A4552BE54A2 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
+		7A0DFB582555C69E934AE2A2C747A6A1 /* SwiftChart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftChart-dummy.m"; sourceTree = "<group>"; };
+		7CB1B5ADF1397D6C04884E68265A488C /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
 		865A00FF4314DB38B742418E255DF9D5 /* Pods-CheckInTimeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTimeTests-umbrella.h"; sourceTree = "<group>"; };
+		8E1AB9413A637861CFCC0B38663147A2 /* Chart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chart.swift; path = Source/Chart.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94C4B9824D362935E512BD9A9D6B48B3 /* Pods-CheckInTime-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTime-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9612262D940635018C4F6AFFB755F1C2 /* Pods-CheckInTimeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CheckInTimeTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9E2F2A3BB5D22C2BC188F180FEB1DDF0 /* SwiftChart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftChart.modulemap; sourceTree = "<group>"; };
-		9E96569280D72FB5E8751107B9251869 /* ChartColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColors.swift; path = Source/ChartColors.swift; sourceTree = "<group>"; };
 		9F1827B8D272126CF11EFB9AF77A185C /* Pods-CheckInTimeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CheckInTimeUITests-dummy.m"; sourceTree = "<group>"; };
 		9F7F2048BD1DCCE7A8D0602858A54AC6 /* Pods-CheckInTime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CheckInTime-umbrella.h"; sourceTree = "<group>"; };
 		A117114FB86C36E716368060D3202017 /* Pods-CheckInTime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CheckInTime.modulemap"; sourceTree = "<group>"; };
 		A49331A8054BF301E640A9409329E134 /* Pods-CheckInTimeTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeTests-resources.sh"; sourceTree = "<group>"; };
-		A49794D4EC62737E742BE70EA18B1305 /* SwiftChart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-prefix.pch"; sourceTree = "<group>"; };
 		A606660AA03A01DC503C635A35CD2CE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A90450B1F0E463216ADA2629349BC3A9 /* Pods-CheckInTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTime.debug.xcconfig"; sourceTree = "<group>"; };
 		A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CheckInTimeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF1ADF32EF8CDD1719D21FB7C94F583B /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C9FEFEE9956D00D20425A16C9419D4B9 /* ChartSeries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartSeries.swift; path = Source/ChartSeries.swift; sourceTree = "<group>"; };
-		CABFBBA379C73ED25BEA7B61E533DECB /* Chart.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chart.swift; path = Source/Chart.swift; sourceTree = "<group>"; };
+		BF9644581B65B9C80E92A25EED856A74 /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		C1CD46A397B67CA304DBB2BF867D92F4 /* SwiftChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-umbrella.h"; sourceTree = "<group>"; };
+		C2C930D79D0BF3CE9D615460CCDF9A0D /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		C2D4E0941487415A86E4FAB7541FFF1B /* ChartSeries.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartSeries.swift; path = Source/ChartSeries.swift; sourceTree = "<group>"; };
 		D0E10A1C8BE13BD52C96FE59044763AD /* Pods-CheckInTimeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CheckInTimeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D6D99F14C3053BE6CF6EE2E7B022A8A1 /* SwiftChart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftChart.xcconfig; sourceTree = "<group>"; };
+		D1A46DE20BDA3A092DDD0E42E7C78A3D /* ChartColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartColors.swift; path = Source/ChartColors.swift; sourceTree = "<group>"; };
+		D86B3DB239C40495A25BD1990C58D04B /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D9653D8B7A0803404C2235D221528C8E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB4BD82342BB22C040B0CDBBE2259861 /* SwiftChart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftChart-umbrella.h"; sourceTree = "<group>"; };
 		DBACB9EA4DF29CEE2FA87530811EBE35 /* Pods-CheckInTimeTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CheckInTimeTests-frameworks.sh"; sourceTree = "<group>"; };
-		F6E7C0106AE6B35AC88A7B1BF8602161 /* Pods_CheckInTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTime.framework; path = "Pods-CheckInTime.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDCF22C5D9B10A58EAB087CE33904093 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2B15F126918EB084836B06924E692ED /* Pods_CheckInTimeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeUITests.framework; path = "Pods-CheckInTimeUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4758FE0B9FE554501ADF4BE5B7B8C0A /* SwiftChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftChart.framework; path = SwiftChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F972FECFC876B929F16C8571ED1E2EFF /* Pods_CheckInTimeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CheckInTimeTests.framework; path = "Pods-CheckInTimeTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		426B237BD06E71BFEB285B96912CB528 /* Frameworks */ = {
+		0904B30BAF593BB3E6F6BB812F6CE89F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EC1E5B47DA0C99FF2890D80E4467FF /* Foundation.framework in Frameworks */,
-				70FF0949BD8CEC02F1BA9EB8E06A8657 /* UIKit.framework in Frameworks */,
+				357A4E818D5D30D2EE2498DE6C971143 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,11 +126,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FA090E1411C0CAB985703AADA7080A3 /* Frameworks */ = {
+		909D81673AAD2C590CEA4CD36B2C84A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F6FCF7080F8F779AE851DD6E3C20318 /* Foundation.framework in Frameworks */,
+				0DE76F4DECE43099CCD1E1516EECACC7 /* Foundation.framework in Frameworks */,
+				7E53C76746C734E8E14E8485DA32DBAC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +140,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				95715C0E831DD240ABD6F4FE63C7A86C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C498802B88E0B32AF323B9C20917DB3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A25CBE680AF4F3121C0673D1DC7AA6C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,14 +182,6 @@
 			path = "Target Support Files/Pods-CheckInTimeUITests";
 			sourceTree = "<group>";
 		};
-		135D658E537665A9D9B02AD5ECADC020 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E1748448BD9FD79A0EB237549B32B646 /* SwiftChart */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		2CA7176005A2DE693E0FF9C51F4392C1 /* Pods-CheckInTime */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +200,33 @@
 			path = "Target Support Files/Pods-CheckInTime";
 			sourceTree = "<group>";
 		};
+		3CAA3799E2F46DE91DF2BF453CF75E2E /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				AF1ADF32EF8CDD1719D21FB7C94F583B /* SideMenuManager.swift */,
+				7CB1B5ADF1397D6C04884E68265A488C /* SideMenuTransition.swift */,
+				D86B3DB239C40495A25BD1990C58D04B /* UISideMenuNavigationController.swift */,
+				BF9644581B65B9C80E92A25EED856A74 /* UITableViewVibrantCell.swift */,
+				EFD1554095545F63AAAC8EB08293E516 /* Support Files */,
+			);
+			name = SideMenu;
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		40AA8027CD8EE41F85066C408AB7B23A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5209571012B9CB869B34CC953EEA29CF /* Info.plist */,
+				138FB67E2B708B17CD7A72710215A708 /* SwiftChart.modulemap */,
+				69A2A6047DC27A13A569944517C1D3E8 /* SwiftChart.xcconfig */,
+				7A0DFB582555C69E934AE2A2C747A6A1 /* SwiftChart-dummy.m */,
+				3FE8C30966C1910766E41B1B637B0897 /* SwiftChart-prefix.pch */,
+				C1CD46A397B67CA304DBB2BF867D92F4 /* SwiftChart-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftChart";
+			sourceTree = "<group>";
+		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,17 +242,6 @@
 				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		4DBD5479FDAD3613E29BAFED82C5FC2C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F6E7C0106AE6B35AC88A7B1BF8602161 /* Pods_CheckInTime.framework */,
-				80E923FB7A7941074A54C9EBEB5BC7B8 /* Pods_CheckInTimeTests.framework */,
-				23C4B5301EA0CC747CFE32B4A42D21CE /* Pods_CheckInTimeUITests.framework */,
-				0921F43BF449B926C735E679C5A6FA51 /* SwiftChart.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		51EF4B81C5733F7E11044AF421772BAF /* Pods-CheckInTimeTests */ = {
@@ -221,59 +262,80 @@
 			path = "Target Support Files/Pods-CheckInTimeTests";
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		62AF99625550F16070265AB26F28EDE5 /* SwiftChart */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				135D658E537665A9D9B02AD5ECADC020 /* Pods */,
-				4DBD5479FDAD3613E29BAFED82C5FC2C /* Products */,
-				00888D5B0A03EA51FE847D124AD54013 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		D640CDE62A382746D80A785914A4AA7D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FDCF22C5D9B10A58EAB087CE33904093 /* Info.plist */,
-				9E2F2A3BB5D22C2BC188F180FEB1DDF0 /* SwiftChart.modulemap */,
-				D6D99F14C3053BE6CF6EE2E7B022A8A1 /* SwiftChart.xcconfig */,
-				4E1F0597B6BDCE065BF23A5C8E26013C /* SwiftChart-dummy.m */,
-				A49794D4EC62737E742BE70EA18B1305 /* SwiftChart-prefix.pch */,
-				DB4BD82342BB22C040B0CDBBE2259861 /* SwiftChart-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftChart";
-			sourceTree = "<group>";
-		};
-		E1748448BD9FD79A0EB237549B32B646 /* SwiftChart */ = {
-			isa = PBXGroup;
-			children = (
-				CABFBBA379C73ED25BEA7B61E533DECB /* Chart.swift */,
-				9E96569280D72FB5E8751107B9251869 /* ChartColors.swift */,
-				C9FEFEE9956D00D20425A16C9419D4B9 /* ChartSeries.swift */,
-				D640CDE62A382746D80A785914A4AA7D /* Support Files */,
+				8E1AB9413A637861CFCC0B38663147A2 /* Chart.swift */,
+				D1A46DE20BDA3A092DDD0E42E7C78A3D /* ChartColors.swift */,
+				C2D4E0941487415A86E4FAB7541FFF1B /* ChartSeries.swift */,
+				40AA8027CD8EE41F85066C408AB7B23A /* Support Files */,
 			);
 			name = SwiftChart;
 			path = SwiftChart;
 			sourceTree = "<group>";
 		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				9D22E5FA3E53A29DE48DBA6630487DBB /* Pods */,
+				81DDBB7E2AC0C0026F1169F4B5A147AC /* Products */,
+				00888D5B0A03EA51FE847D124AD54013 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		81DDBB7E2AC0C0026F1169F4B5A147AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				734A17E9A2ACF2E98A21A9B8E428D453 /* Pods_CheckInTime.framework */,
+				F972FECFC876B929F16C8571ED1E2EFF /* Pods_CheckInTimeTests.framework */,
+				E2B15F126918EB084836B06924E692ED /* Pods_CheckInTimeUITests.framework */,
+				1322FB8F6A708F29301AAB8343D229F0 /* SideMenu.framework */,
+				F4758FE0B9FE554501ADF4BE5B7B8C0A /* SwiftChart.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D22E5FA3E53A29DE48DBA6630487DBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CAA3799E2F46DE91DF2BF453CF75E2E /* SideMenu */,
+				62AF99625550F16070265AB26F28EDE5 /* SwiftChart */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EFD1554095545F63AAAC8EB08293E516 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				73FD7136332D7966367EB341AFF29A07 /* Info.plist */,
+				4DB02ED16D674F273A92AC9E475C52BB /* SideMenu.modulemap */,
+				7943EC9C3848EE00F9992A4552BE54A2 /* SideMenu.xcconfig */,
+				56E21FEBFAFE6805E44D1D472291BE5D /* SideMenu-dummy.m */,
+				34E69BF9DE464B1DE2EC21EB78DE33BD /* SideMenu-prefix.pch */,
+				C2C930D79D0BF3CE9D615460CCDF9A0D /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3286DCAED6D725D5273871D6C62AE79A /* Headers */ = {
+		0D9BDC79497E0C7D1760D012C2A788FA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD27386B49396C9E751725303206898 /* Pods-CheckInTime-umbrella.h in Headers */,
+				66DD13FDC7E3A44004D13181FA2CF19A /* Pods-CheckInTime-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D050335378BFE8B0DC654C9A76329B1 /* Headers */ = {
+		15AEA6DE09C6EB9B749A76F2DA37DFF6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B7720CC28C637C66A944A5CC8A3DDB /* SwiftChart-umbrella.h in Headers */,
+				4B9F235F0CDF0B8B16CD8829AB0C3EB9 /* SideMenu-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +344,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41A738B26E199A755BF40D0A696D709 /* Pods-CheckInTimeTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E87BC97F0710AFA5CC6AC22263E8AA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD88D8D42EF541E89253E9F002A3D2FF /* SwiftChart-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +366,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5F1DD7E5AAA7DEF24DA8859D4EF0E1C6 /* Pods-CheckInTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B180FE07842B9C98C52D973D2A7F11B /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */;
+			buildPhases = (
+				7F093BB91F7C9EE0E6F1F1C942502944 /* Sources */,
+				0904B30BAF593BB3E6F6BB812F6CE89F /* Frameworks */,
+				0D9BDC79497E0C7D1760D012C2A788FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A4F7E5B57AEE86B123DA4C88D513FEB /* PBXTargetDependency */,
+				534502B15FB23B8FD15A0BBFF9FC0759 /* PBXTargetDependency */,
+			);
+			name = "Pods-CheckInTime";
+			productName = "Pods-CheckInTime";
+			productReference = 734A17E9A2ACF2E98A21A9B8E428D453 /* Pods_CheckInTime.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		99CC5596CD08646D80026EE31F20FA34 /* Pods-CheckInTimeTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C658606004BA9F8A8AD306B4B746B64D /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeTests" */;
@@ -310,7 +399,24 @@
 			);
 			name = "Pods-CheckInTimeTests";
 			productName = "Pods-CheckInTimeTests";
-			productReference = 80E923FB7A7941074A54C9EBEB5BC7B8 /* Pods_CheckInTimeTests.framework */;
+			productReference = F972FECFC876B929F16C8571ED1E2EFF /* Pods_CheckInTimeTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A6D14B480A070C2F35332F982B100000 /* SwiftChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B9E6B4D4BF7407A689F809A50B270A /* Build configuration list for PBXNativeTarget "SwiftChart" */;
+			buildPhases = (
+				2C0F9625D685F252A444C3BD6BAE403D /* Sources */,
+				909D81673AAD2C590CEA4CD36B2C84A3 /* Frameworks */,
+				D5E87BC97F0710AFA5CC6AC22263E8AA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftChart;
+			productName = SwiftChart;
+			productReference = F4758FE0B9FE554501ADF4BE5B7B8C0A /* SwiftChart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C184B2C6A91229EB6772F983257DB1EF /* Pods-CheckInTimeUITests */ = {
@@ -327,42 +433,24 @@
 			);
 			name = "Pods-CheckInTimeUITests";
 			productName = "Pods-CheckInTimeUITests";
-			productReference = 23C4B5301EA0CC747CFE32B4A42D21CE /* Pods_CheckInTimeUITests.framework */;
+			productReference = E2B15F126918EB084836B06924E692ED /* Pods_CheckInTimeUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		C7B9DBB84E1B44E41EF111733C8513FB /* Pods-CheckInTime */ = {
+		D3D0DA64AE0793CD7B55FCFDD6A1D0FA /* SideMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85AF5ABDA18A807050C2FE8570B6B740 /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */;
+			buildConfigurationList = E6B13D464904182F89E21F50CCAD221A /* Build configuration list for PBXNativeTarget "SideMenu" */;
 			buildPhases = (
-				42F1F55F5E981F96E51BA345A9FF4F70 /* Sources */,
-				7FA090E1411C0CAB985703AADA7080A3 /* Frameworks */,
-				3286DCAED6D725D5273871D6C62AE79A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C138639DE08DE1DD4E7B5E8CEB148E3C /* PBXTargetDependency */,
-			);
-			name = "Pods-CheckInTime";
-			productName = "Pods-CheckInTime";
-			productReference = F6E7C0106AE6B35AC88A7B1BF8602161 /* Pods_CheckInTime.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		FDE6CB0E2D7CFFE4537B5835B773BD80 /* SwiftChart */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E89534987DCA2570CF8D7E806EF879A3 /* Build configuration list for PBXNativeTarget "SwiftChart" */;
-			buildPhases = (
-				57C9B8968E120F190E453C08B174E878 /* Sources */,
-				426B237BD06E71BFEB285B96912CB528 /* Frameworks */,
-				5D050335378BFE8B0DC654C9A76329B1 /* Headers */,
+				F2F332422A3DA1BF12DCBCD51BDF0E90 /* Sources */,
+				C498802B88E0B32AF323B9C20917DB3A /* Frameworks */,
+				15AEA6DE09C6EB9B749A76F2DA37DFF6 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftChart;
-			productName = SwiftChart;
-			productReference = 0921F43BF449B926C735E679C5A6FA51 /* SwiftChart.framework */;
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = 1322FB8F6A708F29301AAB8343D229F0 /* SideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -382,35 +470,36 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4DBD5479FDAD3613E29BAFED82C5FC2C /* Products */;
+			productRefGroup = 81DDBB7E2AC0C0026F1169F4B5A147AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C7B9DBB84E1B44E41EF111733C8513FB /* Pods-CheckInTime */,
+				5F1DD7E5AAA7DEF24DA8859D4EF0E1C6 /* Pods-CheckInTime */,
 				99CC5596CD08646D80026EE31F20FA34 /* Pods-CheckInTimeTests */,
 				C184B2C6A91229EB6772F983257DB1EF /* Pods-CheckInTimeUITests */,
-				FDE6CB0E2D7CFFE4537B5835B773BD80 /* SwiftChart */,
+				D3D0DA64AE0793CD7B55FCFDD6A1D0FA /* SideMenu */,
+				A6D14B480A070C2F35332F982B100000 /* SwiftChart */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		42F1F55F5E981F96E51BA345A9FF4F70 /* Sources */ = {
+		2C0F9625D685F252A444C3BD6BAE403D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E6860CAD98F7E2C1D75DC086C555F43 /* Pods-CheckInTime-dummy.m in Sources */,
+				BF0860CA349C4F244FE19B42483370D8 /* Chart.swift in Sources */,
+				E044AC31A03351E8108202904B632D9F /* ChartColors.swift in Sources */,
+				6096A1C48BE440BB93D91CE4289E13FB /* ChartSeries.swift in Sources */,
+				997821E4F92DA3A62B69A2D92EA7BDA6 /* SwiftChart-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57C9B8968E120F190E453C08B174E878 /* Sources */ = {
+		7F093BB91F7C9EE0E6F1F1C942502944 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D039E0F2301DF11B5250145200C314CE /* Chart.swift in Sources */,
-				A4FDA697DA25E6C1AA4CA8EAF675CE7E /* ChartColors.swift in Sources */,
-				E82B0B4FBC8F201CBD075AF4465DA096 /* ChartSeries.swift in Sources */,
-				5A100C09348E6DADEE7C0F163D13F39A /* SwiftChart-dummy.m in Sources */,
+				0D8EE92D47579F466F5F6C975AC05695 /* Pods-CheckInTime-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,54 +519,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2F332422A3DA1BF12DCBCD51BDF0E90 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2172057E5DE26F292BC539E84C480EA1 /* SideMenu-dummy.m in Sources */,
+				6802401775C52C143A7F0C71225CCFB4 /* SideMenuManager.swift in Sources */,
+				842F5E280B46071C47F92E08829A89B7 /* SideMenuTransition.swift in Sources */,
+				5333A54129D71295989B4A4A2119555E /* UISideMenuNavigationController.swift in Sources */,
+				2A671CBF1FDFD8332872C0372244782F /* UITableViewVibrantCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C138639DE08DE1DD4E7B5E8CEB148E3C /* PBXTargetDependency */ = {
+		3A4F7E5B57AEE86B123DA4C88D513FEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SideMenu;
+			target = D3D0DA64AE0793CD7B55FCFDD6A1D0FA /* SideMenu */;
+			targetProxy = 745ACDF59364A623E8E978BF7B2847A2 /* PBXContainerItemProxy */;
+		};
+		534502B15FB23B8FD15A0BBFF9FC0759 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftChart;
-			target = FDE6CB0E2D7CFFE4537B5835B773BD80 /* SwiftChart */;
-			targetProxy = 22796123E1466CEF23FBA6E0289B4C31 /* PBXContainerItemProxy */;
+			target = A6D14B480A070C2F35332F982B100000 /* SwiftChart */;
+			targetProxy = 827953D016DE64E562FA0E45ED51F100 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16EBFA89A74892CC37981DD44DC22BE0 /* Release */ = {
+		27EDFA3A9EAAC19DAC784B4F1DADCDB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CheckInTimeTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3DD78EC84B00201E9443BBB562F777AC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6D99F14C3053BE6CF6EE2E7B022A8A1 /* SwiftChart.xcconfig */;
+			baseConfigurationReference = 69A2A6047DC27A13A569944517C1D3E8 /* SwiftChart.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -498,8 +572,126 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		480E081B190AA0E65DE45988B0720EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7943EC9C3848EE00F9992A4552BE54A2 /* SideMenu.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		621AB785940626574F07364CB14760E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		68CF955A25C965176FF963276B37DAE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -507,7 +699,7 @@
 			};
 			name = Release;
 		};
-		63390CECD349834B352B14BAD181EE0E /* Debug */ = {
+		7FB1362DDD344B3C28006950AACF5564 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A90450B1F0E463216ADA2629349BC3A9 /* Pods-CheckInTime.debug.xcconfig */;
 			buildSettings = {
@@ -522,7 +714,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTime/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTime/Pods-CheckInTime.modulemap";
@@ -541,7 +733,7 @@
 			};
 			name = Debug;
 		};
-		7A32B3B0860EA8B6D90F041914DDAE50 /* Debug */ = {
+		92E8767A77078505D8DF896A5435C7E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 48ADAC59CE65A5ED6B3F5C5A2C1DA6BF /* Pods-CheckInTimeUITests.debug.xcconfig */;
 			buildSettings = {
@@ -556,7 +748,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.modulemap";
@@ -573,7 +765,39 @@
 			};
 			name = Debug;
 		};
-		7C07ED8089F70A31B83996A8910D7F18 /* Debug */ = {
+		9C6DA2B244CB06E3B695E6325F2C374F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CheckInTimeTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B57C09D404C607DDE283C5C44183B2A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -622,7 +846,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,9 +857,9 @@
 			};
 			name = Debug;
 		};
-		8BC61F45EDC3916B548024D8E790E26F /* Release */ = {
+		B97CCF082111757A7A0A18C3F6B3C20B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9D763A2D7A69BAEBA1AA1AB409B79A4 /* Pods-CheckInTimeUITests.release.xcconfig */;
+			baseConfigurationReference = 43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -646,19 +870,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeUITests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTime/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeUITests/Pods-CheckInTimeUITests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTime/Pods-CheckInTime.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CheckInTimeUITests;
+				PRODUCT_NAME = Pods_CheckInTime;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -666,64 +891,9 @@
 			};
 			name = Release;
 		};
-		98F29E7567052F62660DDD7069ADF73C /* Release */ = {
+		BD38FC38C97CF91AAC8A906E9E698DBA /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		ACD61A52AA2F191A19CDB49FF24377F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6D99F14C3053BE6CF6EE2E7B022A8A1 /* SwiftChart.xcconfig */;
+			baseConfigurationReference = 69A2A6047DC27A13A569944517C1D3E8 /* SwiftChart.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -744,17 +914,18 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		AF90A23CDE648FED2D0833F8D7F021D7 /* Release */ = {
+		DA8D52E46BD009923703B9A712A01DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43EEF4DDF26F5F3D17AF2C79BA3DD017 /* Pods-CheckInTime.release.xcconfig */;
+			baseConfigurationReference = 7943EC9C3848EE00F9992A4552BE54A2 /* SideMenu.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -765,20 +936,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTime/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTime/Pods-CheckInTime.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_CheckInTime;
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_NAME = SideMenu;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -786,9 +955,9 @@
 			};
 			name = Release;
 		};
-		E782C708044456AE45967D77F4CB93F3 /* Debug */ = {
+		E3E63DFB50AF240E650638C31015A747 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 780723D12AC4E0179E5803A34820C762 /* Pods-CheckInTimeTests.debug.xcconfig */;
+			baseConfigurationReference = 09585B0B0B44AAC3B2F89E45AE302D42 /* Pods-CheckInTimeTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -801,7 +970,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-CheckInTimeTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-CheckInTimeTests/Pods-CheckInTimeTests.modulemap";
@@ -813,10 +982,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -824,17 +994,26 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7C07ED8089F70A31B83996A8910D7F18 /* Debug */,
-				98F29E7567052F62660DDD7069ADF73C /* Release */,
+				B57C09D404C607DDE283C5C44183B2A1 /* Debug */,
+				621AB785940626574F07364CB14760E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		85AF5ABDA18A807050C2FE8570B6B740 /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */ = {
+		56B9E6B4D4BF7407A689F809A50B270A /* Build configuration list for PBXNativeTarget "SwiftChart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63390CECD349834B352B14BAD181EE0E /* Debug */,
-				AF90A23CDE648FED2D0833F8D7F021D7 /* Release */,
+				27EDFA3A9EAAC19DAC784B4F1DADCDB7 /* Debug */,
+				BD38FC38C97CF91AAC8A906E9E698DBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B180FE07842B9C98C52D973D2A7F11B /* Build configuration list for PBXNativeTarget "Pods-CheckInTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FB1362DDD344B3C28006950AACF5564 /* Debug */,
+				B97CCF082111757A7A0A18C3F6B3C20B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -842,8 +1021,8 @@
 		BD6F2DAB13FBCF8DDC5CB72BBFB0CE6F /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A32B3B0860EA8B6D90F041914DDAE50 /* Debug */,
-				8BC61F45EDC3916B548024D8E790E26F /* Release */,
+				92E8767A77078505D8DF896A5435C7E9 /* Debug */,
+				68CF955A25C965176FF963276B37DAE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -851,17 +1030,17 @@
 		C658606004BA9F8A8AD306B4B746B64D /* Build configuration list for PBXNativeTarget "Pods-CheckInTimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E782C708044456AE45967D77F4CB93F3 /* Debug */,
-				16EBFA89A74892CC37981DD44DC22BE0 /* Release */,
+				9C6DA2B244CB06E3B695E6325F2C374F /* Debug */,
+				E3E63DFB50AF240E650638C31015A747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E89534987DCA2570CF8D7E806EF879A3 /* Build configuration list for PBXNativeTarget "SwiftChart" */ = {
+		E6B13D464904182F89E21F50CCAD221A /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACD61A52AA2F191A19CDB49FF24377F6 /* Debug */,
-				3DD78EC84B00201E9443BBB562F777AC /* Release */,
+				480E081B190AA0E65DE45988B0720EDE /* Debug */,
+				DA8D52E46BD009923703B9A712A01DB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
