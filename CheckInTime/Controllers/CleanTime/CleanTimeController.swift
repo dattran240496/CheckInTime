@@ -104,14 +104,18 @@ class CleanTimeController: UIViewController, ApiService{
     
     // get all staff
     func getDataMembers() {
-        guard let url = URL(string: apiURL + "users")  else { return }
+        guard let url = URL(string: apiURL + "users?status=checked_in")  else { return }
         api.callApiGetStaff(url: url)
     }
     // random 4 numbers, for 0 to staff lenght
     @objc func startRandom(_ sender: Timer){
         var numberRandom = 0
         self.seconds += 1
-        if (seconds <= timeClean){
+        if self.staffForClean.count < 4 {
+            seconds = timeClean
+            self.soundRandom.stop()
+        }
+        if (seconds < timeClean){
             self.arrCleanPerson = []
             if self.staffForClean.count >= 4{
                 numberRandom = 4
@@ -125,6 +129,9 @@ class CleanTimeController: UIViewController, ApiService{
             }
             self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
         }else{
+            for i in 0...self.staffForClean.count - 1{
+                self.arrCleanPerson.append(i)
+            }
             self.isDoneRandone      = true
             self.seconds            = 0
             self.setImgCleanStaff(arrRandom: self.arrCleanPerson, arrMem: self.staffForClean)
@@ -156,7 +163,8 @@ class CleanTimeController: UIViewController, ApiService{
     func setImgCleanStaff(arrRandom: [Int], arrMem: [AnyObject]) {
         for i in 1...arrRandom.count{
             let person      = arrMem[arrRandom[i - 1]]
-            let imgAvatar   = (person as AnyObject)["image"] as AnyObject
+            let imgAvatar   = person["image"] as AnyObject
+            let name        = person["name"] as? String!
             let url         = imgAvatar["url"] as? String ?? ""
             let imgURL      = URL(string: apiURL + url)
             let session     = URLSession.shared
@@ -175,25 +183,25 @@ class CleanTimeController: UIViewController, ApiService{
                             switch i{
                             case 1:
                                 self.imgViewClean1.image = image ?? UIImage(named: "imgAvatar-temp.png")
-                                self.lblName1.text = (person as AnyObject)["name"] as? String!
+                                self.lblName1.text = name
                                 break
                             case 2:
                                 self.imgViewClean2.image = image ?? UIImage(named: "imgAvatar-temp.png")
-                                self.lblName2.text = (person as AnyObject)["name"] as? String!
+                                self.lblName2.text = name
                                 break
                             case 3:
                                 self.imgViewClean3.image = image ?? UIImage(named: "imgAvatar-temp.png")
-                                self.lblName3.text = (person as AnyObject)["name"] as? String!
+                                self.lblName3.text = name
                                 break
                             case 4:
                                 self.imgViewClean4.image = image ?? UIImage(named: "imgAvatar-temp.png")
-                                self.lblName4.text = (person as AnyObject)["name"] as? String!
+                                self.lblName4.text = name
                                 break
                             default:
                                 break
                             }
                         })
-                        if self.isRandom == true{
+                        if self.isRandom == true || self.staffForClean.count < 4{
                             DispatchQueue.main.async(execute:{
                                 let winner1             = Candicate(name: self.lblName1.text!, avatar: self.imgViewClean1.image ?? UIImage(named: "imgAvatar-temp.png")!)
                                 let winner2             = Candicate(name: self.lblName2.text!, avatar: self.imgViewClean2.image ?? UIImage(named: "imgAvatar-temp.png")!)
@@ -224,10 +232,6 @@ class CleanTimeController: UIViewController, ApiService{
             let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSArray
             let staffs = json!
             for staff in staffs{
-                let state = (staff as AnyObject)["state"] as? Int ?? 0
-                if state == 1{
-                    //self.staffForClean.append(staff as AnyObject)
-                }
                 self.staffForClean.append(staff as AnyObject)
             }
             var numberRandom = 0
